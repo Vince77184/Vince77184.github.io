@@ -25,6 +25,7 @@
       <a href="#work">الأعمال</a>
       <a href="#publication">البحث</a>
       <a href="#projects">المشاريع</a>
+      <a href="#experience">الخبرة</a>
       <a href="#background">المسار</a>
       <span class="lang"><a href="index.html" hreflang="en" lang="en">EN</a><a href="fr.html" hreflang="fr" lang="fr">FR</a><b>عربي</b></span>
       <a class="btn btn-sm" href="docs/CV_Vincent_Poitier_AR.pdf">السيرة الذاتية</a>
@@ -149,63 +150,97 @@
 
 <section id="projects" class="section band">
   <div class="wrap">
-    <p class="label">04 — مشاريع سابقة</p>
+    <p class="label">04 — المشاريع</p>
     <h2>التدريبات والمشاريع</h2>
+    <p class="sub">انقر على أي مشروع لرؤية كل التفاصيل: الملخص، الجانب التجريبي، المعادلات والأشكال (الصفحات بالإنجليزية).</p>
     <div class="grid">
-      <article class="card">
-        <img src="images/jcp-flow.jpg" alt="مسارات التدفق داخل شبكة مسامات" loading="lazy" width="800" height="600">
-        <p class="when">2024 · جامعة كاليفورنيا سانتا باربرا، الولايات المتحدة</p>
+      <article class="card"><a class="card-link" href="projects/ucsb-porous-media.html">
+        <img src="images/projects/jcp-network.jpg" alt="" loading="lazy" width="800" height="600">
+        <p class="when">2024 · جامعة كاليفورنيا سانتا باربرا</p>
+        <p class="tagline">عددي · مُتحقَّق منه · منشور</p>
         <h3>الأوساط المسامية التفاعلية — تدريب الماستر</h3>
-        <p>نموذج تم التحقق منه بالمقارنة مع بيانات تجريبية، ومعالجة مؤتمتة بلغتَي Python و <span class="ltr">C/C++</span>. ستة أشهر في فريق البروفيسور ف. جيبو، أثمرت المقال أعلاه.</p>
-      </article>
-      <article class="card">
-        <div class="ph"><span>روبوتات</span></div>
-        <p class="when">2023–2024 · جمعية Top Aéro، السوربون / آرتس إي ميتييه</p>
-        <h3>جهاز هبوط مؤتمت لصاروخ من نوع <span class="ltr">Falcon 9</span></h3>
-        <p>تصميم الأرجل القابلة للطيّ ببرنامج SolidWorks، وبرمجة تسلسل الفتح والتحكم في مرحلة الهبوط.</p>
-      </article>
-      <article class="card">
-        <a href="docs/bem_acoustic_diffraction.pdf"><img src="images/bem.jpg" alt="حقل صوتي على قرص الوحدة" loading="lazy" width="800" height="600"></a>
+        <p class="ctext">محاكاة بواجهة حادة، تم التحقق منها على مسألة مرجعية، ومقال كمؤلف أول.</p>
+        <span class="more">اقرأ المزيد ←</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/landing-gear.html">
+        <img src="images/projects/falcon9-legs.jpg" alt="" loading="lazy" width="800" height="600">
+        <p class="when">2023–2024 · جمعية Top Aéro</p>
+        <p class="tagline">ميكاترونيك · تحكم</p>
+        <h3>جهاز هبوط مؤتمت لصاروخ من نوع Falcon 9</h3>
+        <p class="ctext">أرجل قابلة للطيّ بـ SolidWorks، تسلسل الفتح والتحكم في الهبوط.</p>
+        <span class="more">اقرأ المزيد ←</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/bem-acoustics.html">
+        <img src="images/projects/card-bem.jpg" alt="" loading="lazy" width="800" height="600">
         <p class="when">2023 · معهد دالمبير، السوربون</p>
-        <h3><a href="docs/bem_acoustic_diffraction.pdf">العناصر الحدّية لحيود الموجات الصوتية</a></h3>
-        <p>حلّال BEM بلغة Python تم التحقق منه على حالات تحليلية ومقارنته مع Abaqus؛ منهجية التحقق والتوثيق. <a href="docs/bem_acoustic_diffraction.pdf">التقرير (بالفرنسية) ←</a></p>
-      </article>
-      <article class="card">
-        <div class="ph"><span>عناصر محدودة</span></div>
+        <p class="tagline">أداة عددية · مُتحقَّق منها</p>
+        <h3>العناصر الحدّية لحيود الموجات الصوتية</h3>
+        <p class="ctext">حلّال BEM مكتوب من الصفر بلغة Python، مقارن بالحلول التحليلية و Abaqus.</p>
+        <span class="more">اقرأ المزيد ←</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/fea-beam.html">
+        <img src="images/projects/fea.jpg" alt="" loading="lazy" width="800" height="600">
         <p class="when">2023–2024 · مشروع شخصي</p>
-        <h3>تحليل بنية بطريقة العناصر المحدودة</h3>
-        <p>تحليل ساكن وديناميكي لعارضة محمّلة ببرنامج Abaqus، مقارنةً بالحلول التحليلية؛ تصميم بمساعدة الحاسوب ومعالجة النتائج.</p>
-      </article>
-      <article class="card">
-        <a href="docs/gas_marbles_navier.pdf"><img src="images/navier.jpg" alt="فقاعة غاز مغلّفة بالجسيمات" loading="lazy" width="800" height="600"></a>
-        <p class="when">2021 · مختبر نافييه، المدرسة الوطنية للجسور والطرق</p>
-        <h3><a href="docs/gas_marbles_navier.pdf">منصة مجهّزة بأدوات قياس لدراسة كريات الغاز</a></h3>
-        <p>تصميم المنصة وتركيبها؛ كاميرا عالية السرعة تتجاوز 1000 صورة في الثانية، ومعالجة الصور والإشارات بلغة Python. <a href="docs/gas_marbles_navier.pdf">التقرير (بالفرنسية) ←</a></p>
-      </article>
-      <article class="card">
-        <a href="docs/antenna_reverberation_chamber.pdf"><img src="images/antenna.jpg" alt="هوائي على حامل ثلاثي داخل غرفة صدى" loading="lazy" width="800" height="600"></a>
-        <p class="when">2020–2021 · مختبر ESYCOM، جامعة غوستاف إيفل</p>
-        <h3><a href="docs/antenna_reverberation_chamber.pdf">كفاءة الهوائيات في غرفة الصدى</a></h3>
-        <p>اقتناء مؤتمت بمحلل الشبكات المتجهي، وخلط الأنماط، ومعالجة بـ MATLAB. <a href="docs/antenna_reverberation_chamber.pdf">التقرير (بالإنجليزية) ←</a></p>
-      </article>
-      <article class="card">
-        <a href="docs/faraday_waves_parabolic_flight.pdf"><img src="images/faraday.jpg" alt="رسم لموجات داخل قطرة محصورة" loading="lazy" width="800" height="600"></a>
-        <p class="when">2021 · المدرسة العليا للأساتذة، طلب مشاريع الرحلات المكافئة للمركز الفرنسي للدراسات الفضائية</p>
-        <h3><a href="docs/faraday_waves_parabolic_flight.pdf">الجاذبية وموجات فاراداي المحصورة</a></h3>
-        <p>مقترح فريق لتجربة في انعدام الجاذبية، تم اختياره في القائمة الأولية. <a href="docs/faraday_waves_parabolic_flight.pdf">المقترح (بالإنجليزية) ←</a></p>
-      </article>
-      <article class="card">
-        <div class="ph"><span>مستشعرات</span></div>
-        <p class="when">2021–2022 · المدرسة العليا للأساتذة، باريس</p>
-        <h3>مجهر القوة الذرية وليدار زمن الطيران</h3>
-        <p>بناء ومعايرة مجهر قوة ذرية من مكونات بسيطة؛ قياس سرعة الضوء بطريقة زمن الطيران، وهو مبدأ عمل مستشعرات الليدار في الروبوتات.</p>
-      </article>
+        <p class="tagline">Abaqus · تحقق</p>
+        <h3>تحليل بنية بالعناصر المحدودة</h3>
+        <p class="ctext">تحليل ساكن وديناميكي لعارضة محمّلة مقارنةً بالحلول التحليلية.</p>
+        <span class="more">اقرأ المزيد ←</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/gas-marbles.html">
+        <img src="images/projects/card-navier.jpg" alt="" loading="lazy" width="800" height="600">
+        <p class="when">2021 · مختبر نافييه</p>
+        <p class="tagline">منصة تجريبية · كاميرا عالية السرعة</p>
+        <h3>منصة مجهّزة لدراسة كريات الغاز</h3>
+        <p class="ctext">تصميم المنصة وبناؤها، تصوير بأكثر من 1000 صورة/ثانية، ومعالجة بـ Python.</p>
+        <span class="more">اقرأ المزيد ←</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/antenna-reverberation.html">
+        <img src="images/projects/card-antenna.jpg" alt="" loading="lazy" width="800" height="600">
+        <p class="when">2020–2021 · مختبر ESYCOM</p>
+        <p class="tagline">قياسات الترددات الراديوية · اقتناء مؤتمت</p>
+        <h3>كفاءة الهوائيات في غرفة الصدى</h3>
+        <p class="ctext">مسح مؤتمت بمحلل الشبكات، معالجة بـ MATLAB، الكفاءة بين 1.2 و3.2 غيغاهرتز.</p>
+        <span class="more">اقرأ المزيد ←</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/lidar-afm.html">
+        <img src="images/projects/card-lidar.jpg" alt="" loading="lazy" width="800" height="600">
+        <p class="when">2021–2022 · المدرسة العليا للأساتذة</p>
+        <p class="tagline">أجهزة القياس · الارتيابات</p>
+        <h3>ليدار زمن الطيران ومجهر قوة ذرية</h3>
+        <p class="ctext">قياس سرعة الضوء بدقة 3.5٪؛ بناء مجهر قوة ذرية ومعايرته.</p>
+        <span class="more">اقرأ المزيد ←</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/faraday-waves.html">
+        <img src="images/projects/faraday-photo.jpg" alt="" loading="lazy" width="800" height="600">
+        <p class="when">2021 · المدرسة العليا للأساتذة</p>
+        <p class="tagline">تصميم تجربة · انعدام الجاذبية</p>
+        <h3>الجاذبية وموجات فاراداي المحصورة</h3>
+        <p class="ctext">مقترح فريق لتجربة في انعدام الجاذبية، اختير في القائمة الأولية.</p>
+        <span class="more">اقرأ المزيد ←</span>
+      </a></article>
     </div>
   </div>
 </section>
 
+<section id="experience" class="wrap section">
+  <p class="label">05 — الخبرة</p>
+  <h2>مساري بالتفصيل</h2>
+  <ol class="xp">
+    <li><span class="xp-date">2026 – الآن</span><div><h3>مهندس اختبارات وتشغيل — المنصة التجريبية</h3><p class="xp-place">مختبر MSME، المركز الوطني للبحث العلمي، جامعة غوستاف إيفل <a class="xp-link" href="#work">التفاصيل ←</a></p><ul><li>مسؤول عن منصات الاختبار في المختبر (الصوتيات، النفاذية، الحرارة، الاختبارات الميكانيكية متعددة المحاور): التشغيل، الصيانة الوقائية والتصحيحية، نظام إدارة الصيانة.</li><li>تشغيل محلّل حراري Hot Disk TPS 1500 لدى شريك صناعي: استلام من المصنّع، مرجع معتمد، خطة اختبار للتكرارية والانحراف.</li><li>منصة شد ثنائي المحور بأربعة محاور: محركات Festo عبر Modbus TCP، قياس القوة NI، مزامنة الكاميرا؛ تسلسلات مؤتمتة بـ Python و LabVIEW و TestStand مع نمط تراجع آمن.</li><li>كتابة 4 إجراءات اختبار وفق ISO (من 24 إلى 50 صفحة)؛ متطلبات تركيب نحو 15 جهازًا؛ موردون في فرنسا وسويسرا والمملكة المتحدة؛ لجنة التوجيه.</li></ul></div></li>
+    <li><span class="xp-date">2024 – 2026</span><div><h3>أستاذ رياضيات</h3><p class="xp-place">ثانوية وإعدادية موريس روندو، بوسي سان جورج</p><ul><li>شرح المفاهيم التقنية بوضوح، تنظيم العمل، ومتابعة كل تلميذ.</li></ul></div></li>
+    <li><span class="xp-date">2024 · 6 أشهر</span><div><h3>متدرب مهندس ميكانيك — مشروع نهاية الماستر</h3><p class="xp-place">جامعة كاليفورنيا سانتا باربرا، الولايات المتحدة <a class="xp-link" href="projects/ucsb-porous-media.html">التفاصيل ←</a></p><ul><li>وضع بروتوكولات الاختبار والتحقق من نموذج عددي ببيانات مرجعية؛ معالجة مؤتمتة بـ Python و C/C++. نُشر في Journal of Computational Physics (2026).</li></ul></div></li>
+    <li><span class="xp-date">2023 – 2024</span><div><h3>مشروع شخصي — تحليل بالعناصر المحدودة</h3><p class="xp-place">باريس <a class="xp-link" href="projects/fea-beam.html">التفاصيل ←</a></p><ul><li>تحليل ساكن وديناميكي لعارضة محمّلة بـ Abaqus، مقارنةً بالحلول التحليلية؛ تصميم ومعالجة النتائج.</li></ul></div></li>
+    <li><span class="xp-date">2023 – 2024</span><div><h3>مشروع ميكاترونيك — جهاز هبوط مؤتمت</h3><p class="xp-place">جمعية Top Aéro، السوربون / آرتس إي ميتييه <a class="xp-link" href="projects/landing-gear.html">التفاصيل ←</a></p><ul><li>تصميم الأرجل القابلة للطيّ (SolidWorks) وبرمجة تسلسل التحكم والتحكم في الهبوط.</li></ul></div></li>
+    <li><span class="xp-date">2023 · 4 أشهر</span><div><h3>متدرب مهندس — ميكانيك المواد الصلبة</h3><p class="xp-place">معهد جان لو روند دالمبير، جامعة السوربون <a class="xp-link" href="projects/bem-acoustics.html">التفاصيل ←</a></p><ul><li>أداة محاكاة مؤتمتة بـ Python (العناصر الحدّية)، تم التحقق منها على حالات مرجعية ومقارنتها بـ Abaqus؛ منهجية التحقق والتوثيق.</li></ul></div></li>
+    <li><span class="xp-date">2022</span><div><h3>مشغّل ألعاب</h3><p class="xp-place">ديزني لاند باريس</p><ul><li>تشغيل الألعاب وفق إجراءات التشغيل والسلامة — حيث بدأ اهتمامي بأنظمة الألعاب.</li></ul></div></li>
+    <li><span class="xp-date">2021 – 2022</span><div><h3>مشاريع مخبرية — أجهزة القياس</h3><p class="xp-place">المدرسة العليا للأساتذة، باريس <a class="xp-link" href="projects/lidar-afm.html">التفاصيل ←</a></p><ul><li>قياس سرعة الضوء بزمن الطيران (مبدأ الليدار)؛ بناء مجهر قوة ذرية ومعايرته؛ مقترح لرحلات المركز الفرنسي للدراسات الفضائية.</li></ul></div></li>
+    <li><span class="xp-date">2021 · شهران</span><div><h3>متدرب بحث — منصة اختبار مجهّزة</h3><p class="xp-place">مختبر نافييه، المدرسة الوطنية للجسور والطرق <a class="xp-link" href="projects/gas-marbles.html">التفاصيل ←</a></p><ul><li>تصميم وبناء منصة مجهّزة؛ اقتناء بكاميرا عالية السرعة ومعالجة الإشارات بـ Python.</li></ul></div></li>
+    <li><span class="xp-date">2020 – 2021</span><div><h3>مشروع الإجازة — قياسات الترددات الراديوية</h3><p class="xp-place">مختبر ESYCOM، جامعة غوستاف إيفل <a class="xp-link" href="projects/antenna-reverberation.html">التفاصيل ←</a></p><ul><li>قياسات مؤتمتة للهوائيات بمحلل الشبكات المتجهي في غرفة صدى؛ معالجة بـ MATLAB.</li></ul></div></li>
+  </ol>
+</section>
+
 <section id="background" class="wrap section">
-  <p class="label">05 — المسار</p>
+  <p class="label">06 — المسار</p>
   <h2>التكوين والمهارات</h2>
   <div class="cols2">
     <div>
@@ -214,12 +249,6 @@
         <li><span>2022–2024</span><div><b>ماستر في الميكانيك</b><br>جامعة السوربون وآرتس إي ميتييه <span class="ltr">(ENSAM)</span>، بميزة حسن</div></li>
         <li><span>2021–2022</span><div><b>إجازة في الفيزياء النظرية (السنة الثالثة)</b><br>المدرسة العليا للأساتذة <span class="ltr">(ENS)</span>، باريس</div></li>
         <li><span>2018–2021</span><div><b>إجازة في الفيزياء والكيمياء</b><br>جامعة غوستاف إيفل، بميزة حسن جدًا، الأول على الدفعة</div></li>
-      </ul>
-      <h3 class="small">الخبرة المهنية</h3>
-      <ul class="timeline">
-        <li><span>2026–</span><div><b>مهندس اختبارات وتشغيل</b><br>مختبر MSME، المركز الوطني للبحث العلمي / جامعة غوستاف إيفل</div></li>
-        <li><span>2024–2026</span><div><b>أستاذ رياضيات</b><br>ثانوية وإعدادية موريس روندو، بوسي سان جورج</div></li>
-        <li><span>2022</span><div><b>مشغّل ألعاب</b><br>ديزني لاند باريس — حيث بدأ اهتمامي بأنظمة الألعاب الترفيهية</div></li>
       </ul>
     </div>
     <div>
@@ -238,7 +267,7 @@
 
 <section id="interests" class="section band">
   <div class="wrap">
-    <p class="label">06 — اهتمامات</p>
+    <p class="label">07 — اهتمامات</p>
     <h2>ما يشغفني أيضًا</h2>
     <div class="cols3">
       <article>

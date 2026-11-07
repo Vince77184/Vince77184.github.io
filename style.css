@@ -161,3 +161,63 @@ h3.small { font-family: var(--mono); font-size: .8rem; text-transform: uppercase
 @media (max-width: 720px) {
   .lang { border: 0; padding: 0; }
 }
+
+/* project detail pages */
+.project { padding-top: 28px; padding-bottom: 40px; }
+.back { margin: 0 0 22px; font-size: .92rem; }
+.project h1 { font-size: clamp(2rem, 4.4vw, 3.1rem); margin-bottom: 14px; }
+.project h2 { font-size: 1.6rem; margin: 46px 0 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+.chip { font-family: var(--mono); font-size: .74rem; letter-spacing: .04em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; color: var(--muted); background: var(--card); }
+.pcover { margin: 0 0 10px; }
+.pcover img { width: 100%; max-height: 520px; object-fit: contain; background: #fff; border: 1px solid var(--rule); border-radius: 8px; }
+.pgrid { display: grid; grid-template-columns: 1fr 300px; gap: 44px; align-items: start; }
+.pgrid section h2 { margin-top: 30px; }
+.callout { border-inline-start: 3px solid var(--accent); background: var(--card); padding: 16px 20px; border-radius: 0 6px 6px 0; margin-top: 18px; }
+.callout .label { margin-bottom: 6px; }
+.callout p:last-child { margin: 0; }
+.keyres { position: sticky; top: 84px; margin-top: 30px; background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 20px 22px; }
+.keyres h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.keyres ul { padding-inline-start: 1.1em; margin: 0 0 6px; }
+.keyres li { margin-bottom: 8px; font-size: .94rem; }
+.cta.col { flex-direction: column; margin: 16px 0 0; }
+.cta.col .btn { text-align: center; }
+.math { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 26px 14px; overflow-x: auto; }
+.math .katex-display { margin: 14px 0; overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+.pfigs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.pfig { margin: 0; background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 12px; }
+.pfig.wide { grid-column: span 2; }
+.pfig img { width: 100%; max-height: 460px; object-fit: contain; background: #fff; border-radius: 4px; }
+.pfig figcaption { font-size: .86rem; color: var(--muted); margin-top: 8px; }
+.pnav { display: flex; justify-content: space-between; gap: 20px; margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: .95rem; }
+.pnav .next { text-align: end; }
+a.card-link { color: inherit; display: flex; flex-direction: column; height: 100%; }
+a.card-link:hover { text-decoration: none; }
+.card { transition: transform .15s ease, box-shadow .15s ease; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgba(0,0,0,.35); }
+.card .more { margin: auto 18px 18px; font-size: .88rem; color: var(--accent); font-weight: 500; }
+.card .tagline { font-family: var(--mono); font-size: .68rem; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); margin: 0 18px 6px; }
+@media (max-width: 860px) {
+  .pgrid { grid-template-columns: 1fr; gap: 0; }
+  .keyres { position: static; }
+  .pfigs { grid-template-columns: 1fr; }
+  .pfig.wide { grid-column: auto; }
+}
+
+.card .ctext { margin: 0 18px 12px; font-size: .9rem; color: var(--muted); }
+.card .when { margin-bottom: 4px; }
+
+/* experience timeline */
+.xp { list-style: none; padding: 0; margin: 30px 0 0; border-inline-start: 2px solid var(--rule); }
+.xp > li { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 0 0 30px 26px; position: relative; }
+.xp > li::before { content: ""; position: absolute; inset-inline-start: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.xp-date { font-family: var(--mono); font-size: .82rem; color: var(--muted); padding-top: 3px; }
+.xp h3 { font-size: 1.2rem; margin-bottom: 2px; }
+.xp-place { color: var(--muted); font-size: .93rem; margin-bottom: 8px; }
+.xp-link { margin-inline-start: 10px; font-size: .88rem; white-space: nowrap; }
+.xp ul { margin: 0; padding-inline-start: 1.1em; }
+.xp ul li { margin-bottom: 4px; font-size: .95rem; }
+[dir="rtl"] .xp-date { font-family: "IBM Plex Sans Arabic", var(--sans); }
+@media (max-width: 720px) {
+  .xp > li { grid-template-columns: 1fr; gap: 4px; padding-inline-start: 20px; }
+}

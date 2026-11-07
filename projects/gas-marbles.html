@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instrumented Bench for Gas Marbles — Vincent Poitier</title>
+<meta name="description" content="Design of an instrumented bench to study how a particle-laden soap film closes into a gas marble, filmed at over 1000 frames per second.">
+<meta property="og:title" content="Instrumented Bench for Gas Marbles — Vincent Poitier">
+<meta property="og:description" content="Design of an instrumented bench to study how a particle-laden soap film closes into a gas marble, filmed at over 1000 frames per second.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/card-navier.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#projects">All projects</a>
+      <span class="lang"><a href="../index.html">EN</a><a href="../fr.html">FR</a><a href="../ar.html" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#projects">← Back to projects</a></p>
+<p class="kicker">Research internship · Navier laboratory (École des Ponts, Université Gustave Eiffel, CNRS) · 2021 (2 months) · supervisor F. Rouyer</p>
+<h1>Instrumented Bench for Gas Marbles</h1>
+<p class="chips"><span class="chip">Experimental bench</span><span class="chip">High-speed imaging</span><span class="chip">Data processing</span></p>
+<figure class="pcover"><img src="../images/projects/card-navier.jpg" alt="Instrumented Bench for Gas Marbles"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>A <b>gas marble</b> is a bubble armoured by a layer of solid particles. It is much sturdier than a soap bubble, which makes it interesting for acoustic insulation, vibration damping or gas encapsulation — but how it forms was still poorly understood.</p>
+<p>I built a bench where a frame is pulled out of a particle raft floating on soapy water: the granular film stretches into a catenoid, pinches and may close into a (half) gas marble. I varied <b>frame geometry</b> (10×10 to 50×50 mm), <b>pulling speed</b> (1 to 50 mm/s) and particle loading, checking each time that the process was reproducible.</p>
+  <div class="callout"><p class="label">On the bench</p><p>This was hands-on experimental work: designing and assembling the bench (motorised vertical stage, frames, fishing-line supports), synchronising a <b>high-speed camera above 1000 fps</b> because the closure lasts less than a second, then writing the <b>Python image processing</b> that extracts the neck radius over time, with an automatic detection of the rupture instant. Two independent series of measurements were run to check reproducibility.</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>Minimum frame size (L > 25 mm) needed to form a half gas marble</li><li>Pure soap films follow the τ^(2/3) retraction law; particles slow the retraction markedly</li><li>Retraction speed and marble diameter measured against pulling speed, reproducible over two series</li></ul><div class="cta col"><a class="btn" href="../docs/gas_marbles_navier.pdf">Internship report (French, PDF)</a></div></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>Surface tension \(\gamma\) acts as a force per unit length and pressure jumps across a curved interface (Young–Laplace):</p>
+$$\mathrm{d}\mathbf{f}=\gamma\,\mathrm{d}\ell\,\mathbf{n},\qquad \Delta p=\gamma\left(\frac{1}{R_1}+\frac{1}{R_2}\right)$$
+<p>A soap catenoid between two rings of radius \(R\) becomes unstable when the height reaches \(h_c\approx 2R/3\). After that, the neck radius follows a power law (Chen &amp; Steen), with \(\tau=t_{\text{rupture}}-t\):</p>
+$$r(\tau)=\left(\frac{\gamma\,\tau^{2}}{\rho}\right)^{1/3}\propto\tau^{2/3}$$
+<p>The particle-laden film is considered broken when \(r\approx(1+\tfrac{\sqrt2}{2})\,D_p\), i.e. a compact packing of particles — the switch from a continuous to a discrete description.</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/navier-setup.jpg"><img src="../images/projects/navier-setup.jpg" alt="Bench: frame pulled out of a particle raft (sketch and real set-up)." loading="lazy"></a><figcaption>Bench: frame pulled out of a particle raft (sketch and real set-up).</figcaption></figure><figure class="pfig"><a href="../images/projects/navier-catenoid.jpg"><img src="../images/projects/navier-catenoid.jpg" alt="High-speed frame of the stretched catenoid and parametrisation of the neck radius r(t)." loading="lazy"></a><figcaption>High-speed frame of the stretched catenoid and parametrisation of the neck radius r(t).</figcaption></figure><figure class="pfig"><a href="../images/projects/navier-law.jpg"><img src="../images/projects/navier-law.jpg" alt="Measured neck radius vs τ: agreement with the τ^(2/3) law below 15 ms." loading="lazy"></a><figcaption>Measured neck radius vs τ: agreement with the τ^(2/3) law below 15 ms.</figcaption></figure><figure class="pfig wide"><a href="../images/projects/navier-sequence.jpg"><img src="../images/projects/navier-sequence.jpg" alt="Image sequence: pinching of the catenoid and formation of a half gas marble." loading="lazy"></a><figcaption>Image sequence: pinching of the catenoid and formation of a half gas marble.</figcaption></figure><figure class="pfig"><a href="../images/projects/navier-rdot.jpg"><img src="../images/projects/navier-rdot.jpg" alt="Retraction speed dr/dt vs pulling speed, two measurement series (reproducibility)." loading="lazy"></a><figcaption>Retraction speed dr/dt vs pulling speed, two measurement series (reproducibility).</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bem-acoustics.html">← Boundary Elements for Acoustic Diffraction</a><a class="next" href="antenna-reverberation.html">Antenna Efficiency in a Reverberation Chamber →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

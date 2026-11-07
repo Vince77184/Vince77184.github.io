@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antenna Efficiency in a Reverberation Chamber — Vincent Poitier</title>
+<meta name="description" content="Measuring the radiation efficiency of a miniature patch antenna from S-parameters recorded with a VNA in a reverberation chamber.">
+<meta property="og:title" content="Antenna Efficiency in a Reverberation Chamber — Vincent Poitier">
+<meta property="og:description" content="Measuring the radiation efficiency of a miniature patch antenna from S-parameters recorded with a VNA in a reverberation chamber.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/card-antenna.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#projects">All projects</a>
+      <span class="lang"><a href="../index.html">EN</a><a href="../fr.html">FR</a><a href="../ar.html" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#projects">← Back to projects</a></p>
+<p class="kicker">Bachelor graduation project · ESYCOM laboratory, Université Gustave Eiffel · 2020–2021 · supervisor F. Sarrazin · with J. Alfaro</p>
+<h1>Antenna Efficiency in a Reverberation Chamber</h1>
+<p class="chips"><span class="chip">RF measurements</span><span class="chip">Automated acquisition</span><span class="chip">MATLAB</span></p>
+<figure class="pcover"><img src="../images/projects/card-antenna.jpg" alt="Antenna Efficiency in a Reverberation Chamber"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>A reverberation chamber is a metal room with a rotating stirrer: the field inside becomes statistically uniform, so an antenna can be characterised without the expensive anechoic chamber. We measured the <b>radiation efficiency</b> of a miniature patch antenna (antenna under test) against a log-periodic reference antenna, from 1.2 to 3.2 GHz.</p>
+<p>The measurement chain was fully automated: a 4-port <b>vector network analyser</b> swept 10,001 frequencies for each of 24 antenna positions × 72 stirrer positions (about 8 hours of acquisition), producing 3D matrices of S-parameters processed in MATLAB.</p>
+  <div class="callout"><p class="label">On the bench</p><p>Calibration of the VNA (open/short/match), placement of the antennas to avoid direct coupling, mechanical and source stirring, then data checks: plotting random stirrer configurations, comparing stirring methods by their <b>mean square error</b> against a reference, and finally comparing the result with an anechoic-chamber measurement. Human intervention was reduced to three steps, which is what makes the method precise.</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>24 × 72 × 10,001 S-parameter measurements acquired automatically</li><li>Ensemble averaging: MSE ≈ 2×10⁻⁴ vs 0.67 for mechanical stirring alone</li><li>Efficiency rises with frequency up to 1.8 GHz then stays roughly constant; consistent with the anechoic chamber</li></ul><div class="cta col"><a class="btn" href="../docs/antenna_reverberation_chamber.pdf">Project report (English, PDF)</a></div></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>The chamber's quality factor links the received power to the radiated power:</p>
+$$Q=\frac{\omega U}{P_d},\qquad \langle P_{\text{rec}}\rangle=\frac{Q\,\lambda^{3}}{16\pi^{2}V}\,P_{\text{rad}}$$
+<p>Since \(Q\) is intrinsic to the chamber, the non-intrinsic Q-factors seen by both antennas give the unknown efficiency \(\eta_1\) from the known \(\eta_2\):</p>
+$$\eta_1=\eta_2\sqrt{\frac{\langle|S_{11}-\langle S_{11}\rangle|^2\rangle}{\langle|S_{22}-\langle S_{22}\rangle|^2\rangle}}\;\frac{1-|\langle S_{22}\rangle|^2}{1-|\langle S_{11}\rangle|^2}$$
+<p>Stirring methods are compared with \(\mathrm{MSE}=\frac{1}{N}\sum_k|S_{11}(f_k)-\hat S_{11}(f_k)|^2\), and the Q-factor follows the skin depth \(\delta=\sqrt{2/(\omega\mu\sigma)}\).</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/antenna-chamber-photos.jpg"><img src="../images/projects/antenna-chamber-photos.jpg" alt="Reverberation chamber at ESYCOM and its mechanical stirrer." loading="lazy"></a><figcaption>Reverberation chamber at ESYCOM and its mechanical stirrer.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-vna.jpg"><img src="../images/projects/antenna-vna.jpg" alt="Vector network analyser used for the automated frequency sweeps." loading="lazy"></a><figcaption>Vector network analyser used for the automated frequency sweeps.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-s11-raw.jpg"><img src="../images/projects/antenna-s11-raw.jpg" alt="Measured reflection coefficient S11(f) for random stirrer positions." loading="lazy"></a><figcaption>Measured reflection coefficient S11(f) for random stirrer positions.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-s11-stirring.jpg"><img src="../images/projects/antenna-s11-stirring.jpg" alt="Effect of the stirring methods vs the anechoic-chamber reference." loading="lazy"></a><figcaption>Effect of the stirring methods vs the anechoic-chamber reference.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-q.jpg"><img src="../images/projects/antenna-q.jpg" alt="Measured Q-factor of the chamber: increases with frequency, as expected." loading="lazy"></a><figcaption>Measured Q-factor of the chamber: increases with frequency, as expected.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-efficiency.jpg"><img src="../images/projects/antenna-efficiency.jpg" alt="Result: radiation efficiency of the patch antenna, 1.2–3.2 GHz." loading="lazy"></a><figcaption>Result: radiation efficiency of the patch antenna, 1.2–3.2 GHz.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="gas-marbles.html">← Instrumented Bench for Gas Marbles</a><a class="next" href="lidar-afm.html">Time-of-Flight LIDAR and a Home-made AFM →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

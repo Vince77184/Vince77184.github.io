@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flows in Reactive Porous Media — Vincent Poitier</title>
+<meta name="description" content="Sharp-interface simulation of precipitation and dissolution in porous media on adaptive quadtree grids. Published in the Journal of Computational Physics.">
+<meta property="og:title" content="Flows in Reactive Porous Media — Vincent Poitier">
+<meta property="og:description" content="Sharp-interface simulation of precipitation and dissolution in porous media on adaptive quadtree grids. Published in the Journal of Computational Physics.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/jcp-grid.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#projects">All projects</a>
+      <span class="lang"><a href="../index.html">EN</a><a href="../fr.html">FR</a><a href="../ar.html" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#projects">← Back to projects</a></p>
+<p class="kicker">MSc thesis · University of California, Santa Barbara · 2024 (6 months)</p>
+<h1>Flows in Reactive Porous Media</h1>
+<p class="chips"><span class="chip">Numerical model</span><span class="chip">Validation on benchmark</span><span class="chip">Published</span></p>
+<figure class="pcover"><img src="../images/projects/jcp-grid.jpg" alt="Flows in Reactive Porous Media"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>When minerals precipitate or dissolve inside a porous rock or filter, the pores themselves change shape — and with them permeability and the way fluid flows. This matters for carbon sequestration, geothermal energy, water filtration and catalysis. During my MSc thesis in Prof. Frédéric Gibou's group at UC Santa Barbara, I worked on a numerical method that follows this evolution with a <b>sharp</b> solid–liquid interface, on <b>adaptive quadtree grids</b> that refine only where needed.</p>
+<p>The work became a first-author paper: <a href="https://doi.org/10.1016/j.jcp.2026.115533"><i>A Sharp Numerical Approach for Modeling Flows in Reactive Porous Media</i></a>, V. Poitier, E. Bayat, K. Hernandez Leyva, A. Sauret, F. Gibou — Journal of Computational Physics, 2026.</p>
+  <div class="callout"><p class="label">On the bench</p><p>The method was first <b>validated against a known benchmark</b> (dissolution of a calcite grain, compared with several published codes), then checked for <b>grid convergence</b> on the merging of two growing grains. I defined these test protocols, compared the model with reference data and automated all post-processing in Python and C/C++ — the same reflex I now apply to physical test benches: no result is trusted before it is checked against a reference.</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>Sharp interface on adaptive grids: about 100,000 grid points instead of a uniform fine mesh</li><li>Validated on a published dissolution benchmark and with grid-convergence studies</li><li>Captures effective permeability, tortuosity and pore-scale velocity profiles as the pores close</li></ul><div class="cta col"><a class="btn" href="https://doi.org/10.1016/j.jcp.2026.115533">Read the paper (DOI)</a></div></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>Fluid flow in the pores: incompressible Navier–Stokes,</p>
+$$\rho_l\left(\frac{\partial \mathbf{v}}{\partial t}+\mathbf{v}\cdot\nabla\mathbf{v}\right)=-\nabla p+\mu_l\,\Delta\mathbf{v},\qquad \nabla\cdot\mathbf{v}=0 \quad\text{in }\Omega_l$$
+<p>Transport of the dissolved species (advection–diffusion):</p>
+$$\frac{\partial C}{\partial t}+\mathbf{v}\cdot\nabla C=D_l\,\Delta C$$
+<p>At the moving solid–liquid interface \(\Gamma(t)\), mass balance gives a Stefan condition for the interface velocity, and the interface is tracked with a level-set function \(\phi\):</p>
+$$\mathbf{v}_\Gamma\cdot\mathbf{n}\approx-D_l\,\nabla C\cdot\mathbf{n},\qquad \frac{\partial\phi}{\partial t}+\mathbf{v}_\Gamma\cdot\nabla\phi=0$$
+<p>Regimes are explored through the Péclet, Damköhler and Reynolds numbers, \(\mathrm{Pe}=UL/D_l\), \(\mathrm{Da}=kL/D_l\), \(\mathrm{Re}=\rho_l UL/\mu_l\).</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/jcp-grid.jpg"><img src="../images/projects/jcp-grid.jpg" alt="Adaptive quadtree grid refined around the growing grains (white circles: interfaces)." loading="lazy"></a><figcaption>Adaptive quadtree grid refined around the growing grains (white circles: interfaces).</figcaption></figure><figure class="pfig"><a href="../images/projects/jcp-network.jpg"><img src="../images/projects/jcp-network.jpg" alt="Flow paths through the pore network of a precipitating porous medium." loading="lazy"></a><figcaption>Flow paths through the pore network of a precipitating porous medium.</figcaption></figure><figure class="pfig wide"><a href="../images/projects/jcp-benchmark.jpg"><img src="../images/projects/jcp-benchmark.jpg" alt="Benchmark: grain area and dissolution rate over time, compared with published codes." loading="lazy"></a><figcaption>Benchmark: grain area and dissolution rate over time, compared with published codes.</figcaption></figure><figure class="pfig"><a href="../images/projects/jcp-velocity.jpg"><img src="../images/projects/jcp-velocity.jpg" alt="Velocity and concentration fields between two merging grains." loading="lazy"></a><figcaption>Velocity and concentration fields between two merging grains.</figcaption></figure><figure class="pfig"><a href="../images/projects/jcp-curves.jpg"><img src="../images/projects/jcp-curves.jpg" alt="Evolution of flow rate, porosity and tortuosity for several grid levels." loading="lazy"></a><figcaption>Evolution of flow rate, porosity and tortuosity for several grid levels.</figcaption></figure></div></section>
+
+<nav class="pnav"><span></span><a class="next" href="bem-acoustics.html">Boundary Elements for Acoustic Diffraction →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

@@ -25,6 +25,7 @@
       <a href="#work">Work</a>
       <a href="#publication">Research</a>
       <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="#background">Background</a>
       <span class="lang"><b>EN</b><a href="fr.html" hreflang="fr" lang="fr">FR</a><a href="ar.html" hreflang="ar" lang="ar">عربي</a></span>
       <a class="btn btn-sm" href="docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
@@ -150,67 +151,100 @@
   </article>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="section band">
   <div class="wrap">
-    <p class="label">04 — Earlier projects</p>
+    <p class="label">04 — Projects</p>
     <h2>Internships &amp; projects</h2>
+    <p class="sub">Click a project for the full story: summary, the experimental side, equations and figures.</p>
     <div class="grid">
-      <article class="card">
-        <img src="images/jcp-flow.jpg" alt="Flow paths through a pore network" loading="lazy" width="800" height="600">
+      <article class="card"><a class="card-link" href="projects/ucsb-porous-media.html">
+        <img src="images/projects/jcp-network.jpg" alt="" loading="lazy" width="800" height="600">
         <p class="when">2024 · UC Santa Barbara, USA</p>
+        <p class="tagline">Numerical · Benchmarked · Published</p>
         <h3>Reactive porous media — MSc thesis</h3>
-        <p>Model validated against experimental data, automated processing in Python and C/C++. Six months in Prof. F. Gibou's group, led to the paper above.</p>
-      </article>
-      <article class="card">
-        <div class="ph"><span>Robotics</span></div>
+        <p class="ctext">Sharp-interface flow simulation, validated on a benchmark, first-author paper in J. Comput. Phys.</p>
+        <span class="more">Read more →</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/landing-gear.html">
+        <img src="images/projects/falcon9-legs.jpg" alt="" loading="lazy" width="800" height="600">
         <p class="when">2023–2024 · Top Aéro, Sorbonne / Arts et Métiers</p>
+        <p class="tagline">Mechatronics · Control</p>
         <h3>Automated landing gear, Falcon 9-type rocket</h3>
-        <p>Retractable legs designed in SolidWorks, deployment sequence and descent control programmed.</p>
-      </article>
-      <article class="card">
-        <a href="docs/bem_acoustic_diffraction.pdf"><img src="images/bem.jpg" alt="Acoustic field on the unit disc" loading="lazy" width="800" height="600"></a>
+        <p class="ctext">Retractable legs in SolidWorks, deployment sequence and descent control.</p>
+        <span class="more">Read more →</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/bem-acoustics.html">
+        <img src="images/projects/card-bem.jpg" alt="" loading="lazy" width="800" height="600">
         <p class="when">2023 · Institut d'Alembert, Sorbonne</p>
-        <h3><a href="docs/bem_acoustic_diffraction.pdf">Boundary elements for acoustic diffraction</a></h3>
-        <p>Python BEM solver validated on analytical cases and against Abaqus; validation methodology and documentation. <a href="docs/bem_acoustic_diffraction.pdf">Report (fr) →</a></p>
-      </article>
-      <article class="card">
-        <div class="ph"><span>FEA</span></div>
+        <p class="tagline">Numerical tool · Validated on exact solutions</p>
+        <h3>Boundary elements for acoustic diffraction</h3>
+        <p class="ctext">BEM solver written from scratch in Python, checked against analytical solutions and Abaqus.</p>
+        <span class="more">Read more →</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/fea-beam.html">
+        <img src="images/projects/fea.jpg" alt="" loading="lazy" width="800" height="600">
         <p class="when">2023–2024 · Independent project</p>
+        <p class="tagline">Abaqus · Validation</p>
         <h3>Finite element analysis of a structure</h3>
-        <p>Static and dynamic Abaqus analysis of a loaded beam, compared with analytical solutions; CAD and post-processing.</p>
-      </article>
-      <article class="card">
-        <a href="docs/gas_marbles_navier.pdf"><img src="images/navier.jpg" alt="Particle-armoured gas marble" loading="lazy" width="800" height="600"></a>
+        <p class="ctext">Static and dynamic analysis of a loaded beam, compared with analytical solutions.</p>
+        <span class="more">Read more →</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/gas-marbles.html">
+        <img src="images/projects/card-navier.jpg" alt="" loading="lazy" width="800" height="600">
         <p class="when">2021 · Navier laboratory, École des Ponts</p>
-        <h3><a href="docs/gas_marbles_navier.pdf">Instrumented bench for gas marbles</a></h3>
-        <p>Designed and built the bench; high-speed camera above 1000 fps, image and signal processing in Python. <a href="docs/gas_marbles_navier.pdf">Report (fr) →</a></p>
-      </article>
-      <article class="card">
-        <a href="docs/antenna_reverberation_chamber.pdf"><img src="images/antenna.jpg" alt="Antenna on a tripod in a reverberation chamber" loading="lazy" width="800" height="600"></a>
+        <p class="tagline">Experimental bench · High-speed camera</p>
+        <h3>Instrumented bench for gas marbles</h3>
+        <p class="ctext">Bench designed and built, filmed above 1000 fps, Python image processing.</p>
+        <span class="more">Read more →</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/antenna-reverberation.html">
+        <img src="images/projects/card-antenna.jpg" alt="" loading="lazy" width="800" height="600">
         <p class="when">2020–2021 · ESYCOM, Université Gustave Eiffel</p>
-        <h3><a href="docs/antenna_reverberation_chamber.pdf">Antenna efficiency in a reverberation chamber</a></h3>
-        <p>Automated acquisition with a vector network analyser, mode stirring, MATLAB processing. <a href="docs/antenna_reverberation_chamber.pdf">Report →</a></p>
-      </article>
-      <article class="card">
-        <a href="docs/faraday_waves_parabolic_flight.pdf"><img src="images/faraday.jpg" alt="Sketch of waves in a confined drop" loading="lazy" width="800" height="600"></a>
-        <p class="when">2021 · ENS, CNES parabolic flight call</p>
-        <h3><a href="docs/faraday_waves_parabolic_flight.pdf">Gravity and confined Faraday waves</a></h3>
-        <p>Team proposal for a microgravity experiment, shortlisted by CNES. <a href="docs/faraday_waves_parabolic_flight.pdf">Proposal →</a></p>
-      </article>
-      <article class="card">
-        <div class="ph"><span>Sensing</span></div>
+        <p class="tagline">RF measurements · Automated acquisition</p>
+        <h3>Antenna efficiency in a reverberation chamber</h3>
+        <p class="ctext">Automated VNA sweeps (1.7 million points), MATLAB processing, efficiency 1.2–3.2 GHz.</p>
+        <span class="more">Read more →</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/lidar-afm.html">
+        <img src="images/projects/card-lidar.jpg" alt="" loading="lazy" width="800" height="600">
         <p class="when">2021–2022 · École Normale Supérieure</p>
-        <h3>AFM and time-of-flight LIDAR</h3>
-        <p>Built and calibrated an atomic force microscope from low-cost parts; measured the speed of light by time of flight, the principle behind robot LIDAR sensors.</p>
-      </article>
+        <p class="tagline">Instrumentation · Uncertainties</p>
+        <h3>Time-of-flight LIDAR and a home-made AFM</h3>
+        <p class="ctext">Speed of light within 3.5 % by time of flight; AFM built and calibrated.</p>
+        <span class="more">Read more →</span>
+      </a></article>
+      <article class="card"><a class="card-link" href="projects/faraday-waves.html">
+        <img src="images/projects/faraday-photo.jpg" alt="" loading="lazy" width="800" height="600">
+        <p class="when">2021 · ENS, CNES parabolic flight call</p>
+        <p class="tagline">Experiment design · Microgravity</p>
+        <h3>Gravity and confined Faraday waves</h3>
+        <p class="ctext">Team proposal for a microgravity experiment, shortlisted by CNES.</p>
+        <span class="more">Read more →</span>
+      </a></article>
     </div>
   </div>
 </section>
 
+<section id="experience" class="wrap section">
+  <p class="label">05 — Experience</p>
+  <h2>Everything I have done so far</h2>
+  <ol class="xp">
+    <li><span class="xp-date">2026 – now</span><div><h3>Test &amp; Commissioning Engineer — Experimental Platform</h3><p class="xp-place">MSME laboratory (UMR 8208 CNRS), Université Gustave Eiffel <a class="xp-link" href="#work">Details →</a></p><ul><li>In charge of the lab's test benches (acoustic, permeability, thermal, multi-axial mechanical testing): operation, preventive and corrective maintenance, CMMS.</li><li>Commissioned a Hot Disk TPS 1500 thermal analyser at an industrial partner's site: manufacturer acceptance, certified reference, repeatability and drift test plan.</li><li>4-axis biaxial tensile rig: Festo servo-drives over Modbus TCP, NI force measurement, camera sync; automated sequences in Python, LabVIEW and TestStand with a safe fallback mode.</li><li>Wrote 4 standardised ISO test procedures (24–50 pages each); installation prerequisites for ~15 instruments; suppliers in France, Switzerland and the UK; steering committee.</li></ul></div></li>
+    <li><span class="xp-date">2024 – 2026</span><div><h3>Mathematics Teacher</h3><p class="xp-place">Lycée-collège Maurice Rondeau, Bussy-Saint-Georges</p><ul><li>Explaining technical concepts clearly, organising the work, following up each student.</li></ul></div></li>
+    <li><span class="xp-date">2024 · 6 months</span><div><h3>Mechanical Engineering Intern — MSc thesis</h3><p class="xp-place">University of California, Santa Barbara (UCSB), USA <a class="xp-link" href="projects/ucsb-porous-media.html">Details →</a></p><ul><li>Defined test protocols and validated a numerical model against reference data; automated data processing in Python and C/C++. Published in the Journal of Computational Physics (2026).</li></ul></div></li>
+    <li><span class="xp-date">2023 – 2024</span><div><h3>Independent Project — Finite Element Analysis</h3><p class="xp-place">Paris <a class="xp-link" href="projects/fea-beam.html">Details →</a></p><ul><li>Static and dynamic Abaqus analysis of a loaded beam (bending, stresses, strains), compared with analytical solutions; CAD and post-processing.</li></ul></div></li>
+    <li><span class="xp-date">2023 – 2024</span><div><h3>Mechatronics Project — Automated Landing Gear</h3><p class="xp-place">Top Aéro association, Sorbonne Université / Arts et Métiers <a class="xp-link" href="projects/landing-gear.html">Details →</a></p><ul><li>Designed the retractable legs (SolidWorks) and programmed the control sequence and descent control.</li></ul></div></li>
+    <li><span class="xp-date">2023 · 4 months</span><div><h3>Engineering Intern — Solid Mechanics</h3><p class="xp-place">Institut Jean le Rond d'Alembert, Sorbonne Université <a class="xp-link" href="projects/bem-acoustics.html">Details →</a></p><ul><li>Built an automated simulation tool in Python (boundary elements), validated on reference cases and compared with Abaqus; wrote the validation methodology and documentation.</li></ul></div></li>
+    <li><span class="xp-date">2022</span><div><h3>Ride Operator</h3><p class="xp-place">Disneyland Paris</p><ul><li>Operated attractions following the operating and safety procedures — where my interest in ride systems started.</li></ul></div></li>
+    <li><span class="xp-date">2021 – 2022</span><div><h3>Lab projects — Instrumentation</h3><p class="xp-place">École Normale Supérieure, Paris <a class="xp-link" href="projects/lidar-afm.html">Details →</a></p><ul><li>Time-of-flight measurement of the speed of light (LIDAR principle); atomic force microscope built and calibrated; CNES parabolic-flight proposal.</li></ul></div></li>
+    <li><span class="xp-date">2021 · 2 months</span><div><h3>Research Intern — Instrumented Test Bench</h3><p class="xp-place">Navier laboratory, École des Ponts ParisTech <a class="xp-link" href="projects/gas-marbles.html">Details →</a></p><ul><li>Designed and built an instrumented bench; high-speed camera acquisition and signal processing in Python.</li></ul></div></li>
+    <li><span class="xp-date">2020 – 2021</span><div><h3>Bachelor Project — RF Measurements</h3><p class="xp-place">ESYCOM laboratory, Université Gustave Eiffel <a class="xp-link" href="projects/antenna-reverberation.html">Details →</a></p><ul><li>Automated antenna measurements with a vector network analyser in a reverberation chamber; MATLAB processing.</li></ul></div></li>
+  </ol>
+</section>
+
 <!-- BACKGROUND -->
 <section id="background" class="wrap section">
-  <p class="label">05 — Background</p>
+  <p class="label">06 — Background</p>
   <h2>Education, skills &amp; more</h2>
   <div class="cols2">
     <div>
@@ -219,12 +253,6 @@
         <li><span>2022–2024</span><div><b>MSc Mechanical Engineering</b><br>Sorbonne Université &amp; Arts et Métiers (ENSAM), with honours</div></li>
         <li><span>2021–2022</span><div><b>BSc Theoretical Physics (L3)</b><br>École Normale Supérieure, Paris</div></li>
         <li><span>2018–2021</span><div><b>BSc Physics &amp; Chemistry</b><br>Université Gustave Eiffel, highest honours, ranked first</div></li>
-      </ul>
-      <h3 class="small">Experience</h3>
-      <ul class="timeline">
-        <li><span>2026–</span><div><b>Test &amp; Commissioning Engineer</b><br>MSME laboratory, CNRS / Université Gustave Eiffel</div></li>
-        <li><span>2024–2026</span><div><b>Mathematics teacher</b><br>Lycée-collège Maurice Rondeau, Bussy-Saint-Georges</div></li>
-        <li><span>2022</span><div><b>Ride operator</b><br>Disneyland Paris — where my interest in ride systems began</div></li>
       </ul>
     </div>
     <div>
@@ -244,7 +272,7 @@
 <!-- CONTACT -->
 <section id="interests" class="section band">
   <div class="wrap">
-    <p class="label">06 — Interests</p>
+    <p class="label">07 — Interests</p>
     <h2>What else drives me</h2>
     <div class="cols3">
       <article>

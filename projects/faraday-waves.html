@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gravity and Confined Faraday Waves — Vincent Poitier</title>
+<meta name="description" content="Proposal for a parabolic-flight experiment on how gravity and capillarity shape Faraday waves.">
+<meta property="og:title" content="Gravity and Confined Faraday Waves — Vincent Poitier">
+<meta property="og:description" content="Proposal for a parabolic-flight experiment on how gravity and capillarity shape Faraday waves.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/faraday-photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#projects">All projects</a>
+      <span class="lang"><a href="../index.html">EN</a><a href="../fr.html">FR</a><a href="../ar.html" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#projects">← Back to projects</a></p>
+<p class="kicker">Team proposal · École Normale Supérieure · CNES parabolic flight call 2022 (shortlisted)</p>
+<h1>Gravity and Confined Faraday Waves</h1>
+<p class="chips"><span class="chip">Experiment design</span><span class="chip">Microgravity</span><span class="chip">Team project</span></p>
+<figure class="pcover"><img src="../images/projects/faraday-photo.jpg" alt="Gravity and Confined Faraday Waves"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>When a liquid is shaken vertically, standing waves appear at its surface: the <b>Faraday instability</b>. On Earth, gravity dominates the wave behaviour; in microgravity only capillarity remains. With four classmates we designed an experiment for the CNES parabolic flight campaign to watch the same waves while gravity changes from 1.8 g to 0 g, plus a bonus experiment on waves on a floating spherical drop.</p>
+<p>The proposal was shortlisted. I was the team's communication manager and worked on the experimental protocol.</p>
+  <div class="callout"><p class="label">On the bench</p><p>Everything had to be planned for a moving aircraft: a vertical shaker of about 25 kg, transparent containers of several shapes, a hydrophobic container for the spherical drop, strobe lighting and a camera above the surface, with the power budget (220 V / 4 A) and the test schedule at the ENS Fablab before integration.</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>Complete experimental protocol and equipment list for the aircraft</li><li>Shortlisted by CNES</li></ul><div class="cta col"><a class="btn" href="../docs/faraday_waves_parabolic_flight.pdf">Proposal (English, PDF)</a></div></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>Dispersion relation of surface waves (pulsation \(\omega\), wave number \(k\), depth \(h\), surface tension \(\gamma\)):</p>
+$$\omega^{2}=\left(gk+\frac{\gamma k^{3}}{\rho}\right)\tanh(hk)=\left(\ell_c^{-2}+k^{2}\right)\frac{\gamma k}{\rho}\tanh(hk),\qquad \ell_c=\sqrt{\frac{\gamma}{\rho g}}$$
+<p>For \(k\ell_c\ll1\) gravity dominates (\(\omega^2\approx gk\)); for \(k\ell_c\gg1\) capillarity takes over (\(\omega^2\approx\gamma k^3/\rho\)). Changing \(g\) in flight moves the crossover — the measurable signature we were after.</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/faraday-photo.jpg"><img src="../images/projects/faraday-photo.jpg" alt="Faraday instability: standing-wave pattern on a vibrated liquid." loading="lazy"></a><figcaption>Faraday instability: standing-wave pattern on a vibrated liquid.</figcaption></figure><figure class="pfig"><a href="../images/projects/faraday-dispersion.jpg"><img src="../images/projects/faraday-dispersion.jpg" alt="Wave number vs pulsation: gravity- and capillarity-dominated branches." loading="lazy"></a><figcaption>Wave number vs pulsation: gravity- and capillarity-dominated branches.</figcaption></figure><figure class="pfig"><a href="../images/projects/faraday-setup.jpg"><img src="../images/projects/faraday-setup.jpg" alt="Planned experiment: vibrating plate, liquid container and camera." loading="lazy"></a><figcaption>Planned experiment: vibrating plate, liquid container and camera.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="lidar-afm.html">← Time-of-Flight LIDAR and a Home-made AFM</a><a class="next" href="landing-gear.html">Automated Landing Gear for a Falcon 9-type Rocket →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

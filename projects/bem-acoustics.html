@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boundary Elements for Acoustic Diffraction — Vincent Poitier</title>
+<meta name="description" content="A boundary element solver written from scratch in Python for 2D acoustic wave diffraction, validated on analytical solutions.">
+<meta property="og:title" content="Boundary Elements for Acoustic Diffraction — Vincent Poitier">
+<meta property="og:description" content="A boundary element solver written from scratch in Python for 2D acoustic wave diffraction, validated on analytical solutions.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/card-bem.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#projects">All projects</a>
+      <span class="lang"><a href="../index.html">EN</a><a href="../fr.html">FR</a><a href="../ar.html" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#projects">← Back to projects</a></p>
+<p class="kicker">Research internship · Institut Jean le Rond d'Alembert, Sorbonne Université · 2023 (4 months) · supervisor R. Cornaggia</p>
+<h1>Boundary Elements for Acoustic Diffraction</h1>
+<p class="chips"><span class="chip">Numerical tool from scratch</span><span class="chip">Validated on exact solutions</span><span class="chip">Python</span></p>
+<figure class="pcover"><img src="../images/projects/card-bem.jpg" alt="Boundary Elements for Acoustic Diffraction"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>The boundary element method (BEM) solves wave problems by meshing only the <b>boundary</b> of an object instead of the whole space around it. Starting from a blank page, I implemented a 2D BEM in Python for time-harmonic acoustic waves (Laplace and Helmholtz equations) with quadratic elements, singular-integral quadrature and Gauss rules, then used it to compute how a plane wave is diffracted by a rigid circular obstacle.</p>
+<p>The goal was a tool the team could trust: every step was checked on cases where the exact answer is known before moving on to diffraction.</p>
+  <div class="callout"><p class="label">On the bench</p><p>Even on a purely numerical project, I worked like on a test bench: <b>reference cases first</b> (harmonic solutions on the unit disc, compared point by point with the analytical solution), <b>convergence measured</b> as the mesh is refined, then comparison with Abaqus. The validation methodology and the documentation were written so that someone else could rerun every check.</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>2D BEM written from scratch (no external BEM library)</li><li>Error decreases with mesh refinement down to about 10⁻⁷ on reference cases</li><li>Diffraction maps showing the shadow zone appearing as the wavelength gets shorter</li></ul><div class="cta col"><a class="btn" href="../docs/bem_acoustic_diffraction.pdf">Internship report (French, PDF)</a></div></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>Diffraction of an incident plane wave \(u_F=e^{ik\,\mathbf{d}\cdot\mathbf{x}}\) by a rigid obstacle: the scattered field \(v\) solves</p>
+$$(\Delta+k^2)\,v=0\ \text{ in }\Omega,\qquad \partial_n v=-\partial_n u_F\ \text{ on }\partial\Omega,\qquad \partial_r v-ikv=o(r^{-1/2})$$
+<p>Green's identity turns the problem into an integral equation on the boundary only (\(G\): Green function, \(H=\partial_n G\)):</p>
+$$c(\mathbf{x})\,u(\mathbf{x})+\int_{\partial\Omega}H(\mathbf{x},\mathbf{y})\,u(\mathbf{y})\,dS_y=\int_{\partial\Omega}G(\mathbf{x},\mathbf{y})\,q(\mathbf{y})\,dS_y,\qquad G(\mathbf{x},\mathbf{y})=\tfrac{i}{4}H_0^{(1)}(k|\mathbf{x}-\mathbf{y}|)$$
+<p>Collocation on \(N_E\) quadratic elements gives a dense linear system \((\tfrac12\mathbf{I}+\mathbf{A})\,\mathbf{v}=-\mathbf{B}\,\mathbf{q}_F\); the logarithmic singularity is integrated with a dedicated Gauss–log rule.</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/bem-helmholtz.jpg"><img src="../images/projects/bem-helmholtz.jpg" alt="Helmholtz problem on the unit disc: BEM solution (left) vs analytical solution (right)." loading="lazy"></a><figcaption>Helmholtz problem on the unit disc: BEM solution (left) vs analytical solution (right).</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-cut.jpg"><img src="../images/projects/bem-cut.jpg" alt="Horizontal cut: BEM and exact solution overlap." loading="lazy"></a><figcaption>Horizontal cut: BEM and exact solution overlap.</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-flux.jpg"><img src="../images/projects/bem-flux.jpg" alt="Boundary flux computed by the BEM vs exact flux (1st and 4th harmonics)." loading="lazy"></a><figcaption>Boundary flux computed by the BEM vs exact flux (1st and 4th harmonics).</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-convergence.jpg"><img src="../images/projects/bem-convergence.jpg" alt="Error vs number of elements for several Gauss orders: measured convergence." loading="lazy"></a><figcaption>Error vs number of elements for several Gauss orders: measured convergence.</figcaption></figure><figure class="pfig wide"><a href="../images/projects/bem-diffraction.jpg"><img src="../images/projects/bem-diffraction.jpg" alt="Final result: plane wave diffracted by a rigid disc, k = 4 (left) and k = 10 (right) — note the shadow zone at short wavelength." loading="lazy"></a><figcaption>Final result: plane wave diffracted by a rigid disc, k = 4 (left) and k = 10 (right) — note the shadow zone at short wavelength.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="ucsb-porous-media.html">← Flows in Reactive Porous Media</a><a class="next" href="gas-marbles.html">Instrumented Bench for Gas Marbles →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

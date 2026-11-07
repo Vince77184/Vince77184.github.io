@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finite Element Analysis of a Loaded Structure — Vincent Poitier</title>
+<meta name="description" content="Static and dynamic finite element analysis of a loaded beam in Abaqus, compared with analytical solutions.">
+<meta property="og:title" content="Finite Element Analysis of a Loaded Structure — Vincent Poitier">
+<meta property="og:description" content="Static and dynamic finite element analysis of a loaded beam in Abaqus, compared with analytical solutions.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/fea.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#projects">All projects</a>
+      <span class="lang"><a href="../index.html">EN</a><a href="../fr.html">FR</a><a href="../ar.html" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#projects">← Back to projects</a></p>
+<p class="kicker">Independent project · Paris · Oct 2023 – Feb 2024</p>
+<h1>Finite Element Analysis of a Loaded Structure</h1>
+<p class="chips"><span class="chip">Abaqus</span><span class="chip">Validation on analytical solutions</span><span class="chip">CAD</span></p>
+<figure class="pcover"><img src="../images/projects/fea.jpg" alt="Finite Element Analysis of a Loaded Structure"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>A project to master finite element analysis end to end: model a loaded beam in Abaqus, run static and dynamic analyses, and post-process bending, stresses and strains. Each result was compared with the reference analytical solution before trusting the model.</p>
+  <div class="callout"><p class="label">On the bench</p><p>The habit I keep from this project: before any complex model, compute a case whose answer you know, measure the error and refine the mesh until it is under control. The figure below reproduces the idea with a small plane-stress solver: the finite element tip deflection is within 0.5 % of the Euler–Bernoulli value (the small difference is shear deformation, which beam theory neglects).</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>Static and dynamic analyses compared with analytical solutions</li><li>Mesh-convergence and validation methodology</li></ul></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>Finite element system and element stiffness:</p>
+$$\mathbf{K}\,\mathbf{u}=\mathbf{f},\qquad \mathbf{K}=\sum_e\int_{\Omega_e}\mathbf{B}^{T}\mathbf{D}\,\mathbf{B}\,d\Omega$$
+<p>Analytical references for a cantilever of length \(L\), bending stiffness \(EI\), tip load \(P\):</p>
+$$\delta_{\text{tip}}=\frac{PL^{3}}{3EI},\qquad \sigma_{\max}=\frac{PL\,(h/2)}{I},\qquad \omega_n=\beta_n^{2}\sqrt{\frac{EI}{\rho A L^{4}}},\ \ \beta_1L\approx1.875$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/fea.jpg"><img src="../images/projects/fea.jpg" alt="Cantilever beam under tip load: von Mises stress on the deformed mesh and comparison with beam theory (illustration recomputed in Python)." loading="lazy"></a><figcaption>Cantilever beam under tip load: von Mises stress on the deformed mesh and comparison with beam theory (illustration recomputed in Python).</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="landing-gear.html">← Automated Landing Gear for a Falcon 9-type Rocket</a><span></span></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>
