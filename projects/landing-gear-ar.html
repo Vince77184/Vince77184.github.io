@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>جهاز هبوط مؤتمت لصاروخ من نوع Falcon 9 — فانسان بواتييه</title>
+<meta name="description" content="أرجل هبوط قابلة للطيّ مصممة ببرنامج SolidWorks، مع برمجة تسلسل الفتح والتحكم في الهبوط.">
+<meta property="og:title" content="جهاز هبوط مؤتمت لصاروخ من نوع Falcon 9 — فانسان بواتييه">
+<meta property="og:description" content="أرجل هبوط قابلة للطيّ مصممة ببرنامج SolidWorks، مع برمجة تسلسل الفتح والتحكم في الهبوط.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/falcon9-legs.jpg">
+<link rel="alternate" hreflang="en" href="landing-gear.html">
+<link rel="alternate" hreflang="fr" href="landing-gear-fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../ar.html">فانسان بواتييه</a>
+    <nav>
+      <a href="../ar.html#projects">كل المشاريع</a>
+      <span class="lang"><a href="landing-gear.html" hreflang="en" lang="en">EN</a><a href="landing-gear-fr.html" hreflang="fr" lang="fr">FR</a><b>عربي</b></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_AR.pdf">السيرة الذاتية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../ar.html#projects">→ العودة إلى المشاريع</a></p>
+<p class="kicker">مشروع ميكاترونيك · جمعية Top Aéro الطلابية، جامعة السوربون / آرتس إي ميتييه · 2023–2024</p>
+<h1>جهاز هبوط مؤتمت لصاروخ من نوع Falcon 9</h1>
+<p class="chips"><span class="chip">ميكاترونيك</span><span class="chip">تصميم بالحاسوب</span><span class="chip">تحكم</span></p>
+<figure class="pcover"><img src="../images/projects/falcon9-legs.jpg" alt="جهاز هبوط مؤتمت لصاروخ من نوع Falcon 9"></figure>
+<div class="pgrid">
+  <section><h2>الملخص</h2><p>استلهامًا من المرحلة الأولى القابلة لإعادة الاستعمال لصاروخ Falcon 9، عملت جمعيتنا الطلابية على صاروخ يهبط على أرجله الخاصة. صممت <b>الأرجل القابلة للطيّ</b> ببرنامج SolidWorks وبرمجت <b>تسلسل الفتح</b> و<b>التحكم في الهبوط</b>: أرجل مطوية أثناء الصعود، تُفتح تحت ارتفاع محدد، وتُقفل عند ملامسة الأرض.</p>
+  <div class="callout"><p class="label">الجانب التجريبي</p><p>نسخة مصغّرة من مشكلات أنظمة الألعاب الترفيهية والأنظمة الروبوتية الحقيقية: آلية يجب أن تُفتح في اللحظة المناسبة كل مرة، ومشغّل محسوب للحمولة، ومستشعرات تُقرأ في الزمن الحقيقي، وتسلسل يعود إلى حالة آمنة عند الحاجة.</p></div>
+  </section>
+  <aside class="keyres"><h3>النتائج الرئيسية</h3><ul><li>تصميم الأرجل القابلة للطيّ بـ SolidWorks</li><li>برمجة تسلسل الفتح والتحكم في الهبوط</li></ul></aside>
+</div>
+<section><h2>المنهجية والمعادلات</h2><div class="math"><p>الفتح آلة حالات يقودها الارتفاع المقاس \(h(t)\): صعود ← هبوط ← فتح عندما \(h<h_d\) ← ملامسة الأرض. يجب أن يثبّت المشغّل الرِّجل تحت الحمولة:</p>$$\tau_{\text{act}}\geq m\,g\,\ell\,\sin\theta,\qquad \theta\in[0,\theta_{\max}]$$<p>يُنظَّم الهبوط بتغذية راجعة حول منحنى سرعة مرجعي، مثلًا بقانون من نوع PID:</p>$$u(t)=K_p\,e(t)+K_i\int_0^t e\,d\tau+K_d\,\dot e(t),\qquad e=v_{\text{ref}}(h)-v$$</div></section>
+<section><h2>الأشكال</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/landing-gear-logic.jpg"><img src="../images/projects/landing-gear-logic.jpg" alt="حركية الرِّجل ومنطق الفتح (رسم تخطيطي)." loading="lazy"></a><figcaption>حركية الرِّجل ومنطق الفتح (رسم تخطيطي).</figcaption></figure><figure class="pfig"><a href="../images/projects/falcon9-legs.jpg"><img src="../images/projects/falcon9-legs.jpg" alt="في الواقع: المرحلة الأولى لصاروخ Falcon 9 واقفة على أرجلها الأربع بعد الهبوط. الصورة: SpaceX، ملكية عامة." loading="lazy"></a><figcaption>في الواقع: المرحلة الأولى لصاروخ Falcon 9 واقفة على أرجلها الأربع بعد الهبوط. الصورة: SpaceX، ملكية عامة.</figcaption></figure><figure class="pfig"><a href="../images/projects/falcon9-full.jpg"><img src="../images/projects/falcon9-full.jpg" alt="المرحلة الأولى لـ Falcon 9 بعد الهبوط في LZ-1. الصورة: SpaceX، ملكية عامة." loading="lazy"></a><figcaption>المرحلة الأولى لـ Falcon 9 بعد الهبوط في LZ-1. الصورة: SpaceX، ملكية عامة.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="faraday-waves-ar.html">→ الجاذبية وموجات فاراداي المحصورة</a><a class="next" href="fea-beam-ar.html">تحليل بنية محمّلة بطريقة العناصر المحدودة ←</a></nav>
+</main>
+<footer class="wrap foot">© 2026 فانسان بواتييه</footer>
+</body>
+</html>

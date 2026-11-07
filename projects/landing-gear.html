@@ -8,6 +8,8 @@
 <meta property="og:title" content="Automated Landing Gear for a Falcon 9-type Rocket — Vincent Poitier">
 <meta property="og:description" content="Retractable landing legs designed in SolidWorks, with a programmed deployment sequence and descent control.">
 <meta property="og:image" content="https://vince77184.github.io/images/projects/falcon9-legs.jpg">
+<link rel="alternate" hreflang="fr" href="landing-gear-fr.html">
+<link rel="alternate" hreflang="ar" href="landing-gear-ar.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
@@ -22,7 +24,7 @@
     <a class="mark" href="../index.html">Vincent Poitier</a>
     <nav>
       <a href="../index.html#projects">All projects</a>
-      <span class="lang"><a href="../index.html">EN</a><a href="../fr.html">FR</a><a href="../ar.html" lang="ar">عربي</a></span>
+      <span class="lang"><b>EN</b><a href="landing-gear-fr.html" hreflang="fr" lang="fr">FR</a><a href="landing-gear-ar.html" hreflang="ar" lang="ar">عربي</a></span>
       <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
     </nav>
   </div>
@@ -39,10 +41,7 @@
   </section>
   <aside class="keyres"><h3>Key results</h3><ul><li>Retractable legs designed in SolidWorks</li><li>Deployment sequence and descent control programmed</li></ul></aside>
 </div>
-<section><h2>Method &amp; equations</h2><div class="math"><p>The deployment is a state machine driven by the measured altitude \(h(t)\): ascent → descent → deploy when \(h<h_d\) → touchdown. The actuator must hold the leg against the load:</p>
-$$\tau_{\text{act}}\geq m\,g\,\ell\,\sin\theta,\qquad \theta\in[0,\theta_{\max}]$$
-<p>The descent is regulated by feedback around a reference speed profile, for example with a PID-type law:</p>
-$$u(t)=K_p\,e(t)+K_i\int_0^t e\,d\tau+K_d\,\dot e(t),\qquad e=v_{\text{ref}}(h)-v$$</div></section>
+<section><h2>Method &amp; equations</h2><div class="math"><p>The deployment is a state machine driven by the measured altitude \(h(t)\): ascent → descent → deploy when \(h<h_d\) → touchdown. The actuator must hold the leg against the load:</p>$$\tau_{\text{act}}\geq m\,g\,\ell\,\sin\theta,\qquad \theta\in[0,\theta_{\max}]$$<p>The descent is regulated by feedback around a reference speed profile, for example with a PID-type law:</p>$$u(t)=K_p\,e(t)+K_i\int_0^t e\,d\tau+K_d\,\dot e(t),\qquad e=v_{\text{ref}}(h)-v$$</div></section>
 <section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/landing-gear-logic.jpg"><img src="../images/projects/landing-gear-logic.jpg" alt="Leg kinematics and deployment logic (schematic)." loading="lazy"></a><figcaption>Leg kinematics and deployment logic (schematic).</figcaption></figure><figure class="pfig"><a href="../images/projects/falcon9-legs.jpg"><img src="../images/projects/falcon9-legs.jpg" alt="The real thing: a Falcon 9 first stage standing on its four landing legs after landing. Photo: SpaceX, CC0." loading="lazy"></a><figcaption>The real thing: a Falcon 9 first stage standing on its four landing legs after landing. Photo: SpaceX, CC0.</figcaption></figure><figure class="pfig"><a href="../images/projects/falcon9-full.jpg"><img src="../images/projects/falcon9-full.jpg" alt="Falcon 9 booster after landing at LZ-1. Photo: SpaceX, CC0 (public domain)." loading="lazy"></a><figcaption>Falcon 9 booster after landing at LZ-1. Photo: SpaceX, CC0 (public domain).</figcaption></figure></div></section>
 
 <nav class="pnav"><a href="faraday-waves.html">← Gravity and Confined Faraday Waves</a><a class="next" href="fea-beam.html">Finite Element Analysis of a Loaded Structure →</a></nav>

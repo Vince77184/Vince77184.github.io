@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analyse par éléments finis d'une structure chargée — Vincent Poitier</title>
+<meta name="description" content="Analyse statique et dynamique par éléments finis d&#x27;une poutre chargée sous Abaqus, comparée aux solutions analytiques.">
+<meta property="og:title" content="Analyse par éléments finis d'une structure chargée — Vincent Poitier">
+<meta property="og:description" content="Analyse statique et dynamique par éléments finis d&#x27;une poutre chargée sous Abaqus, comparée aux solutions analytiques.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/fea.jpg">
+<link rel="alternate" hreflang="en" href="fea-beam.html">
+<link rel="alternate" hreflang="ar" href="fea-beam-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#projects">Tous les projets</a>
+      <span class="lang"><a href="fea-beam.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="fea-beam-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#projects">← Retour aux projets</a></p>
+<p class="kicker">Projet personnel · Paris · oct. 2023 – févr. 2024</p>
+<h1>Analyse par éléments finis d'une structure chargée</h1>
+<p class="chips"><span class="chip">Abaqus</span><span class="chip">Validation sur solutions analytiques</span><span class="chip">CAO</span></p>
+<figure class="pcover"><img src="../images/projects/fea.jpg" alt="Analyse par éléments finis d&#x27;une structure chargée"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>Un projet pour maîtriser l'analyse par éléments finis de bout en bout : modéliser une poutre chargée sous Abaqus, lancer des analyses statiques et dynamiques, et post-traiter flexion, contraintes et déformations. Chaque résultat a été comparé à la solution analytique de référence avant de faire confiance au modèle.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>L'habitude que je garde de ce projet : avant tout modèle complexe, calculer un cas dont on connaît la réponse, mesurer l'erreur et raffiner le maillage jusqu'à la maîtriser. La figure ci-dessous reproduit l'idée avec un petit solveur en contraintes planes : la flèche en bout calculée par éléments finis est à 0,5 % de la valeur d'Euler–Bernoulli (le petit écart vient du cisaillement, que la théorie des poutres néglige).</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>Analyses statique et dynamique comparées aux solutions analytiques</li><li>Méthodologie de convergence et de validation</li></ul></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p>Système éléments finis et raideur élémentaire :</p>$$\mathbf{K}\,\mathbf{u}=\mathbf{f},\qquad \mathbf{K}=\sum_e\int_{\Omega_e}\mathbf{B}^{T}\mathbf{D}\,\mathbf{B}\,d\Omega$$<p>Références analytiques pour une poutre console de longueur \(L\), de rigidité en flexion \(EI\), chargée en bout par \(P\) :</p>$$\delta_{\text{tip}}=\frac{PL^{3}}{3EI},\qquad \sigma_{\max}=\frac{PL\,(h/2)}{I},\qquad \omega_n=\beta_n^{2}\sqrt{\frac{EI}{\rho A L^{4}}},\ \ \beta_1L\approx1.875$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/fea.jpg"><img src="../images/projects/fea.jpg" alt="Poutre console chargée en bout : contrainte de von Mises sur le maillage déformé et comparaison avec la théorie des poutres (illustration recalculée en Python)." loading="lazy"></a><figcaption>Poutre console chargée en bout : contrainte de von Mises sur le maillage déformé et comparaison avec la théorie des poutres (illustration recalculée en Python).</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="landing-gear-fr.html">← Train d'atterrissage automatisé pour une fusée type Falcon 9</a><span></span></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Écoulements en milieux poreux réactifs — Vincent Poitier</title>
+<meta name="description" content="Simulation à interface nette de la précipitation et de la dissolution en milieu poreux sur maillages quadtree adaptatifs. Publié dans le Journal of Computational Physics.">
+<meta property="og:title" content="Écoulements en milieux poreux réactifs — Vincent Poitier">
+<meta property="og:description" content="Simulation à interface nette de la précipitation et de la dissolution en milieu poreux sur maillages quadtree adaptatifs. Publié dans le Journal of Computational Physics.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/jcp-grid.jpg">
+<link rel="alternate" hreflang="en" href="ucsb-porous-media.html">
+<link rel="alternate" hreflang="ar" href="ucsb-porous-media-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#projects">Tous les projets</a>
+      <span class="lang"><a href="ucsb-porous-media.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="ucsb-porous-media-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#projects">← Retour aux projets</a></p>
+<p class="kicker">Stage de fin de master · University of California, Santa Barbara · 2024 (6 mois)</p>
+<h1>Écoulements en milieux poreux réactifs</h1>
+<p class="chips"><span class="chip">Modèle numérique</span><span class="chip">Validation sur benchmark</span><span class="chip">Publié</span></p>
+<figure class="pcover"><img src="../images/projects/jcp-grid.jpg" alt="Écoulements en milieux poreux réactifs"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>Quand des minéraux précipitent ou se dissolvent dans une roche poreuse ou un filtre, les pores changent de forme — et avec eux la perméabilité et la façon dont le fluide s'écoule. C'est un enjeu pour le stockage du carbone, la géothermie, la filtration de l'eau ou la catalyse. Pendant mon stage de fin de master dans l'équipe du Pr Frédéric Gibou à UC Santa Barbara, j'ai travaillé sur une méthode numérique qui suit cette évolution avec une interface solide–liquide <b>nette</b>, sur des <b>maillages quadtree adaptatifs</b> raffinés seulement là où c'est nécessaire.</p>
+<p>Ce travail a donné un article en premier auteur : <a href="https://doi.org/10.1016/j.jcp.2026.115533"><i>A Sharp Numerical Approach for Modeling Flows in Reactive Porous Media</i></a>, V. Poitier, E. Bayat, K. Hernandez Leyva, A. Sauret, F. Gibou — Journal of Computational Physics, 2026.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>La méthode a d'abord été <b>validée sur un benchmark connu</b> (dissolution d'un grain de calcite, comparée à plusieurs codes publiés), puis vérifiée en <b>convergence de maillage</b> sur la fusion de deux grains en croissance. J'ai défini ces protocoles de test, comparé le modèle aux données de référence et automatisé tout le post-traitement en Python et C/C++ — le même réflexe que j'applique aujourd'hui aux bancs d'essais : aucun résultat n'est fiable avant d'avoir été comparé à une référence.</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>Interface nette sur maillage adaptatif : environ 100 000 points au lieu d'un maillage fin uniforme</li><li>Validé sur un benchmark de dissolution publié et par des études de convergence</li><li>Restitue perméabilité effective, tortuosité et profils de vitesse à l'échelle des pores quand ceux-ci se ferment</li></ul><div class="cta col"><a class="btn" href="https://doi.org/10.1016/j.jcp.2026.115533">Lire l'article (DOI)</a></div></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p>Écoulement dans les pores : Navier–Stokes incompressible,</p>$$\rho_l\left(\frac{\partial \mathbf{v}}{\partial t}+\mathbf{v}\cdot\nabla\mathbf{v}\right)=-\nabla p+\mu_l\,\Delta\mathbf{v},\qquad \nabla\cdot\mathbf{v}=0 \quad\text{in }\Omega_l$$<p>Transport de l'espèce dissoute (advection–diffusion) :</p>$$\frac{\partial C}{\partial t}+\mathbf{v}\cdot\nabla C=D_l\,\Delta C$$<p>À l'interface solide–liquide mobile \(\Gamma(t)\), le bilan de masse donne une condition de Stefan pour la vitesse de l'interface, suivie par une fonction level-set \(\phi\) :</p>$$\mathbf{v}_\Gamma\cdot\mathbf{n}\approx-D_l\,\nabla C\cdot\mathbf{n},\qquad \frac{\partial\phi}{\partial t}+\mathbf{v}_\Gamma\cdot\nabla\phi=0$$<p>Les régimes sont explorés via les nombres de Péclet, Damköhler et Reynolds, \(\mathrm{Pe}=UL/D_l\), \(\mathrm{Da}=kL/D_l\), \(\mathrm{Re}=\rho_l UL/\mu_l\).</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/jcp-grid.jpg"><img src="../images/projects/jcp-grid.jpg" alt="Maillage quadtree adaptatif raffiné autour des grains en croissance (cercles blancs : interfaces)." loading="lazy"></a><figcaption>Maillage quadtree adaptatif raffiné autour des grains en croissance (cercles blancs : interfaces).</figcaption></figure><figure class="pfig"><a href="../images/projects/jcp-network.jpg"><img src="../images/projects/jcp-network.jpg" alt="Chemins d&#x27;écoulement dans le réseau de pores d&#x27;un milieu poreux qui précipite." loading="lazy"></a><figcaption>Chemins d'écoulement dans le réseau de pores d'un milieu poreux qui précipite.</figcaption></figure><figure class="pfig wide"><a href="../images/projects/jcp-benchmark.jpg"><img src="../images/projects/jcp-benchmark.jpg" alt="Benchmark : aire du grain et vitesse de dissolution au cours du temps, comparées à des codes publiés." loading="lazy"></a><figcaption>Benchmark : aire du grain et vitesse de dissolution au cours du temps, comparées à des codes publiés.</figcaption></figure><figure class="pfig"><a href="../images/projects/jcp-velocity.jpg"><img src="../images/projects/jcp-velocity.jpg" alt="Champs de vitesse et de concentration entre deux grains qui fusionnent." loading="lazy"></a><figcaption>Champs de vitesse et de concentration entre deux grains qui fusionnent.</figcaption></figure><figure class="pfig"><a href="../images/projects/jcp-curves.jpg"><img src="../images/projects/jcp-curves.jpg" alt="Évolution du débit, de la porosité et de la tortuosité pour plusieurs niveaux de maillage." loading="lazy"></a><figcaption>Évolution du débit, de la porosité et de la tortuosité pour plusieurs niveaux de maillage.</figcaption></figure></div></section>
+
+<nav class="pnav"><span></span><a class="next" href="bem-acoustics-fr.html">Éléments de frontière pour la diffraction acoustique →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

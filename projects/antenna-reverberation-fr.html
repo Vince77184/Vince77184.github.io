@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficacité d'antennes en chambre réverbérante — Vincent Poitier</title>
+<meta name="description" content="Mesure de l&#x27;efficacité de rayonnement d&#x27;une antenne patch miniature à partir des paramètres S relevés à l&#x27;analyseur de réseau en chambre réverbérante.">
+<meta property="og:title" content="Efficacité d'antennes en chambre réverbérante — Vincent Poitier">
+<meta property="og:description" content="Mesure de l&#x27;efficacité de rayonnement d&#x27;une antenne patch miniature à partir des paramètres S relevés à l&#x27;analyseur de réseau en chambre réverbérante.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/card-antenna.jpg">
+<link rel="alternate" hreflang="en" href="antenna-reverberation.html">
+<link rel="alternate" hreflang="ar" href="antenna-reverberation-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#projects">Tous les projets</a>
+      <span class="lang"><a href="antenna-reverberation.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="antenna-reverberation-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#projects">← Retour aux projets</a></p>
+<p class="kicker">Projet de fin de licence · Laboratoire ESYCOM, Université Gustave Eiffel · 2020–2021 · encadrant F. Sarrazin · avec J. Alfaro</p>
+<h1>Efficacité d'antennes en chambre réverbérante</h1>
+<p class="chips"><span class="chip">Mesures RF</span><span class="chip">Acquisition automatisée</span><span class="chip">MATLAB</span></p>
+<figure class="pcover"><img src="../images/projects/card-antenna.jpg" alt="Efficacité d&#x27;antennes en chambre réverbérante"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>Une chambre réverbérante est une pièce métallique munie d'un brasseur rotatif : le champ y devient statistiquement uniforme, ce qui permet de caractériser une antenne sans coûteuse chambre anéchoïque. Nous avons mesuré l'<b>efficacité de rayonnement</b> d'une antenne patch miniature (antenne sous test) par rapport à une antenne log-périodique de référence, de 1,2 à 3,2 GHz.</p>
+<p>La chaîne de mesure était entièrement automatisée : un <b>analyseur de réseau vectoriel</b> 4 ports balayait 10 001 fréquences pour chacune des 24 positions d'antenne × 72 positions du brasseur (environ 8 heures d'acquisition), produisant des matrices 3D de paramètres S traitées sous MATLAB.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>Étalonnage de l'analyseur (circuit ouvert / court-circuit / charge adaptée), placement des antennes pour éviter le couplage direct, brassage mécanique et brassage de source, puis contrôles des données : tracé de configurations aléatoires du brasseur, comparaison des méthodes de brassage par leur <b>erreur quadratique moyenne</b> par rapport à une référence, et enfin comparaison avec une mesure en chambre anéchoïque. L'intervention humaine était réduite à trois étapes, ce qui fait la précision de la méthode.</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>24 × 72 × 10 001 mesures de paramètres S acquises automatiquement</li><li>Moyenne d'ensemble : MSE ≈ 2×10⁻⁴ contre 0,67 pour le brassage mécanique seul</li><li>Efficacité croissante jusqu'à 1,8 GHz puis à peu près constante ; cohérente avec la chambre anéchoïque</li></ul><div class="cta col"><a class="btn" href="../docs/antenna_reverberation_chamber.pdf">Rapport du projet (anglais, PDF)</a></div></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p>Le facteur de qualité de la chambre relie la puissance reçue à la puissance rayonnée :</p>$$Q=\frac{\omega U}{P_d},\qquad \langle P_{\text{rec}}\rangle=\frac{Q\,\lambda^{3}}{16\pi^{2}V}\,P_{\text{rad}}$$<p>Comme \(Q\) est intrinsèque à la chambre, les facteurs de qualité vus par les deux antennes donnent l'efficacité inconnue \(\eta_1\) à partir de \(\eta_2\) connue :</p>$$\eta_1=\eta_2\sqrt{\frac{\langle|S_{11}-\langle S_{11}\rangle|^2\rangle}{\langle|S_{22}-\langle S_{22}\rangle|^2\rangle}}\;\frac{1-|\langle S_{22}\rangle|^2}{1-|\langle S_{11}\rangle|^2}$$<p>Les méthodes de brassage sont comparées par \(\mathrm{MSE}=\frac{1}{N}\sum_k|S_{11}(f_k)-\hat S_{11}(f_k)|^2\), et le facteur de qualité suit l'épaisseur de peau \(\delta=\sqrt{2/(\omega\mu\sigma)}\).</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/antenna-chamber-photos.jpg"><img src="../images/projects/antenna-chamber-photos.jpg" alt="Chambre réverbérante de l&#x27;ESYCOM et son brasseur mécanique." loading="lazy"></a><figcaption>Chambre réverbérante de l'ESYCOM et son brasseur mécanique.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-vna.jpg"><img src="../images/projects/antenna-vna.jpg" alt="Analyseur de réseau vectoriel utilisé pour les balayages automatisés." loading="lazy"></a><figcaption>Analyseur de réseau vectoriel utilisé pour les balayages automatisés.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-s11-raw.jpg"><img src="../images/projects/antenna-s11-raw.jpg" alt="Coefficient de réflexion S11(f) mesuré pour des positions aléatoires du brasseur." loading="lazy"></a><figcaption>Coefficient de réflexion S11(f) mesuré pour des positions aléatoires du brasseur.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-s11-stirring.jpg"><img src="../images/projects/antenna-s11-stirring.jpg" alt="Effet des méthodes de brassage par rapport à la référence en chambre anéchoïque." loading="lazy"></a><figcaption>Effet des méthodes de brassage par rapport à la référence en chambre anéchoïque.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-q.jpg"><img src="../images/projects/antenna-q.jpg" alt="Facteur de qualité mesuré de la chambre : il croît avec la fréquence, comme prévu." loading="lazy"></a><figcaption>Facteur de qualité mesuré de la chambre : il croît avec la fréquence, comme prévu.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-efficiency.jpg"><img src="../images/projects/antenna-efficiency.jpg" alt="Résultat : efficacité de rayonnement de l&#x27;antenne patch, 1,2–3,2 GHz." loading="lazy"></a><figcaption>Résultat : efficacité de rayonnement de l'antenne patch, 1,2–3,2 GHz.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="gas-marbles-fr.html">← Banc instrumenté pour billes de gaz</a><a class="next" href="lidar-afm-fr.html">LIDAR par temps de vol et AFM fait maison →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الجاذبية وموجات فاراداي المحصورة — فانسان بواتييه</title>
+<meta name="description" content="مقترح تجربة في رحلة مكافئة حول دور الجاذبية والخاصية الشعرية في تشكيل موجات فاراداي.">
+<meta property="og:title" content="الجاذبية وموجات فاراداي المحصورة — فانسان بواتييه">
+<meta property="og:description" content="مقترح تجربة في رحلة مكافئة حول دور الجاذبية والخاصية الشعرية في تشكيل موجات فاراداي.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/faraday-photo.jpg">
+<link rel="alternate" hreflang="en" href="faraday-waves.html">
+<link rel="alternate" hreflang="fr" href="faraday-waves-fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../ar.html">فانسان بواتييه</a>
+    <nav>
+      <a href="../ar.html#projects">كل المشاريع</a>
+      <span class="lang"><a href="faraday-waves.html" hreflang="en" lang="en">EN</a><a href="faraday-waves-fr.html" hreflang="fr" lang="fr">FR</a><b>عربي</b></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_AR.pdf">السيرة الذاتية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../ar.html#projects">→ العودة إلى المشاريع</a></p>
+<p class="kicker">مقترح فريق · المدرسة العليا للأساتذة · طلب مشاريع الرحلات المكافئة للمركز الفرنسي للدراسات الفضائية 2022 (القائمة الأولية)</p>
+<h1>الجاذبية وموجات فاراداي المحصورة</h1>
+<p class="chips"><span class="chip">تصميم تجربة</span><span class="chip">انعدام الجاذبية</span><span class="chip">مشروع فريق</span></p>
+<figure class="pcover"><img src="../images/projects/faraday-photo.jpg" alt="الجاذبية وموجات فاراداي المحصورة"></figure>
+<div class="pgrid">
+  <section><h2>الملخص</h2><p>عندما يُهزّ سائل عموديًا، تظهر على سطحه موجات واقفة: إنها <b>عدم استقرار فاراداي</b>. على الأرض تهيمن الجاذبية على سلوك الموجات، أما في انعدام الجاذبية فلا يبقى إلا أثر الخاصية الشعرية. مع أربعة من زملائي، صممنا تجربة لحملة الرحلات المكافئة للمركز الفرنسي للدراسات الفضائية لمراقبة الموجات نفسها بينما تتغير الجاذبية أثناء الرحلة، إضافة إلى تجربة على موجات فوق قطرة كروية طافية.</p>
+<p>تم اختيار المقترح في القائمة الأولية. كنت مسؤول التواصل في الفريق وعملت على البروتوكول التجريبي.</p>
+  <div class="callout"><p class="label">الجانب التجريبي</p><p>كان يجب التخطيط لكل شيء داخل طائرة متحركة: هزّاز عمودي بنحو 25 كغ، وأوعية شفافة بأشكال مختلفة، ووعاء كاره للماء للقطرة الكروية، وإضاءة وامضة وكاميرا فوق السطح، مع ميزانية الطاقة (220 فولت / 4 أمبير) وجدول الاختبارات في مختبر التصنيع بالمدرسة قبل الإدماج.</p></div>
+  </section>
+  <aside class="keyres"><h3>النتائج الرئيسية</h3><ul><li>بروتوكول تجريبي كامل وقائمة المعدات للطائرة</li><li>اختير في القائمة الأولية</li></ul><div class="cta col"><a class="btn" href="../docs/faraday_waves_parabolic_flight.pdf">المقترح (بالإنجليزية، PDF)</a></div></aside>
+</div>
+<section><h2>المنهجية والمعادلات</h2><div class="math"><p>علاقة التشتت للموجات السطحية (النبض \(\omega\)، عدد الموجة \(k\)، العمق \(h\)، التوتر السطحي \(\gamma\)):</p>$$\omega^{2}=\left(gk+\frac{\gamma k^{3}}{\rho}\right)\tanh(hk)=\left(\ell_c^{-2}+k^{2}\right)\frac{\gamma k}{\rho}\tanh(hk),\qquad \ell_c=\sqrt{\frac{\gamma}{\rho g}}$$<p>عندما \(k\ell_c\ll1\) تهيمن الجاذبية (\(\omega^2\approx gk\))؛ وعندما \(k\ell_c\gg1\) تتغلب الخاصية الشعرية (\(\omega^2\approx\gamma k^3/\rho\)). تغيير \(g\) أثناء الرحلة يزيح نقطة الانتقال — وهي البصمة القابلة للقياس التي كنا نبحث عنها.</p></div></section>
+<section><h2>الأشكال</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/faraday-photo.jpg"><img src="../images/projects/faraday-photo.jpg" alt="عدم استقرار فاراداي: نمط موجات واقفة على سائل مهتز." loading="lazy"></a><figcaption>عدم استقرار فاراداي: نمط موجات واقفة على سائل مهتز.</figcaption></figure><figure class="pfig"><a href="../images/projects/faraday-dispersion.jpg"><img src="../images/projects/faraday-dispersion.jpg" alt="عدد الموجة بدلالة النبض: فرع تهيمن عليه الجاذبية وآخر تهيمن عليه الخاصية الشعرية." loading="lazy"></a><figcaption>عدد الموجة بدلالة النبض: فرع تهيمن عليه الجاذبية وآخر تهيمن عليه الخاصية الشعرية.</figcaption></figure><figure class="pfig"><a href="../images/projects/faraday-setup.jpg"><img src="../images/projects/faraday-setup.jpg" alt="التجربة المخططة: صفيحة مهتزة، وعاء السائل والكاميرا." loading="lazy"></a><figcaption>التجربة المخططة: صفيحة مهتزة، وعاء السائل والكاميرا.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="lidar-afm-ar.html">→ ليدار زمن الطيران ومجهر قوة ذرية مصنوع يدويًا</a><a class="next" href="landing-gear-ar.html">جهاز هبوط مؤتمت لصاروخ من نوع Falcon 9 ←</a></nav>
+</main>
+<footer class="wrap foot">© 2026 فانسان بواتييه</footer>
+</body>
+</html>

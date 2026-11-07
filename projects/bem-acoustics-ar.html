@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>العناصر الحدّية لحيود الموجات الصوتية — فانسان بواتييه</title>
+<meta name="description" content="حلّال بطريقة العناصر الحدّية مكتوب من الصفر بلغة Python لحيود الموجات الصوتية ثنائية البعد، تم التحقق منه على حلول تحليلية.">
+<meta property="og:title" content="العناصر الحدّية لحيود الموجات الصوتية — فانسان بواتييه">
+<meta property="og:description" content="حلّال بطريقة العناصر الحدّية مكتوب من الصفر بلغة Python لحيود الموجات الصوتية ثنائية البعد، تم التحقق منه على حلول تحليلية.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/card-bem.jpg">
+<link rel="alternate" hreflang="en" href="bem-acoustics.html">
+<link rel="alternate" hreflang="fr" href="bem-acoustics-fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../ar.html">فانسان بواتييه</a>
+    <nav>
+      <a href="../ar.html#projects">كل المشاريع</a>
+      <span class="lang"><a href="bem-acoustics.html" hreflang="en" lang="en">EN</a><a href="bem-acoustics-fr.html" hreflang="fr" lang="fr">FR</a><b>عربي</b></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_AR.pdf">السيرة الذاتية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../ar.html#projects">→ العودة إلى المشاريع</a></p>
+<p class="kicker">تدريب بحثي · معهد جان لو روند دالمبير، جامعة السوربون · 2023 (4 أشهر) · المشرف ر. كورناجيا</p>
+<h1>العناصر الحدّية لحيود الموجات الصوتية</h1>
+<p class="chips"><span class="chip">أداة عددية من الصفر</span><span class="chip">تحقق على حلول دقيقة</span><span class="chip">Python</span></p>
+<figure class="pcover"><img src="../images/projects/card-bem.jpg" alt="العناصر الحدّية لحيود الموجات الصوتية"></figure>
+<div class="pgrid">
+  <section><h2>الملخص</h2><p>تحلّ طريقة العناصر الحدّية (BEM) مسائل الموجات بتقسيم <b>حدود</b> الجسم فقط بدل كامل الفضاء المحيط به. انطلاقًا من الصفر، برمجت بلغة Python طريقة BEM ثنائية البعد للموجات الصوتية التوافقية (معادلتا لابلاس وهيلمهولتز) بعناصر تربيعية، وتكامل عددي للتكاملات الشاذة وقواعد غاوس، ثم استعملتها لحساب حيود موجة مستوية على عائق دائري صلب.</p>
+<p>كان الهدف أداة يثق بها الفريق: تم التحقق من كل خطوة على حالات يُعرف حلها الدقيق قبل الانتقال إلى الحيود.</p>
+  <div class="callout"><p class="label">الجانب التجريبي</p><p>حتى في مشروع عددي بحت، عملت كما لو كنت على منصة اختبار: <b>الحالات المرجعية أولًا</b> (حلول توافقية على قرص الوحدة، مقارنةً نقطةً بنقطة بالحل التحليلي)، ثم <b>قياس التقارب</b> عند تدقيق الشبكة، ثم المقارنة مع Abaqus. وكُتبت منهجية التحقق والتوثيق بحيث يستطيع أي شخص آخر إعادة كل اختبار.</p></div>
+  </section>
+  <aside class="keyres"><h3>النتائج الرئيسية</h3><ul><li>طريقة BEM ثنائية البعد مكتوبة من الصفر (دون مكتبة خارجية)</li><li>ينخفض الخطأ مع تدقيق الشبكة حتى نحو 10⁻⁷ على الحالات المرجعية</li><li>خرائط حيود تُظهر منطقة الظل مع قصر الطول الموجي</li></ul><div class="cta col"><a class="btn" href="../docs/bem_acoustic_diffraction.pdf">تقرير التدريب (بالفرنسية، PDF)</a></div></aside>
+</div>
+<section><h2>المنهجية والمعادلات</h2><div class="math"><p>حيود موجة مستوية واردة \(u_F=e^{ik\,\mathbf{d}\cdot\mathbf{x}}\) على عائق صلب: الحقل المحاد \(v\) يحقق</p>$$(\Delta+k^2)\,v=0\ \text{ in }\Omega,\qquad \partial_n v=-\partial_n u_F\ \text{ on }\partial\Omega,\qquad \partial_r v-ikv=o(r^{-1/2})$$<p>تحوّل متطابقة غرين المسألة إلى معادلة تكاملية على الحدود فقط (\(G\): دالة غرين، \(H=\partial_n G\)):</p>$$c(\mathbf{x})\,u(\mathbf{x})+\int_{\partial\Omega}H(\mathbf{x},\mathbf{y})\,u(\mathbf{y})\,dS_y=\int_{\partial\Omega}G(\mathbf{x},\mathbf{y})\,q(\mathbf{y})\,dS_y,\qquad G(\mathbf{x},\mathbf{y})=\tfrac{i}{4}H_0^{(1)}(k|\mathbf{x}-\mathbf{y}|)$$<p>يعطي التجميع النقطي على \(N_E\) عنصرًا تربيعيًا نظامًا خطيًا كثيفًا \((\tfrac12\mathbf{I}+\mathbf{A})\,\mathbf{v}=-\mathbf{B}\,\mathbf{q}_F\)؛ وتُكامل الشذوذ اللوغاريتمي بقاعدة غاوس–لوغاريتم مخصصة.</p></div></section>
+<section><h2>الأشكال</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/bem-helmholtz.jpg"><img src="../images/projects/bem-helmholtz.jpg" alt="مسألة هيلمهولتز على قرص الوحدة: حل BEM (يسار) مقابل الحل التحليلي (يمين)." loading="lazy"></a><figcaption>مسألة هيلمهولتز على قرص الوحدة: حل BEM (يسار) مقابل الحل التحليلي (يمين).</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-cut.jpg"><img src="../images/projects/bem-cut.jpg" alt="مقطع أفقي: حل BEM والحل الدقيق متطابقان." loading="lazy"></a><figcaption>مقطع أفقي: حل BEM والحل الدقيق متطابقان.</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-flux.jpg"><img src="../images/projects/bem-flux.jpg" alt="التدفق على الحدود بطريقة BEM مقابل التدفق الدقيق (التوافقيتان الأولى والرابعة)." loading="lazy"></a><figcaption>التدفق على الحدود بطريقة BEM مقابل التدفق الدقيق (التوافقيتان الأولى والرابعة).</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-convergence.jpg"><img src="../images/projects/bem-convergence.jpg" alt="الخطأ بدلالة عدد العناصر لعدة رتب غاوس: تقارب مقاس." loading="lazy"></a><figcaption>الخطأ بدلالة عدد العناصر لعدة رتب غاوس: تقارب مقاس.</figcaption></figure><figure class="pfig wide"><a href="../images/projects/bem-diffraction.jpg"><img src="../images/projects/bem-diffraction.jpg" alt="النتيجة النهائية: موجة مستوية محادة بقرص صلب، k = 4 (يسار) و k = 10 (يمين) — تظهر منطقة الظل عند الأطوال الموجية القصيرة." loading="lazy"></a><figcaption>النتيجة النهائية: موجة مستوية محادة بقرص صلب، k = 4 (يسار) و k = 10 (يمين) — تظهر منطقة الظل عند الأطوال الموجية القصيرة.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="ucsb-porous-media-ar.html">→ التدفقات في الأوساط المسامية التفاعلية</a><a class="next" href="gas-marbles-ar.html">منصة مجهّزة لدراسة كريات الغاز ←</a></nav>
+</main>
+<footer class="wrap foot">© 2026 فانسان بواتييه</footer>
+</body>
+</html>

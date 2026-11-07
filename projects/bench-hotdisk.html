@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hot Disk TPS 1500 Thermal Analyser — Vincent Poitier</title>
+<meta name="description" content="Commissioning of a transient plane source thermal analyser: acceptance on a certified stainless-steel reference, probe and parameter selection, measurement procedure.">
+<meta property="og:title" content="Hot Disk TPS 1500 Thermal Analyser — Vincent Poitier">
+<meta property="og:description" content="Commissioning of a transient plane source thermal analyser: acceptance on a certified stainless-steel reference, probe and parameter selection, measurement procedure.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-hotdisk-holder.jpg">
+<link rel="alternate" hreflang="fr" href="bench-hotdisk-fr.html">
+<link rel="alternate" hreflang="ar" href="bench-hotdisk-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#work">Current work</a>
+      <span class="lang"><b>EN</b><a href="bench-hotdisk-fr.html" hreflang="fr" lang="fr">FR</a><a href="bench-hotdisk-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#work">← Back to current work</a></p>
+<p class="kicker">Commissioning · MSME laboratory (UMR 8208 CNRS), Université Gustave Eiffel · HeatTransferID project · 2026</p>
+<h1>Hot Disk TPS 1500 Thermal Analyser</h1>
+<p class="chips"><span class="chip">ISO 22007-2</span><span class="chip">Acceptance test</span><span class="chip">Certified reference</span><span class="chip">Repeatability</span></p>
+<figure class="pcover"><img src="../images/projects/bench-hotdisk-holder.jpg" alt="Hot Disk TPS 1500 Thermal Analyser"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>The Hot Disk TPS 1500 measures how heat spreads in a material: in a single test of a few tens of seconds it gives the <b>thermal conductivity</b>, <b>diffusivity</b> and <b>volumetric heat capacity</b>. A very thin nickel double spiral, sandwiched between two identical samples, is at the same time the heater and the thermometer. The instrument serves the collaborative HeatTransferID project (MSME, CERTES and THEMACS Ingénierie) on porous, fibrous, bio-based and recycled insulation materials.</p>
+<p>I commissioned it at the industrial partner's site and wrote its 50-page lab notebook: theory, instrument description, how to choose probe, power and time, the measurement procedure and the acceptance checks.</p>
+  <div class="callout"><p class="label">On the bench</p><p>Acceptance on a <b>certified AISI 316L stainless-steel reference</b>: 10 measurements at 21.66 °C gave λ = 13.77 W/(m·K) (standard deviation 0.78 %), a = 3.606 mm²/s and ρCp = 3.816 MJ/(m³·K). Each channel of the probe switch was then checked one by one (13.61 to 13.78 W/(m·K)). The routine check before every session: at least three measurements on the reference, conforming if the deviation stays below the announced 5 % accuracy (1–2 % expected in practice).</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>Acceptance on certified 316L reference: λ = 13.77 W/(m·K), standard deviation 0.78 % over 10 runs</li><li>All five channels of the probe switch verified (13.61–13.78 W/(m·K))</li><li>50-page lab notebook with parameter-selection method and routine checks</li></ul></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>The probe resistance gives its mean temperature (TCR \(\alpha\approx0.005\ \mathrm{K^{-1}}\)), and the temperature rise follows the transient plane source solution (\(P\): heating power, \(r\): probe radius):</p>$$R(t)=R_0\left[1+\alpha\,\Delta T(t)\right],\qquad \Delta T(\tau)=\frac{P}{\pi^{3/2}\,r\,\lambda}\,D(\tau),\qquad \tau=\frac{\sqrt{a\,t}}{r},\qquad \rho C_p=\frac{\lambda}{a}$$<p>Choosing the measurement time: the total-to-characteristic time ratio must stay between 0.33 and 1, and the probed depth must remain inside the sample (\(L\), \(l\), \(e\): sample dimensions):</p>$$0.33\,\frac{r^{2}}{a}\le t\le\frac{r^{2}}{a},\qquad \Delta p=2\sqrt{a\,t}\ \le\ \min\left(e,\ \tfrac{L}{2}-r,\ \tfrac{l}{2}-r\right)$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/bench-hotdisk-holder.jpg"><img src="../images/projects/bench-hotdisk-holder.jpg" alt="Sample holder: sensor clamped between two samples." loading="lazy"></a><figcaption>Sample holder: sensor clamped between two samples.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-hotdisk-unit.jpg"><img src="../images/projects/bench-hotdisk-unit.jpg" alt="TPS 1500 measurement unit and probe switch." loading="lazy"></a><figcaption>TPS 1500 measurement unit and probe switch.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-hotdisk-probe.jpg"><img src="../images/projects/bench-hotdisk-probe.jpg" alt="Kapton 5501 probe (r = 6.403 mm) on a cotton felt sample." loading="lazy"></a><figcaption>Kapton 5501 probe (r = 6.403 mm) on a cotton felt sample.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-hotdisk-bell.jpg"><img src="../images/projects/bench-hotdisk-bell.jpg" alt="Bell placed over the set-up during the measurement." loading="lazy"></a><figcaption>Bell placed over the set-up during the measurement.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-hotdisk-software.jpg"><img src="../images/projects/bench-hotdisk-software.jpg" alt="Measurement parameters in the Hot Disk software." loading="lazy"></a><figcaption>Measurement parameters in the Hot Disk software.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bench-biaxial.html">← 4-Axis Biaxial Tensile Rig</a><a class="next" href="bench-impedance-tube.html">Impedance Tube — Acoustic Absorption →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

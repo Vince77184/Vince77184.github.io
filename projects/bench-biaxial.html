@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4-Axis Biaxial Tensile Rig — Vincent Poitier</title>
+<meta name="description" content="Four servo-driven arms stretch a specimen in two directions while forces are measured and a DIC camera is triggered in hardware.">
+<meta property="og:title" content="4-Axis Biaxial Tensile Rig — Vincent Poitier">
+<meta property="og:description" content="Four servo-driven arms stretch a specimen in two directions while forces are measured and a DIC camera is triggered in hardware.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-biax-overview.jpg">
+<link rel="alternate" hreflang="fr" href="bench-biaxial-fr.html">
+<link rel="alternate" hreflang="ar" href="bench-biaxial-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#work">Current work</a>
+      <span class="lang"><b>EN</b><a href="bench-biaxial-fr.html" hreflang="fr" lang="fr">FR</a><a href="bench-biaxial-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#work">← Back to current work</a></p>
+<p class="kicker">Test bench · MSME laboratory (UMR 8208 CNRS), Université Gustave Eiffel · 2026</p>
+<h1>4-Axis Biaxial Tensile Rig</h1>
+<p class="chips"><span class="chip">Motion control</span><span class="chip">Modbus TCP</span><span class="chip">NI DAQ</span><span class="chip">Camera sync</span><span class="chip">TestStand / LabVIEW / Python</span></p>
+<figure class="pcover"><img src="../images/projects/bench-biax-overview.jpg" alt="4-Axis Biaxial Tensile Rig"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>The rig stretches a specimen in two perpendicular directions at once. Four motorised arms, set in a cross around the specimen, each have their own servo-drive: they can move together (equibiaxial stretch), axis by axis or with different strokes. It was built to study PET in conditions close to stretch-blow moulding of bottles — heated slightly above the glass transition (about 100 °C), stretched by 400–500 % at high speed — and has even travelled to the SOLEIL synchrotron for in-situ X-ray scattering.</p>
+<p>In 2026 I rewrote its control software (<b>banc_auto</b>): the four Festo drives are driven over <b>Modbus TCP</b>, forces are acquired with an NI chassis, and the DIC camera is now <b>synchronised in hardware</b> by a counter of the NI chassis. I also wrote the 37-page lab notebook (version 1.4) and a delivery package so a new user can run a test alone.</p>
+  <div class="callout"><p class="label">On the bench</p><p>Commissioning work in the strict sense: checking each drive and line of motion, the sign convention of the load cells (compression negative, measured on 15 October 2026), their zero offset (~250 N, removed by a one-second tare) and noise (±5 N), and correcting the <b>20 ms delay</b> of the NI 9237 digital filter so forces and images line up exactly. A safe fallback mode stops the arms if anything goes wrong.</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>New control software banc_auto: Modbus TCP drives, NI force acquisition, hardware-triggered camera</li><li>Load-cell sign, zero offset, noise and 20 ms filter delay characterised and corrected</li><li>37-page lab notebook (v1.4) and delivery package for autonomous use</li></ul></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p><b>Kinematics</b> — from arm positions to strain (stretch \(\lambda\), nominal and true strain):</p>$$\lambda=\frac{L_0+\Delta L}{L_0},\qquad \varepsilon_{\text{nom}}=\lambda-1,\qquad \varepsilon_{\text{true}}=\ln\lambda$$<p><b>Stresses</b> — nominal and true stress for an incompressible material (\(e_0\), \(w_0\): initial thickness and loaded width); for the cruciform specimen, equilibrium of a half specimen cut along its diagonal \(L_0\):</p>$$\sigma_{\text{nom}}=\frac{F}{e_0w_0},\qquad \sigma_{x,\text{true}}=\frac{F_x\,\lambda_x}{e_0w_0},\qquad \sigma_{nn}=\frac{\lambda\sqrt2\,F}{e_0L_0}\ \ (\text{equibiaxial})$$<p><b>Forces</b> — HBM U93 load cells (full Wheatstone bridges, 10 kN for 1 mV/V) read by an NI 9237 at 2000 Hz. <b>Camera</b> — image \(k\) is triggered by the NI counter on PFI 0 at a fixed rate on the force clock:</p>$$F=-10\,000\ \frac{U}{1\ \mathrm{mV/V}}\ \mathrm{N},\qquad t_k=t_0+\frac{k}{f_{\text{cam}}},\quad t_0=1\ \mathrm{s},\ f_{\text{cam}}=100\ \mathrm{fps},\qquad \tau_{\text{filter}}=\frac{40+5/512}{f_s}+4.5\ \mu\mathrm{s}\approx20\ \mathrm{ms}$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/bench-biax-overview.jpg"><img src="../images/projects/bench-biax-overview.jpg" alt="Overview: four Festo servo-drives, cross-shaped frame, load cells and drives cabinet." loading="lazy"></a><figcaption>Overview: four Festo servo-drives, cross-shaped frame, load cells and drives cabinet.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-ring.jpg"><img src="../images/projects/bench-biax-ring.jpg" alt="Cruciform specimen under the ring light, ready for image correlation." loading="lazy"></a><figcaption>Cruciform specimen under the ring light, ready for image correlation.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-top.jpg"><img src="../images/projects/bench-biax-top.jpg" alt="Top view of the central plate with grips and camera." loading="lazy"></a><figcaption>Top view of the central plate with grips and camera.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-plate.jpg"><img src="../images/projects/bench-biax-plate.jpg" alt="Heating enclosure plate with the observation window." loading="lazy"></a><figcaption>Heating enclosure plate with the observation window.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-specimen.jpg"><img src="../images/projects/bench-biax-specimen.jpg" alt="Cruciform specimen geometry (CAD and drawing)." loading="lazy"></a><figcaption>Cruciform specimen geometry (CAD and drawing).</figcaption></figure></div></section>
+
+<nav class="pnav"><span></span><a class="next" href="bench-hotdisk.html">Hot Disk TPS 1500 Thermal Analyser →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

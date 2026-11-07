@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Éléments de frontière pour la diffraction acoustique — Vincent Poitier</title>
+<meta name="description" content="Un solveur par éléments de frontière écrit de zéro en Python pour la diffraction d&#x27;ondes acoustiques en 2D, validé sur des solutions analytiques.">
+<meta property="og:title" content="Éléments de frontière pour la diffraction acoustique — Vincent Poitier">
+<meta property="og:description" content="Un solveur par éléments de frontière écrit de zéro en Python pour la diffraction d&#x27;ondes acoustiques en 2D, validé sur des solutions analytiques.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/card-bem.jpg">
+<link rel="alternate" hreflang="en" href="bem-acoustics.html">
+<link rel="alternate" hreflang="ar" href="bem-acoustics-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#projects">Tous les projets</a>
+      <span class="lang"><a href="bem-acoustics.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="bem-acoustics-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#projects">← Retour aux projets</a></p>
+<p class="kicker">Stage de recherche · Institut Jean le Rond d'Alembert, Sorbonne Université · 2023 (4 mois) · encadrant R. Cornaggia</p>
+<h1>Éléments de frontière pour la diffraction acoustique</h1>
+<p class="chips"><span class="chip">Outil numérique écrit de zéro</span><span class="chip">Validé sur solutions exactes</span><span class="chip">Python</span></p>
+<figure class="pcover"><img src="../images/projects/card-bem.jpg" alt="Éléments de frontière pour la diffraction acoustique"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>La méthode des éléments de frontière (BEM) résout des problèmes d'ondes en ne maillant que la <b>frontière</b> d'un objet, et non tout l'espace autour. Partant d'une page blanche, j'ai implémenté en Python une BEM 2D pour des ondes acoustiques harmoniques (équations de Laplace et d'Helmholtz) avec éléments quadratiques, quadrature des intégrales singulières et règles de Gauss, puis je l'ai utilisée pour calculer la diffraction d'une onde plane par un obstacle circulaire rigide.</p>
+<p>L'objectif : un outil auquel l'équipe puisse se fier. Chaque étape a été vérifiée sur des cas dont la solution exacte est connue avant de passer à la diffraction.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>Même sur un projet purement numérique, j'ai travaillé comme sur un banc d'essais : <b>cas de référence d'abord</b> (solutions harmoniques sur le disque unité, comparées point par point à la solution analytique), <b>convergence mesurée</b> en raffinant le maillage, puis comparaison avec Abaqus. La méthodologie de validation et la documentation ont été rédigées pour que quelqu'un d'autre puisse refaire chaque vérification.</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>BEM 2D écrite de zéro (sans bibliothèque BEM externe)</li><li>Erreur qui décroît avec le raffinement jusqu'à environ 10⁻⁷ sur les cas de référence</li><li>Cartes de diffraction montrant l'apparition de la zone d'ombre aux courtes longueurs d'onde</li></ul><div class="cta col"><a class="btn" href="../docs/bem_acoustic_diffraction.pdf">Rapport de stage (PDF)</a></div></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p>Diffraction d'une onde plane incidente \(u_F=e^{ik\,\mathbf{d}\cdot\mathbf{x}}\) par un obstacle rigide : le champ diffracté \(v\) vérifie</p>$$(\Delta+k^2)\,v=0\ \text{ in }\Omega,\qquad \partial_n v=-\partial_n u_F\ \text{ on }\partial\Omega,\qquad \partial_r v-ikv=o(r^{-1/2})$$<p>L'identité de Green ramène le problème à une équation intégrale sur la seule frontière (\(G\) : fonction de Green, \(H=\partial_n G\)) :</p>$$c(\mathbf{x})\,u(\mathbf{x})+\int_{\partial\Omega}H(\mathbf{x},\mathbf{y})\,u(\mathbf{y})\,dS_y=\int_{\partial\Omega}G(\mathbf{x},\mathbf{y})\,q(\mathbf{y})\,dS_y,\qquad G(\mathbf{x},\mathbf{y})=\tfrac{i}{4}H_0^{(1)}(k|\mathbf{x}-\mathbf{y}|)$$<p>La collocation sur \(N_E\) éléments quadratiques donne un système linéaire plein \((\tfrac12\mathbf{I}+\mathbf{A})\,\mathbf{v}=-\mathbf{B}\,\mathbf{q}_F\) ; la singularité logarithmique est intégrée par une règle de Gauss–log dédiée.</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/bem-helmholtz.jpg"><img src="../images/projects/bem-helmholtz.jpg" alt="Problème de Helmholtz sur le disque unité : solution BEM (gauche) et solution analytique (droite)." loading="lazy"></a><figcaption>Problème de Helmholtz sur le disque unité : solution BEM (gauche) et solution analytique (droite).</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-cut.jpg"><img src="../images/projects/bem-cut.jpg" alt="Coupe horizontale : solutions BEM et exacte superposées." loading="lazy"></a><figcaption>Coupe horizontale : solutions BEM et exacte superposées.</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-flux.jpg"><img src="../images/projects/bem-flux.jpg" alt="Flux au bord calculé par la BEM et flux exact (1re et 4e harmoniques)." loading="lazy"></a><figcaption>Flux au bord calculé par la BEM et flux exact (1re et 4e harmoniques).</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-convergence.jpg"><img src="../images/projects/bem-convergence.jpg" alt="Erreur en fonction du nombre d&#x27;éléments pour plusieurs ordres de Gauss : convergence mesurée." loading="lazy"></a><figcaption>Erreur en fonction du nombre d'éléments pour plusieurs ordres de Gauss : convergence mesurée.</figcaption></figure><figure class="pfig wide"><a href="../images/projects/bem-diffraction.jpg"><img src="../images/projects/bem-diffraction.jpg" alt="Résultat final : onde plane diffractée par un disque rigide, k = 4 (gauche) et k = 10 (droite) — zone d&#x27;ombre aux courtes longueurs d&#x27;onde." loading="lazy"></a><figcaption>Résultat final : onde plane diffractée par un disque rigide, k = 4 (gauche) et k = 10 (droite) — zone d'ombre aux courtes longueurs d'onde.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="ucsb-porous-media-fr.html">← Écoulements en milieux poreux réactifs</a><a class="next" href="gas-marbles-fr.html">Banc instrumenté pour billes de gaz →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

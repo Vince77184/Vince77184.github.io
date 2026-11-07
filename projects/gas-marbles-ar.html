@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>منصة مجهّزة لدراسة كريات الغاز — فانسان بواتييه</title>
+<meta name="description" content="تصميم منصة مجهّزة لدراسة كيف ينغلق غشاء صابوني محمّل بالجسيمات ليشكّل كرية غاز، مصوّر بأكثر من 1000 صورة في الثانية.">
+<meta property="og:title" content="منصة مجهّزة لدراسة كريات الغاز — فانسان بواتييه">
+<meta property="og:description" content="تصميم منصة مجهّزة لدراسة كيف ينغلق غشاء صابوني محمّل بالجسيمات ليشكّل كرية غاز، مصوّر بأكثر من 1000 صورة في الثانية.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/card-navier.jpg">
+<link rel="alternate" hreflang="en" href="gas-marbles.html">
+<link rel="alternate" hreflang="fr" href="gas-marbles-fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../ar.html">فانسان بواتييه</a>
+    <nav>
+      <a href="../ar.html#projects">كل المشاريع</a>
+      <span class="lang"><a href="gas-marbles.html" hreflang="en" lang="en">EN</a><a href="gas-marbles-fr.html" hreflang="fr" lang="fr">FR</a><b>عربي</b></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_AR.pdf">السيرة الذاتية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../ar.html#projects">→ العودة إلى المشاريع</a></p>
+<p class="kicker">تدريب بحثي · مختبر نافييه (المدرسة الوطنية للجسور والطرق، جامعة غوستاف إيفل، CNRS) · 2021 (شهران) · المشرفة ف. رويي</p>
+<h1>منصة مجهّزة لدراسة كريات الغاز</h1>
+<p class="chips"><span class="chip">منصة تجريبية</span><span class="chip">تصوير عالي السرعة</span><span class="chip">معالجة البيانات</span></p>
+<figure class="pcover"><img src="../images/projects/card-navier.jpg" alt="منصة مجهّزة لدراسة كريات الغاز"></figure>
+<div class="pgrid">
+  <section><h2>الملخص</h2><p><b>كرية الغاز</b> فقاعة مغلّفة بطبقة من الجسيمات الصلبة. وهي أمتن بكثير من فقاعة الصابون، ما يجعلها مفيدة للعزل الصوتي وتخميد الاهتزازات وتغليف الغازات — لكن آلية تشكّلها كانت لا تزال غير مفهومة جيدًا.</p>
+<p>بنيت منصة يُسحب فيها إطار من طبقة جسيمات طافية على ماء صابوني: يتمدد الغشاء الحبيبي على شكل سطح سلسلي (كاتينويد)، ثم يختنق وقد ينغلق ليشكّل نصف كرية غاز. غيّرت <b>هندسة الإطار</b> (من 10×10 إلى 50×50 مم)، و<b>سرعة السحب</b> (من 1 إلى 50 مم/ث) وكمية الجسيمات، مع التحقق في كل مرة من قابلية التكرار.</p>
+  <div class="callout"><p class="label">الجانب التجريبي</p><p>عمل تجريبي ميداني: تصميم المنصة وتركيبها (منصة عمودية، إطارات، دعامات من خيط الصيد)، ومزامنة <b>كاميرا عالية السرعة بأكثر من 1000 صورة/ثانية</b> لأن الانغلاق يستغرق أقل من ثانية، ثم كتابة <b>معالجة الصور بلغة Python</b> التي تستخرج نصف قطر العنق مع الزمن، مع كشف آلي للحظة الانقطاع. وأُجريت سلسلتان مستقلتان من القياسات للتحقق من قابلية التكرار.</p></div>
+  </section>
+  <aside class="keyres"><h3>النتائج الرئيسية</h3><ul><li>حجم أدنى للإطار (L > 25 مم) لازم لتشكيل نصف كرية غاز</li><li>الأغشية الصابونية النقية تتبع قانون الانكماش τ^(2/3)؛ والجسيمات تبطئ الانكماش بوضوح</li><li>قياس سرعة الانكماش وقطر الكرية بدلالة سرعة السحب، بنتائج قابلة للتكرار على سلسلتين</li></ul><div class="cta col"><a class="btn" href="../docs/gas_marbles_navier.pdf">تقرير التدريب (بالفرنسية، PDF)</a></div></aside>
+</div>
+<section><h2>المنهجية والمعادلات</h2><div class="math"><p>يعمل التوتر السطحي \(\gamma\) كقوة لكل وحدة طول، ويقفز الضغط عبر الواجهة المنحنية (معادلة يونغ–لابلاس):</p>$$\mathrm{d}\mathbf{f}=\gamma\,\mathrm{d}\ell\,\mathbf{n},\qquad \Delta p=\gamma\left(\frac{1}{R_1}+\frac{1}{R_2}\right)$$<p>يصبح الكاتينويد الصابوني بين حلقتين نصف قطرهما \(R\) غير مستقر عندما يبلغ الارتفاع \(h_c\approx 2R/3\). بعدها يتبع نصف قطر العنق قانون قوة (تشن وستين)، مع \(\tau=t_{\text{rupture}}-t\):</p>$$r(\tau)=\left(\frac{\gamma\,\tau^{2}}{\rho}\right)^{1/3}\propto\tau^{2/3}$$<p>يُعتبر الغشاء المحمّل منقطعًا عندما \(r\approx(1+\tfrac{\sqrt2}{2})\,D_p\)، أي عند تراصّ الجسيمات — الانتقال من وصف متصل إلى وصف منفصل.</p></div></section>
+<section><h2>الأشكال</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/navier-setup.jpg"><img src="../images/projects/navier-setup.jpg" alt="المنصة: إطار يُسحب من طبقة جسيمات (رسم تخطيطي والتركيب الفعلي)." loading="lazy"></a><figcaption>المنصة: إطار يُسحب من طبقة جسيمات (رسم تخطيطي والتركيب الفعلي).</figcaption></figure><figure class="pfig"><a href="../images/projects/navier-catenoid.jpg"><img src="../images/projects/navier-catenoid.jpg" alt="صورة عالية السرعة للكاتينويد الممدود وتحديد نصف قطر العنق r(t)." loading="lazy"></a><figcaption>صورة عالية السرعة للكاتينويد الممدود وتحديد نصف قطر العنق r(t).</figcaption></figure><figure class="pfig"><a href="../images/projects/navier-law.jpg"><img src="../images/projects/navier-law.jpg" alt="نصف قطر العنق المقاس بدلالة τ: توافق مع قانون τ^(2/3) تحت 15 مللي ثانية." loading="lazy"></a><figcaption>نصف قطر العنق المقاس بدلالة τ: توافق مع قانون τ^(2/3) تحت 15 مللي ثانية.</figcaption></figure><figure class="pfig wide"><a href="../images/projects/navier-sequence.jpg"><img src="../images/projects/navier-sequence.jpg" alt="تسلسل صور: اختناق الكاتينويد وتشكّل نصف كرية غاز." loading="lazy"></a><figcaption>تسلسل صور: اختناق الكاتينويد وتشكّل نصف كرية غاز.</figcaption></figure><figure class="pfig"><a href="../images/projects/navier-rdot.jpg"><img src="../images/projects/navier-rdot.jpg" alt="سرعة الانكماش dr/dt بدلالة سرعة السحب، سلسلتان من القياسات (قابلية التكرار)." loading="lazy"></a><figcaption>سرعة الانكماش dr/dt بدلالة سرعة السحب، سلسلتان من القياسات (قابلية التكرار).</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bem-acoustics-ar.html">→ العناصر الحدّية لحيود الموجات الصوتية</a><a class="next" href="antenna-reverberation-ar.html">كفاءة الهوائيات في غرفة الصدى ←</a></nav>
+</main>
+<footer class="wrap foot">© 2026 فانسان بواتييه</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>التدفقات في الأوساط المسامية التفاعلية — فانسان بواتييه</title>
+<meta name="description" content="محاكاة بواجهة حادة للترسيب والذوبان في الأوساط المسامية على شبكات رباعية متكيفة. منشورة في Journal of Computational Physics.">
+<meta property="og:title" content="التدفقات في الأوساط المسامية التفاعلية — فانسان بواتييه">
+<meta property="og:description" content="محاكاة بواجهة حادة للترسيب والذوبان في الأوساط المسامية على شبكات رباعية متكيفة. منشورة في Journal of Computational Physics.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/jcp-grid.jpg">
+<link rel="alternate" hreflang="en" href="ucsb-porous-media.html">
+<link rel="alternate" hreflang="fr" href="ucsb-porous-media-fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../ar.html">فانسان بواتييه</a>
+    <nav>
+      <a href="../ar.html#projects">كل المشاريع</a>
+      <span class="lang"><a href="ucsb-porous-media.html" hreflang="en" lang="en">EN</a><a href="ucsb-porous-media-fr.html" hreflang="fr" lang="fr">FR</a><b>عربي</b></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_AR.pdf">السيرة الذاتية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../ar.html#projects">→ العودة إلى المشاريع</a></p>
+<p class="kicker">تدريب نهاية الماستر · جامعة كاليفورنيا، سانتا باربرا · 2024 (6 أشهر)</p>
+<h1>التدفقات في الأوساط المسامية التفاعلية</h1>
+<p class="chips"><span class="chip">نموذج عددي</span><span class="chip">تحقق على مسألة مرجعية</span><span class="chip">منشور</span></p>
+<figure class="pcover"><img src="../images/projects/jcp-grid.jpg" alt="التدفقات في الأوساط المسامية التفاعلية"></figure>
+<div class="pgrid">
+  <section><h2>الملخص</h2><p>عندما تترسب المعادن أو تذوب داخل صخرة مسامية أو مرشّح، تتغير أشكال المسامات نفسها — ومعها النفاذية وطريقة تدفق السائل. لهذا أهمية في تخزين الكربون، والطاقة الحرارية الجوفية، وترشيح المياه، والحفز الكيميائي. خلال تدريب الماستر في فريق البروفيسور فريديريك جيبو بجامعة كاليفورنيا سانتا باربرا، عملت على طريقة عددية تتتبع هذا التطور بواجهة صلبة–سائلة <b>حادة</b>، على <b>شبكات رباعية متكيفة</b> لا تتكثف إلا حيث يلزم.</p>
+<p>أثمر هذا العمل مقالًا كمؤلف أول: <a href="https://doi.org/10.1016/j.jcp.2026.115533" dir="ltr"><i>A Sharp Numerical Approach for Modeling Flows in Reactive Porous Media</i></a>، منشور في Journal of Computational Physics سنة 2026.</p>
+  <div class="callout"><p class="label">الجانب التجريبي</p><p>تم أولًا <b>التحقق من الطريقة على مسألة مرجعية معروفة</b> (ذوبان حبيبة كالسيت، مقارنةً بعدة برامج منشورة)، ثم <b>اختبار تقارب الشبكة</b> على اندماج حبيبتين ناميتين. وضعت بروتوكولات الاختبار هذه، وقارنت النموذج بالبيانات المرجعية، وأتمتّ كل المعالجة اللاحقة بلغتَي Python و C/C++ — وهو نفس المبدأ الذي أطبّقه اليوم على منصات الاختبار: لا يُوثق بأي نتيجة قبل مقارنتها بمرجع.</p></div>
+  </section>
+  <aside class="keyres"><h3>النتائج الرئيسية</h3><ul><li>واجهة حادة على شبكة متكيفة: نحو 100,000 نقطة بدل شبكة دقيقة منتظمة</li><li>تحقق على مسألة ذوبان مرجعية منشورة وبدراسات تقارب الشبكة</li><li>يلتقط النفاذية الفعلية والتعرّج وملامح السرعة على مستوى المسامات عند انغلاقها</li></ul><div class="cta col"><a class="btn" href="https://doi.org/10.1016/j.jcp.2026.115533">قراءة المقال (DOI)</a></div></aside>
+</div>
+<section><h2>المنهجية والمعادلات</h2><div class="math"><p>التدفق داخل المسامات: معادلات نافييه–ستوكس لمائع غير قابل للانضغاط،</p>$$\rho_l\left(\frac{\partial \mathbf{v}}{\partial t}+\mathbf{v}\cdot\nabla\mathbf{v}\right)=-\nabla p+\mu_l\,\Delta\mathbf{v},\qquad \nabla\cdot\mathbf{v}=0 \quad\text{in }\Omega_l$$<p>انتقال المادة المذابة (حمل–انتشار):</p>$$\frac{\partial C}{\partial t}+\mathbf{v}\cdot\nabla C=D_l\,\Delta C$$<p>عند الواجهة الصلبة–السائلة المتحركة \(\Gamma(t)\)، يعطي توازن الكتلة شرط ستيفان لسرعة الواجهة، التي تُتتبع بدالة مجموعة المستوى \(\phi\):</p>$$\mathbf{v}_\Gamma\cdot\mathbf{n}\approx-D_l\,\nabla C\cdot\mathbf{n},\qquad \frac{\partial\phi}{\partial t}+\mathbf{v}_\Gamma\cdot\nabla\phi=0$$<p>تُستكشف الأنظمة عبر أعداد بيكليه ودامكولر ورينولدز: \(\mathrm{Pe}=UL/D_l\)، \(\mathrm{Da}=kL/D_l\)، \(\mathrm{Re}=\rho_l UL/\mu_l\).</p></div></section>
+<section><h2>الأشكال</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/jcp-grid.jpg"><img src="../images/projects/jcp-grid.jpg" alt="شبكة رباعية متكيفة تتكثف حول الحبيبات النامية (الدوائر البيضاء: الواجهات)." loading="lazy"></a><figcaption>شبكة رباعية متكيفة تتكثف حول الحبيبات النامية (الدوائر البيضاء: الواجهات).</figcaption></figure><figure class="pfig"><a href="../images/projects/jcp-network.jpg"><img src="../images/projects/jcp-network.jpg" alt="مسارات التدفق داخل شبكة مسامات وسط مسامي يحدث فيه ترسيب." loading="lazy"></a><figcaption>مسارات التدفق داخل شبكة مسامات وسط مسامي يحدث فيه ترسيب.</figcaption></figure><figure class="pfig wide"><a href="../images/projects/jcp-benchmark.jpg"><img src="../images/projects/jcp-benchmark.jpg" alt="المسألة المرجعية: مساحة الحبيبة ومعدل الذوبان مع الزمن، مقارنةً ببرامج منشورة." loading="lazy"></a><figcaption>المسألة المرجعية: مساحة الحبيبة ومعدل الذوبان مع الزمن، مقارنةً ببرامج منشورة.</figcaption></figure><figure class="pfig"><a href="../images/projects/jcp-velocity.jpg"><img src="../images/projects/jcp-velocity.jpg" alt="حقول السرعة والتركيز بين حبيبتين تندمجان." loading="lazy"></a><figcaption>حقول السرعة والتركيز بين حبيبتين تندمجان.</figcaption></figure><figure class="pfig"><a href="../images/projects/jcp-curves.jpg"><img src="../images/projects/jcp-curves.jpg" alt="تطور معدل التدفق والمسامية والتعرّج لعدة مستويات من الشبكة." loading="lazy"></a><figcaption>تطور معدل التدفق والمسامية والتعرّج لعدة مستويات من الشبكة.</figcaption></figure></div></section>
+
+<nav class="pnav"><span></span><a class="next" href="bem-acoustics-ar.html">العناصر الحدّية لحيود الموجات الصوتية ←</a></nav>
+</main>
+<footer class="wrap foot">© 2026 فانسان بواتييه</footer>
+</body>
+</html>

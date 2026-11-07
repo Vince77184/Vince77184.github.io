@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impedance Tube — Acoustic Absorption — Vincent Poitier</title>
+<meta name="description" content="Measuring the normal-incidence absorption coefficient and equivalent-fluid properties of porous materials in a 3-microphone impedance tube.">
+<meta property="og:title" content="Impedance Tube — Acoustic Absorption — Vincent Poitier">
+<meta property="og:description" content="Measuring the normal-incidence absorption coefficient and equivalent-fluid properties of porous materials in a 3-microphone impedance tube.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-acou-tube.jpg">
+<link rel="alternate" hreflang="fr" href="bench-impedance-tube-fr.html">
+<link rel="alternate" hreflang="ar" href="bench-impedance-tube-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#work">Current work</a>
+      <span class="lang"><b>EN</b><a href="bench-impedance-tube-fr.html" hreflang="fr" lang="fr">FR</a><a href="bench-impedance-tube-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#work">← Back to current work</a></p>
+<p class="kicker">Test bench · MSME laboratory (UMR 8208 CNRS), Université Gustave Eiffel · 2026</p>
+<h1>Impedance Tube — Acoustic Absorption</h1>
+<p class="chips"><span class="chip">ISO 10534-2</span><span class="chip">Transfer-function method</span><span class="chip">3 microphones</span><span class="chip">Calibration</span></p>
+<figure class="pcover"><img src="../images/projects/bench-acou-tube.jpg" alt="Impedance Tube — Acoustic Absorption"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>An impedance (Kundt) tube sends a plane sound wave onto a sample of porous material — foams, wools, fibrous or granular materials — and measures how much of the energy is <b>absorbed</b> rather than reflected, frequency by frequency. A third microphone behind the sample gives access to the material's <b>volume properties</b> (equivalent density and bulk modulus), the inputs of porous-material models.</p>
+<p>I took charge of the bench, rebuilt its configuration, and wrote a 39-page lab notebook (version 1.2): theory, hardware, microphone checks, daily calibration, sample preparation, measurement and troubleshooting.</p>
+  <div class="callout"><p class="label">On the bench</p><p>The method only holds if its assumptions are checked: plane waves (upper frequency set by the 35 mm microphone spacing, usable band 50–4655 Hz), <b>inter-microphone calibration</b> once per measurement day by swapping microphones, ambient temperature and pressure logged by a weather station (they set the speed of sound and air impedance), sample thickness measured with calipers, and sealing with PTFE tape. An α below 0 or above 1 is treated as a measurement fault, never as a result.</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>Bench configuration rebuilt and verified (usable band 50–4655 Hz)</li><li>Daily calibration and microphone-check procedure</li><li>39-page lab notebook (v1.2), ISO 10534-2 compliant</li></ul></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>Absorption coefficient from the complex reflection coefficient \(R\) at the sample surface:</p>$$\alpha(\omega)=1-|R|^{2}$$<p>Transfer-function method (ISO 10534-2): from \(H_{12}=p(x_2)/p(x_1)\), with microphone spacing \(s\) and distance \(L\) to the sample (\(q_0=\omega/c_0\)):</p>$$R=e^{2jq_0L}\,\frac{H_{12}-e^{-jq_0s}}{e^{jq_0s}-H_{12}}$$<p>With the third microphone (\(H_{23}\)), the wave number \(q_c\) and characteristic impedance \(Z_c\) of the material give the equivalent-fluid properties:</p>$$\rho_{eq}=\frac{Z_c\,q_c}{\omega},\qquad K_{eq}=\frac{\omega\,Z_c}{q_c}$$<p>Validity of plane waves for a tube of diameter \(D\): \(f_u<0.58\,c_0/D\), \(s<0.45\,c_0/f_u\), \(s>0.05\,c_0/f_l\).</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/bench-acou-tube.jpg"><img src="../images/projects/bench-acou-tube.jpg" alt="Impedance tube (Ø 40 mm, 1 m) with its loudspeaker and microphones." loading="lazy"></a><figcaption>Impedance tube (Ø 40 mm, 1 m) with its loudspeaker and microphones.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-acou-mics.jpg"><img src="../images/projects/bench-acou-mics.jpg" alt="Microtech Gefell M370 condenser microphones in their ports." loading="lazy"></a><figcaption>Microtech Gefell M370 condenser microphones in their ports.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-acou-schematic.jpg"><img src="../images/projects/bench-acou-schematic.jpg" alt="Tube configuration: microphones 1 and 2 in front of the sample, microphone 3 in the rigid end." loading="lazy"></a><figcaption>Tube configuration: microphones 1 and 2 in front of the sample, microphone 3 in the rigid end.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-acou-weather.jpg"><img src="../images/projects/bench-acou-weather.jpg" alt="Weather station logging temperature and pressure for every measurement." loading="lazy"></a><figcaption>Weather station logging temperature and pressure for every measurement.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-acou-sample.jpg"><img src="../images/projects/bench-acou-sample.jpg" alt="Foam sample sealed with PTFE tape before insertion." loading="lazy"></a><figcaption>Foam sample sealed with PTFE tape before insertion.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-acou-absorption.jpg"><img src="../images/projects/bench-acou-absorption.jpg" alt="Example from the laboratory poster: absorption of foams with different membrane closure rates (data Trinh et al.)." loading="lazy"></a><figcaption>Example from the laboratory poster: absorption of foams with different membrane closure rates (data Trinh et al.).</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bench-hotdisk.html">← Hot Disk TPS 1500 Thermal Analyser</a><a class="next" href="bench-resistivity.html">Static Airflow Resistivity Bench →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

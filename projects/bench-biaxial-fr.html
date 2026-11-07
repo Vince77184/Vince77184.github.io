@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banc de traction biaxiale 4 axes — Vincent Poitier</title>
+<meta name="description" content="Quatre bras servo-motorisés étirent une éprouvette dans deux directions pendant que les efforts sont mesurés et qu&#x27;une caméra de corrélation d&#x27;images est déclenchée matériellement.">
+<meta property="og:title" content="Banc de traction biaxiale 4 axes — Vincent Poitier">
+<meta property="og:description" content="Quatre bras servo-motorisés étirent une éprouvette dans deux directions pendant que les efforts sont mesurés et qu&#x27;une caméra de corrélation d&#x27;images est déclenchée matériellement.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-biax-overview.jpg">
+<link rel="alternate" hreflang="en" href="bench-biaxial.html">
+<link rel="alternate" hreflang="ar" href="bench-biaxial-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#work">Poste actuel</a>
+      <span class="lang"><a href="bench-biaxial.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="bench-biaxial-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#work">← Retour au poste actuel</a></p>
+<p class="kicker">Banc d'essais · Laboratoire MSME (UMR 8208 CNRS), Université Gustave Eiffel · 2026</p>
+<h1>Banc de traction biaxiale 4 axes</h1>
+<p class="chips"><span class="chip">Commande d'axes</span><span class="chip">Modbus TCP</span><span class="chip">Acquisition NI</span><span class="chip">Synchro caméra</span><span class="chip">TestStand / LabVIEW / Python</span></p>
+<figure class="pcover"><img src="../images/projects/bench-biax-overview.jpg" alt="Banc de traction biaxiale 4 axes"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>Le banc étire une éprouvette dans deux directions perpendiculaires à la fois. Quatre bras motorisés, disposés en croix, ont chacun leur variateur : ils peuvent bouger ensemble (étirage équibiaxial), axe par axe ou avec des courses différentes. Il a été conçu pour étudier le PET dans des conditions proches du soufflage-étirage des bouteilles — chauffé un peu au-dessus de la transition vitreuse (environ 100 °C), étiré de 400 à 500 % à grande vitesse — et a même servi au synchrotron SOLEIL pour de la diffusion des rayons X in situ.</p>
+<p>En 2026, j'ai réécrit son logiciel de pilotage (<b>banc_auto</b>) : les quatre variateurs Festo sont pilotés en <b>Modbus TCP</b>, les efforts acquis par un châssis NI, et la caméra de corrélation d'images est désormais <b>synchronisée matériellement</b> par un compteur du châssis. J'ai aussi rédigé le cahier de laboratoire de 37 pages (version 1.4) et un dossier de livraison pour qu'un nouvel utilisateur puisse lancer un essai seul.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>Du travail de mise en service au sens strict : vérification de chaque variateur et ligne de mouvement, de la convention de signe des capteurs d'effort (compression négative, constatée le 15 octobre 2026), de leur décalage de zéro (~250 N, retiré par une tare d'une seconde) et de leur bruit (±5 N), et correction du <b>retard de 20 ms</b> du filtre numérique du NI 9237 pour que efforts et images coïncident exactement. Un mode de repli sûr arrête les bras au moindre problème.</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>Nouveau logiciel banc_auto : variateurs en Modbus TCP, efforts par NI, caméra déclenchée matériellement</li><li>Signe, zéro, bruit et retard de 20 ms des capteurs caractérisés et corrigés</li><li>Cahier de laboratoire de 37 pages (v1.4) et dossier de livraison pour un usage autonome</li></ul></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p><b>Cinématique</b> — des positions des bras à la déformation (étirement \(\lambda\), déformations nominale et vraie) :</p>$$\lambda=\frac{L_0+\Delta L}{L_0},\qquad \varepsilon_{\text{nom}}=\lambda-1,\qquad \varepsilon_{\text{true}}=\ln\lambda$$<p><b>Contraintes</b> — contraintes nominale et vraie pour un matériau incompressible (\(e_0\), \(w_0\) : épaisseur et largeur chargée initiales) ; pour l'éprouvette en croix, équilibre d'une demi-éprouvette coupée selon sa diagonale \(L_0\) :</p>$$\sigma_{\text{nom}}=\frac{F}{e_0w_0},\qquad \sigma_{x,\text{true}}=\frac{F_x\,\lambda_x}{e_0w_0},\qquad \sigma_{nn}=\frac{\lambda\sqrt2\,F}{e_0L_0}\ \ (\text{equibiaxial})$$<p><b>Efforts</b> — capteurs HBM U93 (ponts de Wheatstone complets, 10 kN pour 1 mV/V) lus par un NI 9237 à 2000 Hz. <b>Caméra</b> — l'image \(k\) est déclenchée par le compteur NI sur PFI 0 à cadence fixe, sur l'horloge des efforts :</p>$$F=-10\,000\ \frac{U}{1\ \mathrm{mV/V}}\ \mathrm{N},\qquad t_k=t_0+\frac{k}{f_{\text{cam}}},\quad t_0=1\ \mathrm{s},\ f_{\text{cam}}=100\ \mathrm{fps},\qquad \tau_{\text{filter}}=\frac{40+5/512}{f_s}+4.5\ \mu\mathrm{s}\approx20\ \mathrm{ms}$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/bench-biax-overview.jpg"><img src="../images/projects/bench-biax-overview.jpg" alt="Vue d&#x27;ensemble : quatre servo-moteurs Festo, cadre en croix, capteurs d&#x27;effort et armoire des variateurs." loading="lazy"></a><figcaption>Vue d'ensemble : quatre servo-moteurs Festo, cadre en croix, capteurs d'effort et armoire des variateurs.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-ring.jpg"><img src="../images/projects/bench-biax-ring.jpg" alt="Éprouvette en croix sous l&#x27;éclairage annulaire, prête pour la corrélation d&#x27;images." loading="lazy"></a><figcaption>Éprouvette en croix sous l'éclairage annulaire, prête pour la corrélation d'images.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-top.jpg"><img src="../images/projects/bench-biax-top.jpg" alt="Vue de dessus de la plaque centrale, des mors et de la caméra." loading="lazy"></a><figcaption>Vue de dessus de la plaque centrale, des mors et de la caméra.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-plate.jpg"><img src="../images/projects/bench-biax-plate.jpg" alt="Plaque de l&#x27;enceinte chauffante avec sa fenêtre d&#x27;observation." loading="lazy"></a><figcaption>Plaque de l'enceinte chauffante avec sa fenêtre d'observation.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-specimen.jpg"><img src="../images/projects/bench-biax-specimen.jpg" alt="Géométrie de l&#x27;éprouvette cruciforme (CAO et plan)." loading="lazy"></a><figcaption>Géométrie de l'éprouvette cruciforme (CAO et plan).</figcaption></figure></div></section>
+
+<nav class="pnav"><span></span><a class="next" href="bench-hotdisk-fr.html">Analyseur thermique Hot Disk TPS 1500 →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

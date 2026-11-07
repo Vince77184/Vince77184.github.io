@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كفاءة الهوائيات في غرفة الصدى — فانسان بواتييه</title>
+<meta name="description" content="قياس كفاءة إشعاع هوائي رقعي مصغّر انطلاقًا من معاملات S المسجلة بمحلل الشبكات في غرفة صدى.">
+<meta property="og:title" content="كفاءة الهوائيات في غرفة الصدى — فانسان بواتييه">
+<meta property="og:description" content="قياس كفاءة إشعاع هوائي رقعي مصغّر انطلاقًا من معاملات S المسجلة بمحلل الشبكات في غرفة صدى.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/card-antenna.jpg">
+<link rel="alternate" hreflang="en" href="antenna-reverberation.html">
+<link rel="alternate" hreflang="fr" href="antenna-reverberation-fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../ar.html">فانسان بواتييه</a>
+    <nav>
+      <a href="../ar.html#projects">كل المشاريع</a>
+      <span class="lang"><a href="antenna-reverberation.html" hreflang="en" lang="en">EN</a><a href="antenna-reverberation-fr.html" hreflang="fr" lang="fr">FR</a><b>عربي</b></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_AR.pdf">السيرة الذاتية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../ar.html#projects">→ العودة إلى المشاريع</a></p>
+<p class="kicker">مشروع نهاية الإجازة · مختبر ESYCOM، جامعة غوستاف إيفل · 2020–2021 · المشرف ف. سارازان · مع ج. ألفارو</p>
+<h1>كفاءة الهوائيات في غرفة الصدى</h1>
+<p class="chips"><span class="chip">قياسات الترددات الراديوية</span><span class="chip">اقتناء مؤتمت</span><span class="chip">MATLAB</span></p>
+<figure class="pcover"><img src="../images/projects/card-antenna.jpg" alt="كفاءة الهوائيات في غرفة الصدى"></figure>
+<div class="pgrid">
+  <section><h2>الملخص</h2><p>غرفة الصدى قاعة معدنية فيها خلّاط دوّار: يصبح الحقل داخلها منتظمًا إحصائيًا، مما يسمح بتوصيف الهوائي دون غرفة عديمة الصدى باهظة الثمن. قسنا <b>كفاءة الإشعاع</b> لهوائي رقعي مصغّر (الهوائي قيد الاختبار) مقارنةً بهوائي مرجعي لوغاريتمي دوري، من 1.2 إلى 3.2 غيغاهرتز.</p>
+<p>كانت سلسلة القياس مؤتمتة بالكامل: <b>محلل شبكات متجهي</b> بأربعة منافذ يمسح 10,001 ترددًا لكل من 24 وضعية للهوائي × 72 وضعية للخلّاط (نحو 8 ساعات من الاقتناء)، منتجًا مصفوفات ثلاثية الأبعاد من معاملات S عولجت بـ MATLAB.</p>
+  <div class="callout"><p class="label">الجانب التجريبي</p><p>معايرة محلل الشبكات (دارة مفتوحة / قصيرة / حمل متوافق)، ووضع الهوائيات بحيث نتجنب الاقتران المباشر، والخلط الميكانيكي وخلط المصدر، ثم فحص البيانات: رسم وضعيات عشوائية للخلّاط، ومقارنة طرق الخلط بـ<b>متوسط مربع الخطأ</b> بالنسبة لمرجع، وأخيرًا مقارنة النتيجة بقياس في غرفة عديمة الصدى. اقتصر التدخل البشري على ثلاث خطوات، وهذا ما يمنح الطريقة دقتها.</p></div>
+  </section>
+  <aside class="keyres"><h3>النتائج الرئيسية</h3><ul><li>24 × 72 × 10,001 قياسًا لمعاملات S مقتناة آليًا</li><li>المتوسط الجمعي: MSE ≈ 2×10⁻⁴ مقابل 0.67 للخلط الميكانيكي وحده</li><li>تزداد الكفاءة مع التردد حتى 1.8 غيغاهرتز ثم تبقى شبه ثابتة؛ متوافقة مع الغرفة عديمة الصدى</li></ul><div class="cta col"><a class="btn" href="../docs/antenna_reverberation_chamber.pdf">تقرير المشروع (بالإنجليزية، PDF)</a></div></aside>
+</div>
+<section><h2>المنهجية والمعادلات</h2><div class="math"><p>يربط معامل الجودة للغرفة القدرة المستقبَلة بالقدرة المشعّة:</p>$$Q=\frac{\omega U}{P_d},\qquad \langle P_{\text{rec}}\rangle=\frac{Q\,\lambda^{3}}{16\pi^{2}V}\,P_{\text{rad}}$$<p>بما أن \(Q\) خاصية ذاتية للغرفة، فإن معاملات الجودة التي يراها الهوائيان تعطي الكفاءة المجهولة \(\eta_1\) انطلاقًا من \(\eta_2\) المعلومة:</p>$$\eta_1=\eta_2\sqrt{\frac{\langle|S_{11}-\langle S_{11}\rangle|^2\rangle}{\langle|S_{22}-\langle S_{22}\rangle|^2\rangle}}\;\frac{1-|\langle S_{22}\rangle|^2}{1-|\langle S_{11}\rangle|^2}$$<p>تُقارن طرق الخلط بـ \(\mathrm{MSE}=\frac{1}{N}\sum_k|S_{11}(f_k)-\hat S_{11}(f_k)|^2\)، ويتبع معامل الجودة عمق الجلد \(\delta=\sqrt{2/(\omega\mu\sigma)}\).</p></div></section>
+<section><h2>الأشكال</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/antenna-chamber-photos.jpg"><img src="../images/projects/antenna-chamber-photos.jpg" alt="غرفة الصدى في مختبر ESYCOM وخلّاطها الميكانيكي." loading="lazy"></a><figcaption>غرفة الصدى في مختبر ESYCOM وخلّاطها الميكانيكي.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-vna.jpg"><img src="../images/projects/antenna-vna.jpg" alt="محلل الشبكات المتجهي المستعمل في المسح الترددي المؤتمت." loading="lazy"></a><figcaption>محلل الشبكات المتجهي المستعمل في المسح الترددي المؤتمت.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-s11-raw.jpg"><img src="../images/projects/antenna-s11-raw.jpg" alt="معامل الانعكاس S11(f) المقاس لوضعيات عشوائية للخلّاط." loading="lazy"></a><figcaption>معامل الانعكاس S11(f) المقاس لوضعيات عشوائية للخلّاط.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-s11-stirring.jpg"><img src="../images/projects/antenna-s11-stirring.jpg" alt="أثر طرق الخلط مقارنةً بمرجع الغرفة عديمة الصدى." loading="lazy"></a><figcaption>أثر طرق الخلط مقارنةً بمرجع الغرفة عديمة الصدى.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-q.jpg"><img src="../images/projects/antenna-q.jpg" alt="معامل الجودة المقاس للغرفة: يزداد مع التردد كما هو متوقع." loading="lazy"></a><figcaption>معامل الجودة المقاس للغرفة: يزداد مع التردد كما هو متوقع.</figcaption></figure><figure class="pfig"><a href="../images/projects/antenna-efficiency.jpg"><img src="../images/projects/antenna-efficiency.jpg" alt="النتيجة: كفاءة إشعاع الهوائي الرقعي بين 1.2 و3.2 غيغاهرتز." loading="lazy"></a><figcaption>النتيجة: كفاءة إشعاع الهوائي الرقعي بين 1.2 و3.2 غيغاهرتز.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="gas-marbles-ar.html">→ منصة مجهّزة لدراسة كريات الغاز</a><a class="next" href="lidar-afm-ar.html">ليدار زمن الطيران ومجهر قوة ذرية مصنوع يدويًا ←</a></nav>
+</main>
+<footer class="wrap foot">© 2026 فانسان بواتييه</footer>
+</body>
+</html>

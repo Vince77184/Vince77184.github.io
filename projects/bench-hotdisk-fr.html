@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analyseur thermique Hot Disk TPS 1500 — Vincent Poitier</title>
+<meta name="description" content="Mise en service d&#x27;un analyseur thermique à source plane transitoire : réception sur un étalon inox certifié, choix des sondes et des paramètres, procédure de mesure.">
+<meta property="og:title" content="Analyseur thermique Hot Disk TPS 1500 — Vincent Poitier">
+<meta property="og:description" content="Mise en service d&#x27;un analyseur thermique à source plane transitoire : réception sur un étalon inox certifié, choix des sondes et des paramètres, procédure de mesure.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-hotdisk-holder.jpg">
+<link rel="alternate" hreflang="en" href="bench-hotdisk.html">
+<link rel="alternate" hreflang="ar" href="bench-hotdisk-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#work">Poste actuel</a>
+      <span class="lang"><a href="bench-hotdisk.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="bench-hotdisk-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#work">← Retour au poste actuel</a></p>
+<p class="kicker">Mise en service · Laboratoire MSME (UMR 8208 CNRS), Université Gustave Eiffel · projet HeatTransferID · 2026</p>
+<h1>Analyseur thermique Hot Disk TPS 1500</h1>
+<p class="chips"><span class="chip">ISO 22007-2</span><span class="chip">Réception</span><span class="chip">Étalon certifié</span><span class="chip">Répétabilité</span></p>
+<figure class="pcover"><img src="../images/projects/bench-hotdisk-holder.jpg" alt="Analyseur thermique Hot Disk TPS 1500"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>Le Hot Disk TPS 1500 mesure comment la chaleur se propage dans un matériau : en un seul essai de quelques dizaines de secondes, il donne la <b>conductivité thermique</b>, la <b>diffusivité</b> et la <b>capacité thermique volumique</b>. Une double spirale de nickel très fine, prise entre deux échantillons identiques, est à la fois le radiateur et le thermomètre. L'appareil sert le projet collaboratif HeatTransferID (MSME, CERTES et THEMACS Ingénierie) sur des isolants poreux, fibreux, biosourcés ou recyclés.</p>
+<p>Je l'ai mis en service sur le site du partenaire industriel et j'ai rédigé son cahier de laboratoire de 50 pages : théorie, description de l'appareil, choix de la sonde, de la puissance et du temps, procédure de mesure et contrôles de réception.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>Réception sur un <b>étalon certifié en inox AISI 316L</b> : 10 mesures à 21,66 °C ont donné λ = 13,77 W/(m·K) (écart-type 0,78 %), a = 3,606 mm²/s et ρCp = 3,816 MJ/(m³·K). Chaque voie du commutateur de sondes a ensuite été contrôlée une par une (13,61 à 13,78 W/(m·K)). Le contrôle de routine avant chaque séance : au moins trois mesures sur l'étalon, conforme si l'écart reste sous la précision annoncée de 5 % (1 à 2 % attendus en pratique).</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>Réception sur étalon 316L certifié : λ = 13,77 W/(m·K), écart-type 0,78 % sur 10 essais</li><li>Les cinq voies du commutateur de sondes vérifiées (13,61–13,78 W/(m·K))</li><li>Cahier de laboratoire de 50 pages avec méthode de choix des paramètres et contrôles de routine</li></ul></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p>La résistance de la sonde donne sa température moyenne (TCR \(\alpha\approx0{,}005\ \mathrm{K^{-1}}\)), et l'échauffement suit la solution de la source plane transitoire (\(P\) : puissance de chauffe, \(r\) : rayon de la sonde) :</p>$$R(t)=R_0\left[1+\alpha\,\Delta T(t)\right],\qquad \Delta T(\tau)=\frac{P}{\pi^{3/2}\,r\,\lambda}\,D(\tau),\qquad \tau=\frac{\sqrt{a\,t}}{r},\qquad \rho C_p=\frac{\lambda}{a}$$<p>Choix du temps de mesure : le rapport temps total / temps caractéristique doit rester entre 0,33 et 1, et la profondeur sondée doit rester dans l'échantillon (\(L\), \(l\), \(e\) : dimensions d'un morceau) :</p>$$0.33\,\frac{r^{2}}{a}\le t\le\frac{r^{2}}{a},\qquad \Delta p=2\sqrt{a\,t}\ \le\ \min\left(e,\ \tfrac{L}{2}-r,\ \tfrac{l}{2}-r\right)$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/bench-hotdisk-holder.jpg"><img src="../images/projects/bench-hotdisk-holder.jpg" alt="Porte-échantillon : sonde serrée entre deux échantillons." loading="lazy"></a><figcaption>Porte-échantillon : sonde serrée entre deux échantillons.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-hotdisk-unit.jpg"><img src="../images/projects/bench-hotdisk-unit.jpg" alt="Unité de mesure TPS 1500 et commutateur de sondes." loading="lazy"></a><figcaption>Unité de mesure TPS 1500 et commutateur de sondes.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-hotdisk-probe.jpg"><img src="../images/projects/bench-hotdisk-probe.jpg" alt="Sonde Kapton 5501 (r = 6,403 mm) sur un feutre de coton." loading="lazy"></a><figcaption>Sonde Kapton 5501 (r = 6,403 mm) sur un feutre de coton.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-hotdisk-bell.jpg"><img src="../images/projects/bench-hotdisk-bell.jpg" alt="Cloche posée sur le montage pendant la mesure." loading="lazy"></a><figcaption>Cloche posée sur le montage pendant la mesure.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-hotdisk-software.jpg"><img src="../images/projects/bench-hotdisk-software.jpg" alt="Paramètres de mesure dans le logiciel Hot Disk." loading="lazy"></a><figcaption>Paramètres de mesure dans le logiciel Hot Disk.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bench-biaxial-fr.html">← Banc de traction biaxiale 4 axes</a><a class="next" href="bench-impedance-tube-fr.html">Tube d'impédance — absorption acoustique →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

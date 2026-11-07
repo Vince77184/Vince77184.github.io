@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banc de résistivité statique au passage de l'air — Vincent Poitier</title>
+<meta name="description" content="Mesure de la résistivité statique au passage de l&#x27;air de milieux poreux par un écoulement laminaire maîtrisé (méthode statique ISO 9053-1).">
+<meta property="og:title" content="Banc de résistivité statique au passage de l'air — Vincent Poitier">
+<meta property="og:description" content="Mesure de la résistivité statique au passage de l&#x27;air de milieux poreux par un écoulement laminaire maîtrisé (méthode statique ISO 9053-1).">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-resist-setup.jpg">
+<link rel="alternate" hreflang="en" href="bench-resistivity.html">
+<link rel="alternate" hreflang="ar" href="bench-resistivity-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#work">Poste actuel</a>
+      <span class="lang"><a href="bench-resistivity.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="bench-resistivity-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#work">← Retour au poste actuel</a></p>
+<p class="kicker">Banc d'essais · Laboratoire MSME (UMR 8208 CNRS), Université Gustave Eiffel · 2026</p>
+<h1>Banc de résistivité statique au passage de l'air</h1>
+<p class="chips"><span class="chip">ISO 9053-1</span><span class="chip">Loi de Darcy</span><span class="chip">AcoustiFlow</span><span class="chip">Mesure sur deux faces</span></p>
+<figure class="pcover"><img src="../images/projects/bench-resist-setup.jpg" alt="Banc de résistivité statique au passage de l&#x27;air"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>Un écoulement d'air laminaire, lent et parfaitement maîtrisé traverse l'échantillon et l'on mesure la différence de pression entre ses deux faces : plus le matériau « freine » l'air, plus sa résistivité σ est grande. Avec la porosité ouverte, σ est l'un des deux paramètres de premier ordre nécessaires pour identifier les modèles de milieux poreux à partir des mesures au tube d'impédance.</p>
+<p>J'ai rédigé le cahier de laboratoire de 36 pages (version 2.1) : théorie, résistivimètre AcoustiFlow et son compresseur, les deux géométries d'échantillon, la procédure (face A puis face B), les contrôles de résultat et l'exploitation dans le logiciel de caractérisation RoKCell.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>Le cahier insiste sur ce qui rend la valeur fiable : rester dans le <b>régime de Darcy</b> (perte de charge proportionnelle à la vitesse), mesurer à plusieurs vitesses et ramener le résultat à la vitesse de référence de 0,5 mm/s de la norme, relever température et pression (la viscosité de l'air varie d'environ 0,3 % par °C), mesurer les deux faces de chaque échantillon et recouper σ avec l'estimation tirée des mesures acoustiques.</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>Procédure conforme à la méthode statique ISO 9053-1, deux faces par échantillon</li><li>Relevé température/pression et passage à la perméabilité intrinsèque k₀</li><li>Cahier de laboratoire de 36 pages (v2.1) avec dépannage et fiche de séance</li></ul></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p>La norme ISO 9053-1 définit trois grandeurs emboîtées pour un échantillon d'épaisseur \(e\) et de section \(S\), traversé par un débit \(Q\) (vitesse \(v=Q/S\)) avec une perte de charge \(\Delta P\) :</p>$$R=\frac{\Delta P}{Q},\qquad R_s=R\,S=\frac{\Delta P}{v},\qquad \sigma=\frac{R_s}{e}=\frac{\Delta P}{v\,e}\quad[\mathrm{N\,s\,m^{-4}}]$$<p>À très faible vitesse, l'écoulement suit la loi de Darcy ; σ est liée à la perméabilité visqueuse statique \(k_0\), grandeur réellement intrinsèque (\(\eta\approx1{,}8\times10^{-5}\) Pa·s pour l'air) :</p>$$\mathbf{v}=-\frac{k_0}{\eta}\,\nabla P\quad\Longrightarrow\quad\frac{\Delta P}{e}=\sigma\,v,\qquad \sigma=\frac{\eta}{k_0}$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/bench-resist-setup.jpg"><img src="../images/projects/bench-resist-setup.jpg" alt="Le banc : résistivimètre AcoustiFlow et porte-échantillon." loading="lazy"></a><figcaption>Le banc : résistivimètre AcoustiFlow et porte-échantillon.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-resist-meter.jpg"><img src="../images/projects/bench-resist-meter.jpg" alt="Résistivimètre AcoustiFlow." loading="lazy"></a><figcaption>Résistivimètre AcoustiFlow.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-resist-holder.jpg"><img src="../images/projects/bench-resist-holder.jpg" alt="Porte-échantillon et grille support." loading="lazy"></a><figcaption>Porte-échantillon et grille support.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-resist-compressor.jpg"><img src="../images/projects/bench-resist-compressor.jpg" alt="Compresseur silencieux qui alimente le banc (8 bar max)." loading="lazy"></a><figcaption>Compresseur silencieux qui alimente le banc (8 bar max).</figcaption></figure><figure class="pfig wide"><a href="../images/projects/bench-resist-results.jpg"><img src="../images/projects/bench-resist-results.jpg" alt="Mesure à plusieurs vitesses d&#x27;air et écran de résultats." loading="lazy"></a><figcaption>Mesure à plusieurs vitesses d'air et écran de résultats.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bench-impedance-tube-fr.html">← Tube d'impédance — absorption acoustique</a><a class="next" href="bench-porosity-fr.html">Banc de porosité ouverte et masse volumique apparente →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

@@ -221,3 +221,9 @@ a.card-link:hover { text-decoration: none; }
 @media (max-width: 720px) {
   .xp > li { grid-template-columns: 1fr; gap: 4px; padding-inline-start: 20px; }
 }
+
+/* equations stay left-to-right inside Arabic pages */
+[dir="rtl"] .katex, [dir="rtl"] .katex-display { direction: ltr; unicode-bidi: isolate; }
+[dir="rtl"] .pnav .next { text-align: start; }
+
+.flinks { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-weight: 500; font-size: .95rem; }

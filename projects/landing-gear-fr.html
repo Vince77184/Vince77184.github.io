@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Train d'atterrissage automatisé pour une fusée type Falcon 9 — Vincent Poitier</title>
+<meta name="description" content="Jambes d&#x27;atterrissage rétractables conçues sous SolidWorks, avec séquence de déploiement et asservissement de la descente programmés.">
+<meta property="og:title" content="Train d'atterrissage automatisé pour une fusée type Falcon 9 — Vincent Poitier">
+<meta property="og:description" content="Jambes d&#x27;atterrissage rétractables conçues sous SolidWorks, avec séquence de déploiement et asservissement de la descente programmés.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/falcon9-legs.jpg">
+<link rel="alternate" hreflang="en" href="landing-gear.html">
+<link rel="alternate" hreflang="ar" href="landing-gear-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#projects">Tous les projets</a>
+      <span class="lang"><a href="landing-gear.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="landing-gear-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#projects">← Retour aux projets</a></p>
+<p class="kicker">Projet mécatronique · Association étudiante Top Aéro, Sorbonne Université / Arts et Métiers · 2023–2024</p>
+<h1>Train d'atterrissage automatisé pour une fusée type Falcon 9</h1>
+<p class="chips"><span class="chip">Mécatronique</span><span class="chip">CAO</span><span class="chip">Commande</span></p>
+<figure class="pcover"><img src="../images/projects/falcon9-legs.jpg" alt="Train d&#x27;atterrissage automatisé pour une fusée type Falcon 9"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>Inspirée du premier étage réutilisable du Falcon 9, notre association étudiante a travaillé sur une fusée qui atterrit sur ses propres jambes. J'ai conçu les <b>jambes rétractables</b> sous SolidWorks et programmé la <b>séquence de déploiement</b> et l'<b>asservissement de la descente</b> : jambes repliées à la montée, déployées sous une altitude donnée, verrouillées au contact du sol.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>Une version à petite échelle des problèmes des vraies attractions et des systèmes robotisés : un mécanisme qui doit se déployer au bon moment à chaque fois, un actionneur dimensionné pour la charge, des capteurs lus en temps réel et une séquence qui se replie dans un état sûr.</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>Jambes rétractables conçues sous SolidWorks</li><li>Séquence de déploiement et asservissement de la descente programmés</li></ul></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p>Le déploiement est une machine à états pilotée par l'altitude mesurée \(h(t)\) : montée → descente → déploiement quand \(h<h_d\) → contact sol. L'actionneur doit tenir la jambe sous la charge :</p>$$\tau_{\text{act}}\geq m\,g\,\ell\,\sin\theta,\qquad \theta\in[0,\theta_{\max}]$$<p>La descente est asservie autour d'un profil de vitesse de référence, par exemple avec une loi de type PID :</p>$$u(t)=K_p\,e(t)+K_i\int_0^t e\,d\tau+K_d\,\dot e(t),\qquad e=v_{\text{ref}}(h)-v$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/landing-gear-logic.jpg"><img src="../images/projects/landing-gear-logic.jpg" alt="Cinématique de la jambe et logique de déploiement (schéma)." loading="lazy"></a><figcaption>Cinématique de la jambe et logique de déploiement (schéma).</figcaption></figure><figure class="pfig"><a href="../images/projects/falcon9-legs.jpg"><img src="../images/projects/falcon9-legs.jpg" alt="En vrai : un premier étage de Falcon 9 posé sur ses quatre jambes après l&#x27;atterrissage. Photo : SpaceX, CC0." loading="lazy"></a><figcaption>En vrai : un premier étage de Falcon 9 posé sur ses quatre jambes après l'atterrissage. Photo : SpaceX, CC0.</figcaption></figure><figure class="pfig"><a href="../images/projects/falcon9-full.jpg"><img src="../images/projects/falcon9-full.jpg" alt="Premier étage de Falcon 9 après atterrissage à LZ-1. Photo : SpaceX, CC0 (domaine public)." loading="lazy"></a><figcaption>Premier étage de Falcon 9 après atterrissage à LZ-1. Photo : SpaceX, CC0 (domaine public).</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="faraday-waves-fr.html">← Gravité et ondes de Faraday confinées</a><a class="next" href="fea-beam-fr.html">Analyse par éléments finis d'une structure chargée →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

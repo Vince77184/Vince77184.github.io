@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LIDAR par temps de vol et AFM fait maison — Vincent Poitier</title>
+<meta name="description" content="Mesure de la vitesse de la lumière par temps de vol (principe du LIDAR) et construction d&#x27;un microscope à force atomique à partir de composants simples.">
+<meta property="og:title" content="LIDAR par temps de vol et AFM fait maison — Vincent Poitier">
+<meta property="og:description" content="Mesure de la vitesse de la lumière par temps de vol (principe du LIDAR) et construction d&#x27;un microscope à force atomique à partir de composants simples.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/card-lidar.jpg">
+<link rel="alternate" hreflang="en" href="lidar-afm.html">
+<link rel="alternate" hreflang="ar" href="lidar-afm-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#projects">Tous les projets</a>
+      <span class="lang"><a href="lidar-afm.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="lidar-afm-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#projects">← Retour aux projets</a></p>
+<p class="kicker">Projets de TP · École Normale Supérieure, Paris · 2021–2022 · avec F. Barbier-Chebbah</p>
+<h1>LIDAR par temps de vol et AFM fait maison</h1>
+<p class="chips"><span class="chip">Instrumentation</span><span class="chip">Calcul d'incertitudes</span><span class="chip">Étalonnage</span></p>
+<figure class="pcover"><img src="../images/projects/card-lidar.jpg" alt="LIDAR par temps de vol et AFM fait maison"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p><b>LIDAR.</b> Une LED proche infrarouge (870 nm) envoie des créneaux à travers deux lentilles vers une photodiode ; un oscilloscope mesure le retard. C'est exactement ainsi que les LIDAR des robots mobiles mesurent les distances. Une première mesure donnait une vitesse trois fois trop grande : les retards des câbles et de l'électronique ajoutaient un décalage constant. Nous l'avons éliminé en déplaçant les plaques optiques et en ajustant la <b>pente</b> distance–temps.</p>
+<p><b>AFM.</b> Au Fablab de l'ENS, nous avons construit un microscope à force atomique à partir d'un diapason, d'un actionneur piézoélectrique et d'un accéléromètre, puis nous l'avons étalonné et avons mesuré la plus petite force qu'il détecte.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>Les deux projets visent une mesure qu'on peut défendre : choisir la forme du signal pour affiner la lecture du temps, focaliser le faisceau pour travailler sur de grandes distances, <b>propager les incertitudes</b> sur chaque grandeur, étalonner l'accéléromètre (échelon de 2g → 1 V) et vérifier que la durée d'acquisition dépasse le temps d'établissement du résonateur avant de tracer un diagramme de Bode.</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>c mesurée à 3,5 % près avec un banc simple, après élimination d'un biais systématique</li><li>Diapason caractérisé : f₀ = 2,063 kHz, Q ≈ 258, τ ≈ 20 ms</li><li>Mesure de force à l'AFM avec une erreur relative inférieure à 1 % au-dessus de 5 mN</li></ul></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p><b>Temps de vol</b> — vitesse et incertitude :</p>$$c=\frac{\Delta x}{\Delta t},\qquad \frac{U(c)}{c}=\sqrt{\left(\frac{U(\Delta x)}{\Delta x}\right)^2+\left(\frac{U(\Delta t)}{\Delta t}\right)^2}$$<p>L'ajustement \(\Delta x=c\,\Delta t+b\) élimine le décalage \(b\) et donne \(c_{\text{exp}}=(2{,}89\pm0{,}12)\times10^{8}\ \mathrm{m\,s^{-1}}\), à 3,5 % de la valeur de référence.</p><p><b>AFM</b> — le diapason est un oscillateur forcé amorti ; une force pointe–échantillon \(F_{\text{in}}=AX+B\dot X\) décale sa résonance et son facteur de qualité :</p>$$\ddot X+\frac{\gamma}{m}\dot X+\frac{k}{m}X=\frac{F_{\text{ext}}}{m},\qquad \omega_0=\sqrt{k/m},\quad Q=\frac{\omega_0 m}{\gamma},\qquad \omega_0'^2=\frac{k-A}{m}$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/lidar-setup.jpg"><img src="../images/projects/lidar-setup.jpg" alt="Montage temps de vol : générateur, LED IR, deux lentilles, photodiode, oscilloscope." loading="lazy"></a><figcaption>Montage temps de vol : générateur, LED IR, deux lentilles, photodiode, oscilloscope.</figcaption></figure><figure class="pfig"><a href="../images/projects/lidar-scope.jpg"><img src="../images/projects/lidar-scope.jpg" alt="Oscilloscope : créneau émis (jaune) et signal de la photodiode (bleu)." loading="lazy"></a><figcaption>Oscilloscope : créneau émis (jaune) et signal de la photodiode (bleu).</figcaption></figure><figure class="pfig"><a href="../images/projects/lidar-fit.jpg"><img src="../images/projects/lidar-fit.jpg" alt="Distance en fonction du temps de vol avec barres d&#x27;erreur et ajustement linéaire : la pente vaut c." loading="lazy"></a><figcaption>Distance en fonction du temps de vol avec barres d'erreur et ajustement linéaire : la pente vaut c.</figcaption></figure><figure class="pfig"><a href="../images/projects/afm-setup.jpg"><img src="../images/projects/afm-setup.jpg" alt="Principe de l&#x27;AFM : diapason excité par un actionneur piézo, lu par un accéléromètre." loading="lazy"></a><figcaption>Principe de l'AFM : diapason excité par un actionneur piézo, lu par un accéléromètre.</figcaption></figure><figure class="pfig"><a href="../images/projects/afm-photo.jpg"><img src="../images/projects/afm-photo.jpg" alt="Notre AFM fait maison au Fablab de l&#x27;ENS." loading="lazy"></a><figcaption>Notre AFM fait maison au Fablab de l'ENS.</figcaption></figure><figure class="pfig"><a href="../images/projects/afm-table.jpg"><img src="../images/projects/afm-table.jpg" alt="Paramètres mesurés et calculés avec incertitudes (f₀ = 2,063 kHz, Q ≈ 258)." loading="lazy"></a><figcaption>Paramètres mesurés et calculés avec incertitudes (f₀ = 2,063 kHz, Q ≈ 258).</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="antenna-reverberation-fr.html">← Efficacité d'antennes en chambre réverbérante</a><a class="next" href="faraday-waves-fr.html">Gravité et ondes de Faraday confinées →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

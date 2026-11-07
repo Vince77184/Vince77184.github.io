@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Static Airflow Resistivity Bench — Vincent Poitier</title>
+<meta name="description" content="Measuring the static airflow resistivity of porous materials with a controlled laminar airflow (ISO 9053-1 static method).">
+<meta property="og:title" content="Static Airflow Resistivity Bench — Vincent Poitier">
+<meta property="og:description" content="Measuring the static airflow resistivity of porous materials with a controlled laminar airflow (ISO 9053-1 static method).">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-resist-setup.jpg">
+<link rel="alternate" hreflang="fr" href="bench-resistivity-fr.html">
+<link rel="alternate" hreflang="ar" href="bench-resistivity-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#work">Current work</a>
+      <span class="lang"><b>EN</b><a href="bench-resistivity-fr.html" hreflang="fr" lang="fr">FR</a><a href="bench-resistivity-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#work">← Back to current work</a></p>
+<p class="kicker">Test bench · MSME laboratory (UMR 8208 CNRS), Université Gustave Eiffel · 2026</p>
+<h1>Static Airflow Resistivity Bench</h1>
+<p class="chips"><span class="chip">ISO 9053-1</span><span class="chip">Darcy's law</span><span class="chip">AcoustiFlow</span><span class="chip">Two-face measurement</span></p>
+<figure class="pcover"><img src="../images/projects/bench-resist-setup.jpg" alt="Static Airflow Resistivity Bench"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>A slow, perfectly controlled laminar airflow crosses the sample and the pressure drop between its two faces is measured: the more the material "brakes" the air, the higher its resistivity σ. Together with open porosity, σ is one of the two first-order inputs needed to identify porous-material models from impedance-tube measurements.</p>
+<p>I wrote the 36-page lab notebook (version 2.1): theory, the AcoustiFlow resistivity meter and its compressor, the two sample geometries, the procedure (face A, then face B), result checks and how the value feeds the RoKCell characterisation software.</p>
+  <div class="callout"><p class="label">On the bench</p><p>The notebook insists on what makes the number trustworthy: staying in the <b>Darcy regime</b> (pressure drop proportional to speed), measuring at several speeds and bringing the result back to the 0.5 mm/s reference of the standard, logging temperature and pressure (air viscosity changes by about 0.3 % per °C), measuring both faces of every sample and cross-checking σ with the estimate from the acoustic measurements.</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>Procedure compliant with ISO 9053-1 static method, two faces per sample</li><li>Temperature/pressure logging and conversion to intrinsic permeability k₀</li><li>36-page lab notebook (v2.1) with troubleshooting and session sheet</li></ul></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>ISO 9053-1 defines three nested quantities for a sample of thickness \(e\), section \(S\), crossed by a flow rate \(Q\) (speed \(v=Q/S\)) with pressure drop \(\Delta P\):</p>$$R=\frac{\Delta P}{Q},\qquad R_s=R\,S=\frac{\Delta P}{v},\qquad \sigma=\frac{R_s}{e}=\frac{\Delta P}{v\,e}\quad[\mathrm{N\,s\,m^{-4}}]$$<p>At very low speed the flow obeys Darcy's law; σ is linked to the viscous static permeability \(k_0\), the truly intrinsic quantity (\(\eta\approx1.8\times10^{-5}\) Pa·s for air):</p>$$\mathbf{v}=-\frac{k_0}{\eta}\,\nabla P\quad\Longrightarrow\quad\frac{\Delta P}{e}=\sigma\,v,\qquad \sigma=\frac{\eta}{k_0}$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/bench-resist-setup.jpg"><img src="../images/projects/bench-resist-setup.jpg" alt="The bench: AcoustiFlow resistivity meter and sample holder." loading="lazy"></a><figcaption>The bench: AcoustiFlow resistivity meter and sample holder.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-resist-meter.jpg"><img src="../images/projects/bench-resist-meter.jpg" alt="AcoustiFlow resistivity meter." loading="lazy"></a><figcaption>AcoustiFlow resistivity meter.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-resist-holder.jpg"><img src="../images/projects/bench-resist-holder.jpg" alt="Sample holder and support grid." loading="lazy"></a><figcaption>Sample holder and support grid.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-resist-compressor.jpg"><img src="../images/projects/bench-resist-compressor.jpg" alt="Silent compressor feeding the bench (8 bar max)." loading="lazy"></a><figcaption>Silent compressor feeding the bench (8 bar max).</figcaption></figure><figure class="pfig wide"><a href="../images/projects/bench-resist-results.jpg"><img src="../images/projects/bench-resist-results.jpg" alt="Measurement at several air speeds and result screen." loading="lazy"></a><figcaption>Measurement at several air speeds and result screen.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bench-impedance-tube.html">← Impedance Tube — Acoustic Absorption</a><a class="next" href="bench-porosity.html">Open Porosity and Bulk Density Bench →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

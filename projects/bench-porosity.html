@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Porosity and Bulk Density Bench — Vincent Poitier</title>
+<meta name="description" content="Measuring the open porosity and bulk density of porous materials by weighing a gas-filled chamber at two pressures.">
+<meta property="og:title" content="Open Porosity and Bulk Density Bench — Vincent Poitier">
+<meta property="og:description" content="Measuring the open porosity and bulk density of porous materials by weighing a gas-filled chamber at two pressures.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-poro-chamber.jpg">
+<link rel="alternate" hreflang="fr" href="bench-porosity-fr.html">
+<link rel="alternate" hreflang="ar" href="bench-porosity-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../index.html">Vincent Poitier</a>
+    <nav>
+      <a href="../index.html#work">Current work</a>
+      <span class="lang"><b>EN</b><a href="bench-porosity-fr.html" hreflang="fr" lang="fr">FR</a><a href="bench-porosity-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../index.html#work">← Back to current work</a></p>
+<p class="kicker">Test bench · MSME laboratory (UMR 8208 CNRS), Université Gustave Eiffel · 2026</p>
+<h1>Open Porosity and Bulk Density Bench</h1>
+<p class="chips"><span class="chip">Pressure/mass method</span><span class="chip">PHI-X</span><span class="chip">Precision balance</span><span class="chip">Certified check sample</span></p>
+<figure class="pcover"><img src="../images/projects/bench-poro-chamber.jpg" alt="Open Porosity and Bulk Density Bench"></figure>
+<div class="pgrid">
+  <section><h2>Summary</h2><p>The bench measures the <b>open porosity</b> φ — the fraction of the volume made of pores the gas can reach — and the <b>bulk density</b> of a porous sample. It uses the pressure/mass method of Salissou and Panneton: a sealed chamber is weighed filled with gas at two pressures, empty then with the sample; the difference gives the volume of the solid phase.</p>
+<p>I wrote the 24-page lab notebook (version 1.1): theory, the PHI-X porosimeter, the precision balance and its 2 kg standard mass, the certified check sample, safety under pressure, the procedure and the use of the results in RoKCell.</p>
+  <div class="callout"><p class="label">On the bench</p><p>Everything rests on mass differences of a few grams, so the notebook lists every error source and its cure: balance calibrated with a 2 kg Troemner standard handled with gloves, thermal equilibrium before weighing (the method assumes an isothermal process), leak checks, sample dimensions measured with calipers, the right gas declared in the software (air from the compressor, while the Mecanum certificate was established with argon), and a check on the certified reference cylinder before measuring.</p></div>
+  </section>
+  <aside class="keyres"><h3>Key results</h3><ul><li>Procedure with balance calibration and certified check sample</li><li>Error sources and safety under pressure documented</li><li>24-page lab notebook (v1.1); results feed the RoKCell characterisation</li></ul></aside>
+</div>
+<section><h2>Method &amp; equations</h2><div class="math"><p>Definitions (\(V_t\): total volume, \(V_s\): volume of the solid phase and closed pores):</p>$$\phi=\frac{V_t-V_s}{V_t}=1-\frac{V_s}{V_t},\qquad \rho=\frac{m_{\text{sample}}}{V_t}$$<p>Pressure/mass method: masses \(M_1\dots M_4\) and pressures \(P_1\dots P_4\) of the four states (empty and with sample, two pressures each), gas constant \(R\) (287 J/(kg·K) for air, 208 for argon), temperature \(T\), chamber volume \(V\):</p>$$\phi=1-\frac{R\,T}{V_t}\left(\frac{M_2-M_1}{P_2-P_1}-\frac{M_4-M_3}{P_4-P_3}\right),\qquad \rho=\frac{M_3-M_1}{V_t}+\frac{(P_1-P_3)\,V+P_3V_s}{R\,T\,V_t}$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/bench-poro-chamber.jpg"><img src="../images/projects/bench-poro-chamber.jpg" alt="Sealed measurement chamber with pressure gauge and quick coupling." loading="lazy"></a><figcaption>Sealed measurement chamber with pressure gauge and quick coupling.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-poro-phix.jpg"><img src="../images/projects/bench-poro-phix.jpg" alt="PHI-X porosimeter: pressure regulator and operating-pressure gauge." loading="lazy"></a><figcaption>PHI-X porosimeter: pressure regulator and operating-pressure gauge.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-poro-balance.jpg"><img src="../images/projects/bench-poro-balance.jpg" alt="Sartorius precision balance read automatically by the software." loading="lazy"></a><figcaption>Sartorius precision balance read automatically by the software.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-poro-method.jpg"><img src="../images/projects/bench-poro-method.jpg" alt="The four weighing states of the pressure/mass method." loading="lazy"></a><figcaption>The four weighing states of the pressure/mass method.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-poro-software.jpg"><img src="../images/projects/bench-poro-software.jpg" alt="Guided measurement sequence in the PHI-X software." loading="lazy"></a><figcaption>Guided measurement sequence in the PHI-X software.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bench-resistivity.html">← Static Airflow Resistivity Bench</a><span></span></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

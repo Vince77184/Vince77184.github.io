@@ -8,6 +8,8 @@
 <meta property="og:title" content="Boundary Elements for Acoustic Diffraction — Vincent Poitier">
 <meta property="og:description" content="A boundary element solver written from scratch in Python for 2D acoustic wave diffraction, validated on analytical solutions.">
 <meta property="og:image" content="https://vince77184.github.io/images/projects/card-bem.jpg">
+<link rel="alternate" hreflang="fr" href="bem-acoustics-fr.html">
+<link rel="alternate" hreflang="ar" href="bem-acoustics-ar.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
@@ -22,7 +24,7 @@
     <a class="mark" href="../index.html">Vincent Poitier</a>
     <nav>
       <a href="../index.html#projects">All projects</a>
-      <span class="lang"><a href="../index.html">EN</a><a href="../fr.html">FR</a><a href="../ar.html" lang="ar">عربي</a></span>
+      <span class="lang"><b>EN</b><a href="bem-acoustics-fr.html" hreflang="fr" lang="fr">FR</a><a href="bem-acoustics-ar.html" hreflang="ar" lang="ar">عربي</a></span>
       <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_EN.pdf">Resume</a>
     </nav>
   </div>
@@ -40,11 +42,7 @@
   </section>
   <aside class="keyres"><h3>Key results</h3><ul><li>2D BEM written from scratch (no external BEM library)</li><li>Error decreases with mesh refinement down to about 10⁻⁷ on reference cases</li><li>Diffraction maps showing the shadow zone appearing as the wavelength gets shorter</li></ul><div class="cta col"><a class="btn" href="../docs/bem_acoustic_diffraction.pdf">Internship report (French, PDF)</a></div></aside>
 </div>
-<section><h2>Method &amp; equations</h2><div class="math"><p>Diffraction of an incident plane wave \(u_F=e^{ik\,\mathbf{d}\cdot\mathbf{x}}\) by a rigid obstacle: the scattered field \(v\) solves</p>
-$$(\Delta+k^2)\,v=0\ \text{ in }\Omega,\qquad \partial_n v=-\partial_n u_F\ \text{ on }\partial\Omega,\qquad \partial_r v-ikv=o(r^{-1/2})$$
-<p>Green's identity turns the problem into an integral equation on the boundary only (\(G\): Green function, \(H=\partial_n G\)):</p>
-$$c(\mathbf{x})\,u(\mathbf{x})+\int_{\partial\Omega}H(\mathbf{x},\mathbf{y})\,u(\mathbf{y})\,dS_y=\int_{\partial\Omega}G(\mathbf{x},\mathbf{y})\,q(\mathbf{y})\,dS_y,\qquad G(\mathbf{x},\mathbf{y})=\tfrac{i}{4}H_0^{(1)}(k|\mathbf{x}-\mathbf{y}|)$$
-<p>Collocation on \(N_E\) quadratic elements gives a dense linear system \((\tfrac12\mathbf{I}+\mathbf{A})\,\mathbf{v}=-\mathbf{B}\,\mathbf{q}_F\); the logarithmic singularity is integrated with a dedicated Gauss–log rule.</p></div></section>
+<section><h2>Method &amp; equations</h2><div class="math"><p>Diffraction of an incident plane wave \(u_F=e^{ik\,\mathbf{d}\cdot\mathbf{x}}\) by a rigid obstacle: the scattered field \(v\) solves</p>$$(\Delta+k^2)\,v=0\ \text{ in }\Omega,\qquad \partial_n v=-\partial_n u_F\ \text{ on }\partial\Omega,\qquad \partial_r v-ikv=o(r^{-1/2})$$<p>Green's identity turns the problem into an integral equation on the boundary only (\(G\): Green function, \(H=\partial_n G\)):</p>$$c(\mathbf{x})\,u(\mathbf{x})+\int_{\partial\Omega}H(\mathbf{x},\mathbf{y})\,u(\mathbf{y})\,dS_y=\int_{\partial\Omega}G(\mathbf{x},\mathbf{y})\,q(\mathbf{y})\,dS_y,\qquad G(\mathbf{x},\mathbf{y})=\tfrac{i}{4}H_0^{(1)}(k|\mathbf{x}-\mathbf{y}|)$$<p>Collocation on \(N_E\) quadratic elements gives a dense linear system \((\tfrac12\mathbf{I}+\mathbf{A})\,\mathbf{v}=-\mathbf{B}\,\mathbf{q}_F\); the logarithmic singularity is integrated with a dedicated Gauss–log rule.</p></div></section>
 <section><h2>Figures</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/bem-helmholtz.jpg"><img src="../images/projects/bem-helmholtz.jpg" alt="Helmholtz problem on the unit disc: BEM solution (left) vs analytical solution (right)." loading="lazy"></a><figcaption>Helmholtz problem on the unit disc: BEM solution (left) vs analytical solution (right).</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-cut.jpg"><img src="../images/projects/bem-cut.jpg" alt="Horizontal cut: BEM and exact solution overlap." loading="lazy"></a><figcaption>Horizontal cut: BEM and exact solution overlap.</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-flux.jpg"><img src="../images/projects/bem-flux.jpg" alt="Boundary flux computed by the BEM vs exact flux (1st and 4th harmonics)." loading="lazy"></a><figcaption>Boundary flux computed by the BEM vs exact flux (1st and 4th harmonics).</figcaption></figure><figure class="pfig"><a href="../images/projects/bem-convergence.jpg"><img src="../images/projects/bem-convergence.jpg" alt="Error vs number of elements for several Gauss orders: measured convergence." loading="lazy"></a><figcaption>Error vs number of elements for several Gauss orders: measured convergence.</figcaption></figure><figure class="pfig wide"><a href="../images/projects/bem-diffraction.jpg"><img src="../images/projects/bem-diffraction.jpg" alt="Final result: plane wave diffracted by a rigid disc, k = 4 (left) and k = 10 (right) — note the shadow zone at short wavelength." loading="lazy"></a><figcaption>Final result: plane wave diffracted by a rigid disc, k = 4 (left) and k = 10 (right) — note the shadow zone at short wavelength.</figcaption></figure></div></section>
 
 <nav class="pnav"><a href="ucsb-porous-media.html">← Flows in Reactive Porous Media</a><a class="next" href="gas-marbles.html">Instrumented Bench for Gas Marbles →</a></nav>

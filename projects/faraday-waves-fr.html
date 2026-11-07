@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gravité et ondes de Faraday confinées — Vincent Poitier</title>
+<meta name="description" content="Proposition d&#x27;expérience en vol parabolique sur le rôle de la gravité et de la capillarité dans les ondes de Faraday.">
+<meta property="og:title" content="Gravité et ondes de Faraday confinées — Vincent Poitier">
+<meta property="og:description" content="Proposition d&#x27;expérience en vol parabolique sur le rôle de la gravité et de la capillarité dans les ondes de Faraday.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/faraday-photo.jpg">
+<link rel="alternate" hreflang="en" href="faraday-waves.html">
+<link rel="alternate" hreflang="ar" href="faraday-waves-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#projects">Tous les projets</a>
+      <span class="lang"><a href="faraday-waves.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="faraday-waves-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#projects">← Retour aux projets</a></p>
+<p class="kicker">Proposition d'équipe · École Normale Supérieure · appel vols paraboliques CNES 2022 (présélectionnée)</p>
+<h1>Gravité et ondes de Faraday confinées</h1>
+<p class="chips"><span class="chip">Conception d'expérience</span><span class="chip">Micropesanteur</span><span class="chip">Projet d'équipe</span></p>
+<figure class="pcover"><img src="../images/projects/faraday-photo.jpg" alt="Gravité et ondes de Faraday confinées"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>Quand on secoue verticalement un liquide, des ondes stationnaires apparaissent à sa surface : c'est l'<b>instabilité de Faraday</b>. Sur Terre, la gravité domine le comportement des ondes ; en micropesanteur, seule la capillarité subsiste. Avec quatre camarades, nous avons conçu une expérience pour la campagne de vols paraboliques du CNES afin d'observer les mêmes ondes pendant que la gravité varie en vol, plus une expérience bonus sur des ondes à la surface d'une goutte sphérique flottante.</p>
+<p>La proposition a été présélectionnée. J'étais responsable de la communication de l'équipe et j'ai travaillé sur le protocole expérimental.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>Tout devait être prévu pour un avion en mouvement : un pot vibrant vertical d'environ 25 kg, des récipients transparents de plusieurs formes, un récipient hydrophobe pour la goutte sphérique, un éclairage stroboscopique et une caméra au-dessus de la surface, avec le budget électrique (220 V / 4 A) et le planning d'essais au Fablab de l'ENS avant intégration.</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>Protocole expérimental complet et liste du matériel pour l'avion</li><li>Présélectionnée par le CNES</li></ul><div class="cta col"><a class="btn" href="../docs/faraday_waves_parabolic_flight.pdf">Proposition (anglais, PDF)</a></div></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p>Relation de dispersion des ondes de surface (pulsation \(\omega\), nombre d'onde \(k\), profondeur \(h\), tension de surface \(\gamma\)) :</p>$$\omega^{2}=\left(gk+\frac{\gamma k^{3}}{\rho}\right)\tanh(hk)=\left(\ell_c^{-2}+k^{2}\right)\frac{\gamma k}{\rho}\tanh(hk),\qquad \ell_c=\sqrt{\frac{\gamma}{\rho g}}$$<p>Pour \(k\ell_c\ll1\) la gravité domine (\(\omega^2\approx gk\)) ; pour \(k\ell_c\gg1\) la capillarité l'emporte (\(\omega^2\approx\gamma k^3/\rho\)). Faire varier \(g\) en vol déplace la transition — la signature mesurable que nous cherchions.</p></div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/faraday-photo.jpg"><img src="../images/projects/faraday-photo.jpg" alt="Instabilité de Faraday : motif d&#x27;ondes stationnaires sur un liquide vibré." loading="lazy"></a><figcaption>Instabilité de Faraday : motif d'ondes stationnaires sur un liquide vibré.</figcaption></figure><figure class="pfig"><a href="../images/projects/faraday-dispersion.jpg"><img src="../images/projects/faraday-dispersion.jpg" alt="Nombre d&#x27;onde en fonction de la pulsation : branches dominées par la gravité et par la capillarité." loading="lazy"></a><figcaption>Nombre d'onde en fonction de la pulsation : branches dominées par la gravité et par la capillarité.</figcaption></figure><figure class="pfig"><a href="../images/projects/faraday-setup.jpg"><img src="../images/projects/faraday-setup.jpg" alt="Expérience prévue : plateau vibrant, récipient de liquide et caméra." loading="lazy"></a><figcaption>Expérience prévue : plateau vibrant, récipient de liquide et caméra.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="lidar-afm-fr.html">← LIDAR par temps de vol et AFM fait maison</a><a class="next" href="landing-gear-fr.html">Train d'atterrissage automatisé pour une fusée type Falcon 9 →</a></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

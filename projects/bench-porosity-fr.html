@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banc de porosité ouverte et masse volumique apparente — Vincent Poitier</title>
+<meta name="description" content="Mesure de la porosité ouverte et de la masse volumique apparente de milieux poreux en pesant une chambre remplie de gaz à deux pressions.">
+<meta property="og:title" content="Banc de porosité ouverte et masse volumique apparente — Vincent Poitier">
+<meta property="og:description" content="Mesure de la porosité ouverte et de la masse volumique apparente de milieux poreux en pesant une chambre remplie de gaz à deux pressions.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-poro-chamber.jpg">
+<link rel="alternate" hreflang="en" href="bench-porosity.html">
+<link rel="alternate" hreflang="ar" href="bench-porosity-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../fr.html">Vincent Poitier</a>
+    <nav>
+      <a href="../fr.html#work">Poste actuel</a>
+      <span class="lang"><a href="bench-porosity.html" hreflang="en" lang="en">EN</a><b>FR</b><a href="bench-porosity-ar.html" hreflang="ar" lang="ar">عربي</a></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_FR.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../fr.html#work">← Retour au poste actuel</a></p>
+<p class="kicker">Banc d'essais · Laboratoire MSME (UMR 8208 CNRS), Université Gustave Eiffel · 2026</p>
+<h1>Banc de porosité ouverte et masse volumique apparente</h1>
+<p class="chips"><span class="chip">Méthode pression/masse</span><span class="chip">PHI-X</span><span class="chip">Balance de précision</span><span class="chip">Échantillon de vérification certifié</span></p>
+<figure class="pcover"><img src="../images/projects/bench-poro-chamber.jpg" alt="Banc de porosité ouverte et masse volumique apparente"></figure>
+<div class="pgrid">
+  <section><h2>Résumé</h2><p>Le banc mesure la <b>porosité ouverte</b> φ — la fraction du volume occupée par les pores accessibles au gaz — et la <b>masse volumique apparente</b> d'un échantillon poreux. Il utilise la méthode pression/masse de Salissou et Panneton : on pèse une chambre étanche remplie de gaz à deux pressions, à vide puis avec l'échantillon ; la différence donne le volume de la phase solide.</p>
+<p>J'ai rédigé le cahier de laboratoire de 24 pages (version 1.1) : théorie, porosimètre PHI-X, balance de précision et masse étalon de 2 kg, échantillon de vérification certifié, sécurité sous pression, procédure et exploitation dans RoKCell.</p>
+  <div class="callout"><p class="label">Côté expérimental</p><p>Tout repose sur des différences de masse de quelques grammes, donc le cahier liste chaque source d'erreur et sa parade : balance calibrée avec une masse étalon Troemner de 2 kg manipulée avec des gants, équilibre thermique avant pesée (la méthode suppose une transformation isotherme), contrôle des fuites, dimensions mesurées au pied à coulisse, bon gaz déclaré dans le logiciel (air du compresseur, alors que le certificat Mecanum a été établi à l'argon) et vérification sur le cylindre de référence certifié avant de mesurer.</p></div>
+  </section>
+  <aside class="keyres"><h3>Résultats clés</h3><ul><li>Procédure avec calibration de la balance et échantillon de vérification certifié</li><li>Sources d'erreur et sécurité sous pression documentées</li><li>Cahier de laboratoire de 24 pages (v1.1) ; résultats exploités dans RoKCell</li></ul></aside>
+</div>
+<section><h2>Méthode et équations</h2><div class="math"><p>Définitions (\(V_t\) : volume total, \(V_s\) : volume de la phase solide et des pores fermés) :</p>$$\phi=\frac{V_t-V_s}{V_t}=1-\frac{V_s}{V_t},\qquad \rho=\frac{m_{\text{sample}}}{V_t}$$<p>Méthode pression/masse : masses \(M_1\dots M_4\) et pressions \(P_1\dots P_4\) des quatre états (à vide et avec échantillon, deux pressions chacun), constante du gaz \(R\) (287 J/(kg·K) pour l'air, 208 pour l'argon), température \(T\), volume de la chambre \(V\) :</p>$$\phi=1-\frac{R\,T}{V_t}\left(\frac{M_2-M_1}{P_2-P_1}-\frac{M_4-M_3}{P_4-P_3}\right),\qquad \rho=\frac{M_3-M_1}{V_t}+\frac{(P_1-P_3)\,V+P_3V_s}{R\,T\,V_t}$$</div></section>
+<section><h2>Figures</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/bench-poro-chamber.jpg"><img src="../images/projects/bench-poro-chamber.jpg" alt="Chambre de mesure étanche avec manomètre et raccord rapide." loading="lazy"></a><figcaption>Chambre de mesure étanche avec manomètre et raccord rapide.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-poro-phix.jpg"><img src="../images/projects/bench-poro-phix.jpg" alt="Porosimètre PHI-X : régulateur et manomètre de pression de service." loading="lazy"></a><figcaption>Porosimètre PHI-X : régulateur et manomètre de pression de service.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-poro-balance.jpg"><img src="../images/projects/bench-poro-balance.jpg" alt="Balance de précision Sartorius lue automatiquement par le logiciel." loading="lazy"></a><figcaption>Balance de précision Sartorius lue automatiquement par le logiciel.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-poro-method.jpg"><img src="../images/projects/bench-poro-method.jpg" alt="Les quatre états de pesée de la méthode pression/masse." loading="lazy"></a><figcaption>Les quatre états de pesée de la méthode pression/masse.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-poro-software.jpg"><img src="../images/projects/bench-poro-software.jpg" alt="Séquence de mesure guidée dans le logiciel PHI-X." loading="lazy"></a><figcaption>Séquence de mesure guidée dans le logiciel PHI-X.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bench-resistivity-fr.html">← Banc de résistivité statique au passage de l'air</a><span></span></nav>
+</main>
+<footer class="wrap foot">© 2026 Vincent Poitier</footer>
+</body>
+</html>

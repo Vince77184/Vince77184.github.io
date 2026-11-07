@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>منصة الشد ثنائي المحور بأربعة محاور — فانسان بواتييه</title>
+<meta name="description" content="أربعة أذرع بمحركات مؤازرة تشدّ عيّنة في اتجاهين بينما تُقاس القوى وتُشغَّل كاميرا ارتباط الصور ماديًا.">
+<meta property="og:title" content="منصة الشد ثنائي المحور بأربعة محاور — فانسان بواتييه">
+<meta property="og:description" content="أربعة أذرع بمحركات مؤازرة تشدّ عيّنة في اتجاهين بينما تُقاس القوى وتُشغَّل كاميرا ارتباط الصور ماديًا.">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-biax-overview.jpg">
+<link rel="alternate" hreflang="en" href="bench-biaxial.html">
+<link rel="alternate" hreflang="fr" href="bench-biaxial-fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../ar.html">فانسان بواتييه</a>
+    <nav>
+      <a href="../ar.html#work">العمل الحالي</a>
+      <span class="lang"><a href="bench-biaxial.html" hreflang="en" lang="en">EN</a><a href="bench-biaxial-fr.html" hreflang="fr" lang="fr">FR</a><b>عربي</b></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_AR.pdf">السيرة الذاتية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../ar.html#work">→ العودة إلى العمل الحالي</a></p>
+<p class="kicker">منصة اختبار · مختبر MSME (UMR 8208 CNRS)، جامعة غوستاف إيفل · 2026</p>
+<h1>منصة الشد ثنائي المحور بأربعة محاور</h1>
+<p class="chips"><span class="chip">التحكم في المحاور</span><span class="chip">Modbus TCP</span><span class="chip">اقتناء NI</span><span class="chip">مزامنة الكاميرا</span><span class="chip">TestStand / LabVIEW / Python</span></p>
+<figure class="pcover"><img src="../images/projects/bench-biax-overview.jpg" alt="منصة الشد ثنائي المحور بأربعة محاور"></figure>
+<div class="pgrid">
+  <section><h2>الملخص</h2><p>تشدّ المنصة العيّنة في اتجاهين متعامدين في آن واحد. أربعة أذرع بمحركات موزعة على شكل صليب، لكل منها مشغّل خاص: يمكن تحريكها معًا (شدّ متساوٍ في الاتجاهين)، أو محورًا محورًا، أو بمسافات مختلفة. صُممت لدراسة مادة PET في ظروف قريبة من نفخ القوارير — مسخّنة فوق درجة التحول الزجاجي بقليل (نحو 100 °م) وممدودة بنسبة 400 إلى 500٪ بسرعة عالية — واستُعملت حتى في سنكروترون SOLEIL لتجارب تشتت الأشعة السينية.</p>
+<p>في 2026 أعدت كتابة برنامج التحكم فيها (<b>banc_auto</b>): تُقاد محركات Festo الأربعة عبر <b>Modbus TCP</b>، وتُقتنى القوى بهيكل NI، وأصبحت كاميرا ارتباط الصور <b>متزامنة ماديًا</b> بعدّاد في الهيكل. كما كتبت دفتر المختبر (37 صفحة، النسخة 1.4) وملف تسليم ليتمكن أي مستخدم جديد من إجراء اختبار بمفرده.</p>
+  <div class="callout"><p class="label">الجانب التجريبي</p><p>عمل تشغيل بالمعنى الدقيق: فحص كل مشغّل وكل خط حركة، واتجاه إشارة حساسات القوة (الضغط سالب، كما لوحظ في 15 أكتوبر 2026)، وإزاحة الصفر (~250 نيوتن تُزال بمعايرة ثانية واحدة) والضجيج (±5 نيوتن)، وتصحيح <b>تأخير 20 مللي ثانية</b> للمرشّح الرقمي في NI 9237 حتى تتطابق القوى والصور تمامًا. ونمط تراجع آمن يوقف الأذرع عند أي خلل.</p></div>
+  </section>
+  <aside class="keyres"><h3>النتائج الرئيسية</h3><ul><li>برنامج تحكم جديد banc_auto: مشغّلات عبر Modbus TCP، اقتناء القوى بـ NI، كاميرا مُشغّلة ماديًا</li><li>توصيف وتصحيح الإشارة والصفر والضجيج وتأخير المرشّح (20 مللي ثانية)</li><li>دفتر مختبر من 37 صفحة (v1.4) وملف تسليم للاستعمال المستقل</li></ul></aside>
+</div>
+<section><h2>المنهجية والمعادلات</h2><div class="math"><p><b>الحركية</b> — من مواضع الأذرع إلى التشوه (نسبة المدّ \(\lambda\)، التشوه الاسمي والحقيقي):</p>$$\lambda=\frac{L_0+\Delta L}{L_0},\qquad \varepsilon_{\text{nom}}=\lambda-1,\qquad \varepsilon_{\text{true}}=\ln\lambda$$<p><b>الإجهادات</b> — الإجهاد الاسمي والحقيقي لمادة غير قابلة للانضغاط (\(e_0\)، \(w_0\): السماكة والعرض الابتدائيان)؛ وللعيّنة الصليبية، توازن نصف عيّنة مقطوعة على طول قطرها \(L_0\):</p>$$\sigma_{\text{nom}}=\frac{F}{e_0w_0},\qquad \sigma_{x,\text{true}}=\frac{F_x\,\lambda_x}{e_0w_0},\qquad \sigma_{nn}=\frac{\lambda\sqrt2\,F}{e_0L_0}\ \ (\text{equibiaxial})$$<p><b>القوى</b> — حساسات HBM U93 (جسور ويتستون كاملة، 10 كيلونيوتن لكل 1 mV/V) يقرؤها NI 9237 بتردد 2000 هرتز. <b>الكاميرا</b> — تُلتقط الصورة \(k\) بنبضة من عدّاد NI على المنفذ PFI 0 بإيقاع ثابت على ساعة القوى:</p>$$F=-10\,000\ \frac{U}{1\ \mathrm{mV/V}}\ \mathrm{N},\qquad t_k=t_0+\frac{k}{f_{\text{cam}}},\quad t_0=1\ \mathrm{s},\ f_{\text{cam}}=100\ \mathrm{fps},\qquad \tau_{\text{filter}}=\frac{40+5/512}{f_s}+4.5\ \mu\mathrm{s}\approx20\ \mathrm{ms}$$</div></section>
+<section><h2>الأشكال</h2><div class="pfigs"><figure class="pfig wide"><a href="../images/projects/bench-biax-overview.jpg"><img src="../images/projects/bench-biax-overview.jpg" alt="نظرة عامة: أربعة محركات Festo، إطار صليبي، حساسات القوة وخزانة المشغّلات." loading="lazy"></a><figcaption>نظرة عامة: أربعة محركات Festo، إطار صليبي، حساسات القوة وخزانة المشغّلات.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-ring.jpg"><img src="../images/projects/bench-biax-ring.jpg" alt="العيّنة الصليبية تحت الإضاءة الحلقية، جاهزة لارتباط الصور." loading="lazy"></a><figcaption>العيّنة الصليبية تحت الإضاءة الحلقية، جاهزة لارتباط الصور.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-top.jpg"><img src="../images/projects/bench-biax-top.jpg" alt="منظر علوي للصفيحة المركزية مع الفكوك والكاميرا." loading="lazy"></a><figcaption>منظر علوي للصفيحة المركزية مع الفكوك والكاميرا.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-plate.jpg"><img src="../images/projects/bench-biax-plate.jpg" alt="صفيحة الحجرة المسخّنة مع نافذة المراقبة." loading="lazy"></a><figcaption>صفيحة الحجرة المسخّنة مع نافذة المراقبة.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-biax-specimen.jpg"><img src="../images/projects/bench-biax-specimen.jpg" alt="هندسة العيّنة الصليبية (تصميم ورسم)." loading="lazy"></a><figcaption>هندسة العيّنة الصليبية (تصميم ورسم).</figcaption></figure></div></section>
+
+<nav class="pnav"><span></span><a class="next" href="bench-hotdisk-ar.html">المحلّل الحراري Hot Disk TPS 1500 ←</a></nav>
+</main>
+<footer class="wrap foot">© 2026 فانسان بواتييه</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>منصة المقاومة الساكنة لتدفق الهواء — فانسان بواتييه</title>
+<meta name="description" content="قياس المقاومة الساكنة لتدفق الهواء في المواد المسامية بتدفق صفائحي مضبوط (الطريقة الساكنة ISO 9053-1).">
+<meta property="og:title" content="منصة المقاومة الساكنة لتدفق الهواء — فانسان بواتييه">
+<meta property="og:description" content="قياس المقاومة الساكنة لتدفق الهواء في المواد المسامية بتدفق صفائحي مضبوط (الطريقة الساكنة ISO 9053-1).">
+<meta property="og:image" content="https://vince77184.github.io/images/projects/bench-resist-setup.jpg">
+<link rel="alternate" hreflang="en" href="bench-resistivity.html">
+<link rel="alternate" hreflang="fr" href="bench-resistivity-fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../ar.html">فانسان بواتييه</a>
+    <nav>
+      <a href="../ar.html#work">العمل الحالي</a>
+      <span class="lang"><a href="bench-resistivity.html" hreflang="en" lang="en">EN</a><a href="bench-resistivity-fr.html" hreflang="fr" lang="fr">FR</a><b>عربي</b></span>
+      <a class="btn btn-sm" href="../docs/CV_Vincent_Poitier_AR.pdf">السيرة الذاتية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap project">
+<p class="back"><a href="../ar.html#work">→ العودة إلى العمل الحالي</a></p>
+<p class="kicker">منصة اختبار · مختبر MSME (UMR 8208 CNRS)، جامعة غوستاف إيفل · 2026</p>
+<h1>منصة المقاومة الساكنة لتدفق الهواء</h1>
+<p class="chips"><span class="chip">ISO 9053-1</span><span class="chip">قانون دارسي</span><span class="chip">AcoustiFlow</span><span class="chip">قياس على الوجهين</span></p>
+<figure class="pcover"><img src="../images/projects/bench-resist-setup.jpg" alt="منصة المقاومة الساكنة لتدفق الهواء"></figure>
+<div class="pgrid">
+  <section><h2>الملخص</h2><p>يعبر تدفق هوائي صفائحي بطيء ومضبوط تمامًا العيّنة، ويُقاس فرق الضغط بين وجهيها: كلما "كبحت" المادة الهواء أكثر ارتفعت مقاومتها σ. ومع المسامية المفتوحة، تُعد σ أحد المدخلين الأساسيين لتحديد نماذج المواد المسامية انطلاقًا من قياسات أنبوب المعاوقة.</p>
+<p>كتبت دفتر المختبر (36 صفحة، النسخة 2.1): النظرية، جهاز AcoustiFlow وضاغطه، هندستا العيّنات، الإجراء (الوجه A ثم الوجه B)، فحص النتائج واستعمال القيمة في برنامج التوصيف RoKCell.</p>
+  <div class="callout"><p class="label">الجانب التجريبي</p><p>يركّز الدفتر على ما يجعل القيمة موثوقة: البقاء في <b>نظام دارسي</b> (فقد الضغط متناسب مع السرعة)، والقياس عند عدة سرعات وإرجاع النتيجة إلى السرعة المرجعية 0.5 مم/ث في المعيار، وتسجيل الحرارة والضغط (تتغير لزوجة الهواء بنحو 0.3٪ لكل درجة)، وقياس وجهي كل عيّنة ومقارنة σ بالتقدير المستخلص من القياسات الصوتية.</p></div>
+  </section>
+  <aside class="keyres"><h3>النتائج الرئيسية</h3><ul><li>إجراء مطابق للطريقة الساكنة ISO 9053-1، بقياس وجهي كل عيّنة</li><li>تسجيل الحرارة والضغط والانتقال إلى النفاذية الذاتية k₀</li><li>دفتر مختبر من 36 صفحة (v2.1) مع تشخيص الأعطال وبطاقة الجلسة</li></ul></aside>
+</div>
+<section><h2>المنهجية والمعادلات</h2><div class="math"><p>يعرّف المعيار ISO 9053-1 ثلاثة مقادير متداخلة لعيّنة سماكتها \(e\) ومقطعها \(S\)، يعبرها تدفق \(Q\) (السرعة \(v=Q/S\)) بفقد ضغط \(\Delta P\):</p>$$R=\frac{\Delta P}{Q},\qquad R_s=R\,S=\frac{\Delta P}{v},\qquad \sigma=\frac{R_s}{e}=\frac{\Delta P}{v\,e}\quad[\mathrm{N\,s\,m^{-4}}]$$<p>عند سرعة منخفضة جدًا يتبع التدفق قانون دارسي؛ وترتبط σ بالنفاذية اللزجة الساكنة \(k_0\)، وهي المقدار الذاتي حقًا (\(\eta\approx1.8\times10^{-5}\) باسكال·ثانية للهواء):</p>$$\mathbf{v}=-\frac{k_0}{\eta}\,\nabla P\quad\Longrightarrow\quad\frac{\Delta P}{e}=\sigma\,v,\qquad \sigma=\frac{\eta}{k_0}$$</div></section>
+<section><h2>الأشكال</h2><div class="pfigs"><figure class="pfig"><a href="../images/projects/bench-resist-setup.jpg"><img src="../images/projects/bench-resist-setup.jpg" alt="المنصة: جهاز AcoustiFlow وحامل العيّنات." loading="lazy"></a><figcaption>المنصة: جهاز AcoustiFlow وحامل العيّنات.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-resist-meter.jpg"><img src="../images/projects/bench-resist-meter.jpg" alt="جهاز قياس المقاومة AcoustiFlow." loading="lazy"></a><figcaption>جهاز قياس المقاومة AcoustiFlow.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-resist-holder.jpg"><img src="../images/projects/bench-resist-holder.jpg" alt="حامل العيّنة وشبكة الدعم." loading="lazy"></a><figcaption>حامل العيّنة وشبكة الدعم.</figcaption></figure><figure class="pfig"><a href="../images/projects/bench-resist-compressor.jpg"><img src="../images/projects/bench-resist-compressor.jpg" alt="الضاغط الصامت الذي يغذي المنصة (8 بار كحد أقصى)." loading="lazy"></a><figcaption>الضاغط الصامت الذي يغذي المنصة (8 بار كحد أقصى).</figcaption></figure><figure class="pfig wide"><a href="../images/projects/bench-resist-results.jpg"><img src="../images/projects/bench-resist-results.jpg" alt="القياس عند عدة سرعات للهواء وشاشة النتائج." loading="lazy"></a><figcaption>القياس عند عدة سرعات للهواء وشاشة النتائج.</figcaption></figure></div></section>
+
+<nav class="pnav"><a href="bench-impedance-tube-ar.html">→ أنبوب المعاوقة — الامتصاص الصوتي</a><a class="next" href="bench-porosity-ar.html">منصة المسامية المفتوحة والكثافة الظاهرية ←</a></nav>
+</main>
+<footer class="wrap foot">© 2026 فانسان بواتييه</footer>
+</body>
+</html>
